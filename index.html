@@ -335,31 +335,29 @@
         }
 
 @media screen and (max-width: 768px) {
-  @media screen and (max-width: 768px) {
-  .navbar {
-    width: 100%; /* Adjust the width to fill the screen */
+ 
+ .navbar {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
   }
 
   .logo {
-    flex: 1; /* Allow the logo to expand to fill available space */
-    margin-left: 10px; /* Add some space between logo and nav links */
-  }
-
-  .logo img {
-    height: auto; /* Ensure logo size adjusts responsively */
+    margin-bottom: 20px; /* Add some space below the logo */
   }
 
   .nav-links {
-    flex: 1; /* Allow nav links to expand to fill available space */
     display: flex;
-    justify-content: flex-end;
-    margin-right: 10px; /* Add some space between nav links and logo */
+    flex-direction: column; /* Stack nav links vertically */
+    align-items: center; /* Center items horizontally */
   }
 
   .nav-links li {
-    margin-left: 10px; /* Add some space between nav links */
+    margin: 10px 0; /* Add some space between nav links */
   }
-}
+
+  .burger {
+    margin-top: 20px; /* Add some space above the burger icon */
+  }
 
 
   .home-section, .about-section {
