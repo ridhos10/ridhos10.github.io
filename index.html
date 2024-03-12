@@ -335,9 +335,32 @@
         }
 
 @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) {
   .navbar {
     width: 100%; /* Adjust the width to fill the screen */
   }
+
+  .logo {
+    flex: 1; /* Allow the logo to expand to fill available space */
+    margin-left: 10px; /* Add some space between logo and nav links */
+  }
+
+  .logo img {
+    height: auto; /* Ensure logo size adjusts responsively */
+  }
+
+  .nav-links {
+    flex: 1; /* Allow nav links to expand to fill available space */
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px; /* Add some space between nav links and logo */
+  }
+
+  .nav-links li {
+    margin-left: 10px; /* Add some space between nav links */
+  }
+}
+
 
   .home-section, .about-section {
     width: 100%; /* Ensure sections expand to full width */
