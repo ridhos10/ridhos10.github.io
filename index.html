@@ -60,7 +60,8 @@
 
    
        @media screen and (max-width: 768px) {
-  .logo span {
+    
+    .logo span {
     font-size: 30px;
     left: 13px;
   }
@@ -110,7 +111,7 @@
   }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
   .burger {
     display: none;
   }
@@ -194,6 +195,8 @@
     }
 
     @media screen and (max-width: 768px) {
+     
+      
       .profile-img {
         width: 200px; /* Mengurangi ukuran foto pribadi untuk perangkat kecil */
         height: 150px;
@@ -330,30 +333,28 @@
             background-color: #222c6e;
             color: #fff;
         }
+
 @media screen and (max-width: 768px) {
   .navbar {
-    width: 100%; /* Sesuaikan lebar dengan layar */
+    width: 100%; /* Adjust the width to fill the screen */
   }
 
-  .home-section {
-    padding: 50px 10px; /* Sesuaikan jarak atas dan bawah */
-  }
-
-  .about-section {
-    padding: 50px 10px; /* Sesuaikan jarak atas dan bawah */
+  .home-section, .about-section {
+    width: 100%; /* Ensure sections expand to full width */
+    padding: 50px 0; /* Adjust padding if needed */
+    margin: 0; /* Reset margin */
   }
 
   .project {
-    margin-bottom: 20px; /* Sesuaikan jarak antar proyek */
+    margin-bottom: 20px; /* Adjust margin if needed */
   }
 
   .box {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Sesuaikan lebar kotak proyek */
-    gap: 5px; /* Sesuaikan jarak antar kotak proyek */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust box width */
+    gap: 5px; /* Adjust gap between boxes */
   }
 }
-
-  
+    
   </style>
 </head>
 <body>
