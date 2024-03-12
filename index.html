@@ -1,450 +1,650 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MY PORTOFOLIO | RIDHO SYAPUTRA</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    .navbar {
+      
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+      background-color: #222c6e;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 98%;
+      z-index: 1; /* Penambahan properti position */
+      font-size: 20px;
+      font-weight: bold;
+      text-shadow: -2px -2px 0 #000,
+                    2px -2px 0 #000,
+                    -2px 2px 0 #000,
+                    2px 2px 0 #000;
 
-    <link rel="stylesheet" href="style.css ">
-    <title> My Portofolio | Ridho Syaputra</title>
-</head>
+    }
 
-<body id="home">
+    .navbar a {
+        display: inline-block;
+        text-align: center;
+        padding: 2px 4px;
+    }
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="Image/Logo.png" alt="" width="30" height="24" class="d-inline-block">
+    .logo img {
+      position: relative;
+      display: inline-block;
+      top: 5px;
+      left: 5px;
+      height: 30px;
+      margin-right: 10px;
+    }
 
-                Ridho Syaputra
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#gallery">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- Akhir Navbar -->
+    .logo span {
+        color: white; 
+        position: absolute; 
+        top: 50%;
+        transform: translateY(-50%);
+        left: 70px;
+        font-size: 20px;
+        color: white;
+    }
 
-
-    <!-- Jumbotron -->
-    <section class="jumbotron jumbotron-fluid  text-center">
-        <img src="Image/Aku3.jpg" alt="Ridho Syaputra" width="200" height="200" class="circle img-thumbnail2" 
-        ><br>
-        <h1 class="judul">RIDHO SYAPUTRA</h1>
-        <p class="lead" style="color: white;
-         text-shadow:
-    0.5px 0.5px 0 #000,
-    -0.5px 0.5px 0 #000,
-    -0.5px -0.5px 0 #000,
-    0.5px -0.5px 0 #000;">Network Engineer | Graphic Designer | Web Developer</p>
-            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 1440 320"><path fill="#273036" fill-opacity="0.2" d="M0,128L40,144C80,160,160,192,240,208C320,224,400,224,480,213.3C560,203,640,181,720,149.3C800,117,880,75,960,90.7C1040,107,1120,181,1200,186.7C1280,192,1360,128,1400,96L1440,64L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
-        
-        </section> <!-- Akhir Jumbotron -->
-
-    <!-- About -->
-     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#273036" fill-opacity="0.1" d="M0,128L40,144C80,160,160,192,240,208C320,224,400,224,480,213.3C560,203,640,181,720,149.3C800,117,880,75,960,90.7C1040,107,1120,181,1200,186.7C1280,192,1360,128,1400,96L1440,64L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
    
-  <section id="about">
-        <div class="container container-me">
-            <div class="row text-center mb-5">
-                <div class="col">
-                    <h2>About Me</h2>
-                </div>
-            </div>
-            <div class="row justify-content-between fs-5">
-                <div class="col-md-6 text-center">
-                    <h3 class="text-center mb-3">DESKRIPSI DIRI</h3>
-                <p>Saya adalah seorang lulusan dari SMK dengan jurusan Teknik Komputer Dan Jaringan. 
-                    Saya sudah terbiasa mengkonfigurasi Mikrotik, menggunakan HTML, CSS dan MYSQL. 
-                    Saya juga memiliki kemampuan untuk editing foto dengan Adobe Photoshop dan editing video dengan Filmora. 
-                    Karena saya memiliki kepribadian yang kreatif dan keingin tahuan yang tinggi untuk terus belajar hal baru. 
-                    Selain itu saya juga adalah pribadi yang mengutamakan kejujuran dalam segala aspek.
-                    Saya bukanlah perokok, tidak memiliki tindik, tidak minum minuman keras dan tidak memiliki
-                    tattoo.
-                </p></div>
-                <div class="col-md-4">
-                    <h3 class="text-center mb-3">KEMAMPUAN</h3>
-                <ul><li><b>Microsoft Office</b></li>
-                    <dl>Word, Excel, Power Point</dl>
-                </li>
-                    <li><b>Editing</b> 
-                        <dl>Photoshop, Ilustrator, Filmora</dl>
-                    </li>
-                    <li><b>Konfigurasi Mikrotik</b>
-                        <dl>Konfigurasi dasar, WLAN, Firewall, VPN</dl>
-                    </li>
-                    <li><b>Programming</b>
-                        <dl>HTML, CSS, Database MYSQL</dl>
-                    </li>
-                    
-                </ul>
-            </div>
+        @media screen and(max-width: 768px;)
+        {.logo span
+                {font-size: 30px;
+                    left: 13px;}
+        .logo img {left: 20%;}
+        }
+    .nav-links {
+      list-style: none;
+      display: none;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: calc(100% - 1px); /* Penyesuaian properti top */
+      left: 0;
+      background-color: #5b62b7;
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .nav-links a:hover{
+        background-color: #ddd;
+        color: #f2f2f2;
+    }
+
+    .nav-links.active {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-links li {
+      margin-right: 20px;
+      margin-bottom: 10px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .burger {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      margin-right: 20px;
+    }
+
+    .line {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 3px 0;
+    }
+
+    @media screen and (min-width: 769px) {
+      .burger {
+        display: none;
+      }
+
+      .nav-links {
+        display: flex !important;
+        justify-content: flex-end;
+        position: static;
+        background-color: transparent;
+        width: auto;
+        padding: 0;
+      }
+
+      .nav-links li {
+        margin-bottom: 0;
+      }
+
+      
+      }
+
+
+
+      /*Home Section*/
+         .home-section {
+      background: url('latarhome.png') center/cover; /* Gambar latar belakang */
+      position:relative; /* Untuk memungkinkan overlay */
+      color: white;
+      padding: 50px 20px; /* Jarak atas dan bawah */
+      text-align: center;
+      height: 500px;
+    }
+
+
+    .home-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .home-section .content (
+        position: relative;
+        z-index: 1;)
+
+
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* Overlay gelap */
+    }
+
+    .profile-img {
+      width: 300px; /* Lebar foto pribadi */
+      height: 200px; /* Tinggi foto pribadi */
+      border: 4px solid black; /* Garis pembatas hitam */
+      border-radius: 50%; /* Membuat foto menjadi lingkaran */
+      margin: 0 auto 10px; /* Membuat jarak antara foto dengan teks */
+    margin-top: 50px;
+    margin-left: 50px;
+    /*display: block;*/ /* Agar bisa menggunakan margin auto */
+      z-index: 0;
+      position: relative;
+    }
+
+    .name {
+      font-size: 30px; /* Ukuran teks nama */
+      font-weight: bold; /* Tebal teks nama */
+      color: white;
+      z-index: 0;
+      position: relative;
+      margin-left: 50px;
+      text-shadow: -2px -2px 0 #000,
+                    2px -2px 0 #000,
+                    -2px 2px 0 #000,
+                    2px 2px 0 #000;
+    }
+
+    @media screen and (max-width: 768px) {
+      .profile-img {
+        width: 200px; /* Mengurangi ukuran foto pribadi untuk perangkat kecil */
+        height: 150px;
+      }
+
+      .name {
+        font-size: 20px; /* Mengurangi ukuran teks nama untuk perangkat kecil */
+      }
+    }
+
+
+
+    /*About Section*/
+       .about-section {
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .qa-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+
+  .qa-container {
+    position: relative;
+    width: 80%;
+    max-width: 600px; /* Lebih lebar */
+    margin: 0 auto;
+  }
+
+  .qa-box {
+    display: none;
+    padding: 40px; /* Lebih besar */
+    background-color: #ffffff;
+    border: 2px solid #2e3192;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .qa-box h2 {
+    font-size: 24px; /* Lebih besar */
+    margin-bottom: 20px; /* Lebih besar */
+  }
+
+  .qa-box p {
+    font-size: 18px; /* Lebih besar */
+    line-height: 1.6;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #2e3192;
+    font-size: 24px;
+  }
+
+  .arrow.left {
+    left: 10px;
+  }
+
+  .arrow.right {
+    right: 10px;
+  }
+
+   
+
+
+   .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color:  #cccccc;
+        }
+        .project {
+            margin-bottom: 40px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 10px;
+        }
+        .box img,
+        .box video {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #333;
+            padding: 1px;
+        }
+
+
+
+        #contact {
+            padding: 20px;
+            background-color: #222c6e;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #contact h2 {
+            margin-bottom: 10px;
+
+            color: #fff;
+            text-shadow: -2px -2px 0 #000,
+                    2px -2px 0 #000,
+                    -2px 2px 0 #000,
+                    2px 2px 0 #000;
+        }
+
+        #contact ul {
+            color: #fff;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #contact li {
+            margin-bottom: 5px;
+            color: #fff;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #222c6e;
+            color: #fff;
+        }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="burger" onclick="toggleMenu()">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+  <div class="logo">
+    <img src="Logo.png" alt="Logo">
+    <span>RIDHO SYAPUTRA</span>
+  </div>
+  <ul class="nav-links" id="menu">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About Me</a></li>
+    <li><a href="#project">Project</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  var menuItems = document.querySelectorAll('.nav-links a');
+  menuItems.forEach(function (menuItem) {
+    menuItem.addEventListener('click', function () {
+      var menu = document.getElementById("menu");
+      menu.classList.remove("active");
+    });
+  });
+});
+
+function toggleMenu() {
+  var menu = document.getElementById("menu");
+  menu.classList.toggle("active");
+}
+</script>
+
+
+<section class="home-section" id="home">
+  <img src="aku.jpg" alt="Foto Pribadi" class="profile-img">
+  <div class="name">RIDHO SYAPUTRA <br>
+    Network | Design | Program
+  </div>
+
+
+        
+</section>
+
+
+
+<section class="about-section" id="about">
+
+  <div class="qa-title">Q&A</div>
+  <p>Klik Panah Untuk Melihat Pertanyaan Berikutnya.</p>
+  <div class="qa-container">
+
+    <div class="qa-box" id="qa-1">
+      <h2>Tentang Saya?</h2>
+      <p>Saya adalah lulusan SMK Teknik Komputer dan Jaringan tahun 2020.
+         Saya bukan perokok, tidak memiliki tindik dan tato serta tidak
+         mengonsumsi minuman keras.
+      </p>
+      <div class="arrow right" onclick="nextQuestion(1)">&#10095;</div>
+    </div>
+
+    <div class="qa-box" id="qa-2">
+      <h2>Hobi Saya?</h2>
+      <p>Saya memiliki hobi membaca komik dan menonton film.
+         Dengan hobi saya ini, saya dapat meningkatkan kemampuan
+         bahasa Inggris saya.
+      </p>
+      <div class="arrow left" onclick="prevQuestion(2)">&#10094;</div>
+      <div class="arrow right" onclick="nextQuestion(2)">&#10095;</div>
+    </div>
+
+    <div class="qa-box" id="qa-3">
+      <h2>Sifat Baik Saya?</h2>
+      <p>Saya adalah orang yang jujur, bertanggung jawab, memiliki jiwa penolong
+      dan memiliki rasa ingin tahu yang tinggi.</p>
+      <div class="arrow left" onclick="prevQuestion(3)">&#10094;</div>
+      <div class="arrow right" onclick="nextQuestion(3)">&#10095;</div>
+    </div>
+    <!-- Tambahkan lebih banyak pertanyaan jika diperlukan -->
+    <div class="qa-box" id="qa-4">
+      <h2>Kelemahan Saya?</h2>
+      <p style="text-align: left;">- Saya adalah orang yang pelupa, namun saya dapat mengatasinya dengan membuat
+         catatan penting di hp/buku kecil yang selalu saya bawa.<br>
+         - Terkadang saya kurang percaya diri menyampaikan opini pribadi ke publik.
+         <br>- Terkadang saya terlalu psimis akan sesuatu yang membuat saya overthinking
+         dan mempersiapkan hal yang akan datang.
+      </p>
+      <div class="arrow left" onclick="prevQuestion(4)">&#10094;</div>
+      <div class="arrow right" onclick="nextQuestion(4)">&#10095;</div>
+    </div>
+    <div class="qa-box" id="qa-5">
+      <h2>Skill Saya?</h2>
+      <p style="text-align: left;">
+          - Mahir menggunakan Microsoft Word, Excel, Power Point.(Membuat Surat, Membuat Table kasir dan Gudang menggunakan Vlookup, SUM, IF)<br>
+          - Menengah melakukan setting router Mikrotik (Konfigurasi dasar, WLAN, Firewall, VPN, Limit, Block web).<br>
+          - Menengah menggunakan Adobe Photoshop, Filmora, Ilustrator, Capcut.<br>
+          - Menengah memahami HTML, CSS, Database Mysql (Membuat web dan aplikasi).<br>
+          - Mensetting CCTV, VAR, Mesin Print.<br>
+          - Melakukan transaksi dan laporan penjualan.
+
+      </p>
+      <div class="arrow left" onclick="prevQuestion(5)">&#10094;</div>
+      <div class="arrow right" onclick="nextQuestion(5)">&#10095;</div>
+    </div>
+
+    <div class="qa-box" id="qa-6">
+      <h2>Motivasi Saya Bekerja?</h2>
+      <p>Saya ingin mencari pekerjaan dengan lingkungan yang tidak harus 
+         membuat saya berhubungan dengan hal buruk menurut pandangan agama saya (Islam),
+         dan saya akan bekerja keras agar menjadi karyawan tetap di perusahaan tersebut.
+    </p>
+      <div class="arrow left" onclick="prevQuestion(6)">&#10094;</div>
+      <div class="arrow right" onclick="nextQuestion(6)">&#10095;</div>
+    </div>
+
+    <div class="qa-box" id="qa-6">
+      <h2>Kenapa Anda Harus Menerima Saya?</h2>
+      <p>Karena Saya adalah orang yang mengutamakan Attitude daripada pendidikan,harta,skill dll.
+        Saya rasa sedikit calon pelamar yang menjanjikan Attitude baik.
+    </p>
+      <div class="arrow left" onclick="prevQuestion(6)">&#10094;</div>
+      <div class="arrow right" onclick="nextQuestion(6)">&#10095;</div>
+    </div>
+
+    <div class="qa-box" id="qa-7">
+      <h2>Gaji Yang Diharapkan?</h2>
+      <p>Range gaji yang saya harapkan Rp. 3000.000,00 - Rp. 5000.000,00 atau 3 Juta - 5 Juta Rupiah.
+    </p>
+      <div class="arrow left" onclick="prevQuestion(7)">&#10094;</div>
+      <div class="arrow right" onclick="nextQuestion(7)">&#10095;</div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  document.getElementById('qa-1').style.display = 'block';
+
+  function nextQuestion(currentQuestion) {
+    var nextQuestion = currentQuestion + 1;
+    var currentBox = document.getElementById('qa-' + currentQuestion);
+    var nextBox = document.getElementById('qa-' + nextQuestion);
+
+    currentBox.style.display = 'none';
+    if (nextBox) {
+      nextBox.style.display = 'block';
+    } else {
+      document.getElementById('qa-1').style.display = 'block';
+    }
+  }
+
+  function prevQuestion(currentQuestion) {
+    var prevQuestion = currentQuestion - 1;
+    var currentBox = document.getElementById('qa-' + currentQuestion);
+    var prevBox = document.getElementById('qa-' + prevQuestion);
+
+    currentBox.style.display = 'none';
+    if (prevBox) {
+      prevBox.style.display = 'block';
+    } else {
+      var lastQuestion = document.querySelectorAll('.qa-box').length;
+      document.getElementById('qa-' + lastQuestion).style.display = 'block';
+    }
+  }
+</script>
+
+<section id="project">
+
+<div class="container">
+    
+
+        <h1 style="color: white; font-size: 50px; text-shadow: -1px -1px 0 #000,
+                    1px -1px 0 #fff,
+                    -1px 1px 0 #fff,
+                    1px 1px 0 #fff;
+                    ">PROJECT</h1>
+
+        <div class="project">
+            <h2 style="color: black; text-shadow: -2px -2px 0 #FFF,
+                    2px -2px 0 #FFF,
+                    -2px 2px 0 #FFF,
+                    2px 2px 0 #FFF; font-size: 50px;">WIKA Rekayasa Kontruksi</h2>
+            <div class="box">
+                <img src="wika1.jpg" alt="Gambar 1" style="height: 400px; width: 450px;" >
+                <img src="wika2.jpg" alt="Gambar 2" style="height: 400px; width: 450px;">
+                <img src="wika3.gif" alt="Gambar 3" style="height: 400px; width: 450px;">
+                <img src="wika4.gif" alt="Gambar 4" style="height: 400px; width: 450px;">
+                <img src="wika5.jpg" alt="Gambar 5" style="height: 400px; width: 450px;">
+                <img src="wika6.png" alt="Gambar 6" style="height: 400px; width: 450px;">
+                <img src="wika7.png" alt="Gambar 7" style="height: 400px; width: 450px;">
+                <video controls>
+                    <source src="wika8.mp4" type="video/mp4" style="height: 400px; width: 450px;">
+                    Your browser does not support the video tag.
+                </video>
+                 <!--<video controls>
+                    <source src="video_2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video controls>
+                    <source src="video_3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>-->
             </div>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#808080" fill-opacity="1" d="M0,32L40,58.7C80,85,160,139,240,138.7C320,139,400,85,480,90.7C560,96,640,160,720,176C800,192,880,160,960,165.3C1040,171,1120,213,1200,192C1280,171,1360,85,1400,42.7L1440,0L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
-    </section>
-    <!-- Akhir About -->
 
-    <!-- Gallery -->
-<section id="gallery">
-    <div class="container" style="max-width: fit-content;">
-        <div class="row text-center">
-            <div class="col">
-                <h2 style="color: white;">My Gallery</h2><br><br>
+        <div class="project">
+            <h2 style="color: black; text-shadow: -2px -2px 0 #FFF,
+                    2px -2px 0 #FFF,
+                    -2px 2px 0 #FFF,
+                    2px 2px 0 #FFF; font-size: 50px;">PT Perdana Global Internet</h2>
+            <div class="box">
+                <img src="nextone1.jpg" alt="Gambar 1" style="height: 400px; width: 450px;" >
+                <img src="nextone2.jpg" alt="Gambar 2" style="height: 400px; width: 450px;" >
+                <img src="nextone3.jpg" alt="Gambar 3" style="height: 400px; width: 450px;" >
+                <img src="nextone4.jpg" alt="Gambar 4" style="height: 400px; width: 450px;" >
+                <img src="nextone5.jpg" alt="Gambar 5" style="height: 400px; width: 450px;" >
+                <img src="nextone6.jpg" alt="Gambar 6" style="height: 400px; width: 450px;" >
+                <img src="nextone7.gif" alt="Gambar 7" style="height: 400px; width: 450px;" >
+                <!--<video controls>
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video controls>
+                    <source src="video_2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video controls>
+                    <source src="video_3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>-->
             </div>
+            <!-- Sama seperti bagian WIKA, ganti gambar_X.jpg dan video_X.mp4 dengan tautan yang sesuai -->
         </div>
-        <div class="row">
 
-<!-- Gambar Gallery 1 -->
-<div class="col-md-3 mb-3" >
-                <div class="card wrap-container">
-  <img src="Image/SIAP UNTUK WEB/InCollage_20230910_225911293.jpg" class="card-img-top" alt="Idcard">
-
-  
-  
-</div>
-
-
-</div>
-
-<!-- Gambar Gallery 2 -->
- <div class="col-md-3 mb-3" >
-                <div class="card wrap-container">
-  <img src="Image/SIAP UNTUK WEB/20230908_022623.jpg" class="card-img-top" alt="Customcasingmodem">
-
-  
-  
-</div>
-
-
-</div>
-
-<!-- Gambar Gallery 3 -->
- <div class="col-md-3 mb-3" >
-                <div class="card wrap-container">
-  <img src="Image/SIAP UNTUK WEB/20230908_025241.jpg" class="card-img-top" alt="MenerjemahkanKomikDigital">
-
-  
-  
-</div>
-
-
-</div>
-
-<!-- Gambar Gallery 4 -->
-<div class="col-md-3 mb-3" >
-                <div class="card wrap-container">
-  <img src="Image/SIAP UNTUK WEB/20230908_031229.jpg" class="card-img-top" alt="MenggantiPerangkatOffice">
-
-  
-  
-</div>
-
-
-</div>
-
-<!-- Gambar Gallery 5 -->
-<div class="col-md-3 mb-3" >
-                <div class="card wrap-container">
-  <img src="Image/SIAP UNTUK WEB/InCollage_20230908_023417935.jpg" class="card-img-top" alt="PerangkatPemasanganInternet">
-
-  
-  
-</div>
-
-
-</div>
-
-<!-- Gambar Gallery 6 -->
-<div class="col-md-3 mb-3" >
-                <div class="card wrap-container">
-  <img src="Image/SIAP UNTUK WEB/InCollage_20230908_023825598.jpg" class="card-img-top" alt="RekanKerja">
-
-  
-  
-</div>
-
-
-</div>
-
-<!-- Gambar Gallery 7 -->
-<div class="col-md-3 mb-3" >
-                <div class="card wrap-container">
-  <img src="Image/SIAP UNTUK WEB/InCollage_20230908_024436339.jpg" class="card-img-top" alt="MonitoringVPN">
-
-  
-  
-</div>
-
-
-</div>
-
-<!-- Gambar Gallery 8 -->
-<div class="col-md-3 mb-3" >
-                <div class="card wrap-container">
-  <img src="Image/SIAP UNTUK WEB/InCollage_20230908_024649383.jpg" class="card-img-top" alt="PemotretanLapangan">
-
-  
-  
-</div>
-
-
-</div>
-
-<!-- Gambar Gallery 9 -->
-<div class="col-md-3 mb-3" >
-                <div class="card wrap-container">
-  <img src="Image/SIAP UNTUK WEB/InCollage_20230908_025051818.jpg" class="card-img-top" alt="AllPerangkatOffice">
-
-  
-  
-</div>
-
-
-</div>
-
-<!-- Gambar Gallery 10 -->
-<div class="col-md-3 mb-3" >
-                <div class="card wrap-container">
-  <img src="Image/SIAP UNTUK WEB/InCollage_20230908_025810603.jpg" class="card-img-top" alt="PembuatanArt">
-
-  
-  
-</div>
-
-
-</div>
-
-<!-- Gambar Gallery 11 -->
-<div class="col-md-3 mb-3" >
-                <div class="card wrap-container">
-  <img src="Image/SIAP UNTUK WEB/InCollage_20230908_031433957.jpg" class="card-img-top" alt="PembuatanPortofoliodenganHTMLdanCSS">
-
-  
-  
-</div>
-
-
-</div>
-
-<!-- Gambar Gallery 12 -->
-<div class="col-md-3 mb-3" >
-                <div class="card wrap-container">
-  <img src="Image/SIAP UNTUK WEB/InCollage_20230908_030003617.jpg" class="card-img-top" alt="Pembuatan3DModelLogoTKJSMKN4Bekasi">
-
-  
-  
-</div>
-
-
-</div>
-
-<!-- Gambar Gallery 13 -->
-<div class="col-md-3 mb-3" >
-                <div class="card wrap-container">
-                    <div></div>
-  <img src="Image/SIAP UNTUK WEB/3d model logo tkj smkn 4.gif" class="card-img-top" alt="3DModelLogoTKJSMKN4Bekasi">
-
-  
-  
-</div>
-
-
-</div>
-
-<!-- Gambar Gallery 14 -->
-<div class="col-md-3 mb-3" >
-                <div class="card wrap-container">
-  <img src="Image/SIAP UNTUK WEB/20230908_025330.jpg" class="card-img-top" alt="membuat3DmodelWika">
-
-  
-  
-</div>
-
-
-</div>
-
-<!-- Gambar Gallery 15 -->
-<div class="col-md-3 mb-3" >
-                <div class="card wrap-container">
-  <img src="Image/SIAP UNTUK WEB/3D Model Logo Wika.gif" class="card-img-top" alt="3DModelLogoWIKA1">
-
-  
-  
-</div>
-
-
-</div>
-
-<!-- Gambar Gallery 16 -->
-<div class="col-md-3 mb-3" >
-                <div class="card wrap-container">
-  <img src="Image/SIAP UNTUK WEB/3D Model WIKA.gif"  class="card-img-top"  alt="3DModelLogoWika2">
-
-  
-  
-</div>
-
-
-</div>
-
-<!-- Gambar Gallery 17 -->
-<div class="col-md-3 mb-3" >
-                <div class="card wrap-container">
-  <img src="Image/SIAP UNTUK WEB/InCollage_20230910_225756423.jpg" class="card-img-top" alt="EditingVideoFilmora">
-
-  
-  
-</div>
-
-
-</div>
-
-<!-- Gambar Gallery 18 -->
-<div class="col-md-3 mb-3" >
-                <div class="card wrap-container">
-  <img src="Image/SIAP UNTUK WEB/InCollage_20230910_230001906.jpg" class="card-img-top" alt="LaporanPekerjaan">
-
-  
-  
-</div>
-
-
-
-
-</div>
-
-<!-- Gambar Gallery 19 -->
-<div class="col-md-3 mb-3" >
-                <div class="card wrap-container">
-  <img src="Image/SIAP UNTUK WEB/20230908_022109.jpg" class="card-img-top" alt="CrimpingKabel">
-
-  
-  
-</div>
-
-
-</div>
-
-<!-- Gambar Gallery 20 -->
-<div class="col-md-3 mb-3" >
-                <div class="card wrap-container">
-  <img src="Image/SIAP UNTUK WEB/VID-20230911-WA0000.gif" style="height:305px;" class="card-img-top" alt="CrimpingKabel2">
-
-  
-  
-</div>
-
-
-</div>
-
-<!-- Gambar Gallery 21 -->
- <div class="col-md-3 mb-3" >
-                <div class="card wrap-container">
-  <img src="Image/SIAP UNTUK WEB/kasir.png" class="card-img-top" alt="kasir">
-
-  
-  
-</div>
-</div>
-
-<!-- Gambar Gallery 22 -->
- <div class="col-md-3 mb-3" >
-                <div class="card wrap-container">
-  <img src="Image/SIAP UNTUK WEB/gudang.png" class="card-img-top" alt="gudang">
-
-  
-  
-</div>
-</div>
-
-<!-- Gambar Gallery 23 -->
- <div class="col-md-3 mb-3" >
-                <div class="card wrap-container">
-  <img src="Image/SIAP UNTUK WEB/ob.png" class="card-img-top" alt="ob">
-
-  
-  
-</div>
-</div>
-<!-- Akhir Gambar Gallery -->
+        <div class="section">
+            <h2 style="color: black; text-shadow: -2px -2px 0 #FFF,
+                    2px -2px 0 #FFF,
+                    -2px 2px 0 #FFF,
+                    2px 2px 0 #FFF; font-size: 50px;">Gamer Village</h2>
+            <div class="box">
+                <img src="gv1.png" alt="Gambar 1" style="height: 400px; width: 450px;">
+                <img src="gv2.png" alt="Gambar 2" style="height: 400px; width: 450px;">
+                <img src="gv3.png" alt="Gambar 3" style="height: 400px; width: 450px;">
+                <img src="gv4.png" alt="Gambar 4" style="height: 400px; width: 450px;">
+                <img src="gv5.png" alt="Gambar 5" style="height: 400px; width: 450px;">
+
+                <video controls>
+                    <source src="gv6.mp4" type="video/mp4" style="height: 400px; width: 450px;">
+                    Your browser does not support the video tag.
+                </video>
+                <!--<video controls>
+                    <source src="video_2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video controls>
+                    <source src="video_3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>-->
+            </div>
+            <!-- Sama seperti bagian WIKA, ganti gambar_X.jpg dan video_X.mp4 dengan tautan yang sesuai -->
+        </div>
+
+        <div class="section">
+            <h2 style="color: black; text-shadow: -2px -2px 0 #FFF,
+                    2px -2px 0 #FFF,
+                    -2px 2px 0 #FFF,
+                    2px 2px 0 #FFF; font-size: 50px;">Freelance</h2>
+            <div class="box">
+                <img src="freelance1.png" alt="Gambar 1" style="height: 400px; width: 450px;">
+                <img src="freelance2.jpg" alt="Gambar 2" style="height: 400px; width: 450px;">
+                <img src="freelance3.jpg" alt="Gambar 3" style="height: 400px; width: 450px;">
+                <img src="freelance4.jpg" alt="Gambar 4" style="height: 400px; width: 450px;">
+                <img src="freelance5.gif" alt="Gambar 5" style="height: 400px; width: 450px;">
+                <img src="freelance6.jpg" alt="Gambar 6" style="height: 400px; width: 450px;">
+                <img src="freelance7.jpg" alt="Gambar 7" style="height: 400px; width: 450px;">
+                <!--<video controls>
+                    <source src="video_1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video controls>
+                    <source src="video_2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video controls>
+                    <source src="video_3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>-->
+            </div>
+            <!-- Sama seperti bagian WIKA, ganti gambar_X.jpg dan video_X.mp4 dengan tautan yang sesuai -->
         </div>
     </div>
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,160L48,186.7C96,213,192,267,288,266.7C384,267,480,213,576,202.7C672,192,768,224,864,240C960,256,1056,256,1152,224C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
 </section>
-    <!-- Akhir Gallery -->
 
+<section id="contact">
+    <h2>Hubungi Saya</h2>
+    <ul>
+        <li>Email :  syahputraridho3@gmail.com</li>
+        <li>Whatsapp : 0878 8430 6940</li>
+        <li>Telepon : 0851 5720 8842</li>
+    </ul>
+</section>
 
-    <!-- Section Contact -->
-
-    <section id="contact">
-        <div class="container" style="padding-bottom: 2rem;">
-            <div class="row text-center">
-                <div class="col">
-                    <h2>Contact Me</h2><br>
-                </div>
-            </div>
-            
-            <div class="row">
-               <!-- FB -->
-                <div class="col-md-4"> <a href="https://web.facebook.com/ridho.syaputra.12139/" target="_blank" style="text-decoration: none;">
-                <img width="48" height="48" src="https://img.icons8.com/color/48/facebook-new.png" alt="facebook-new"/>&nbsp;<b style="color: black;">Ridho Syaputra</b></a>
-            </div>
-
-            <!-- Instagram -->
-            <div class="col-md-4"> <a href="https://www.instagram.com/ridho.s10/" target="_blank" style="text-decoration: none;">
-                <img width="48" height="48" src="https://img.icons8.com/fluency/48/instagram-new.png" alt="instagram-new"/>&nbsp;<b style="color: black;">Ridho.S10</b></a>
-            </div>
-
-            <!-- Gmail -->
-            <div class="col-md-4">
-                <a><img width="48" height="48" src="https://img.icons8.com/fluency/48/gmail-new.png" alt="gmail-new"/>&nbsp;<b>syahputraridho3@gmail.com</b></a>
-                </div>
-                
-
-
-            </div>
-        </div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#212529" fill-opacity="1" d="M0,192L48,202.7C96,213,192,235,288,234.7C384,235,480,213,576,202.7C672,192,768,192,864,213.3C960,235,1056,277,1152,266.7C1248,256,1344,192,1392,160L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-    </section>
-    <!-- Akhir Contact -->
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center p-3">
-        <p>Created by <a class="text-white fw-bold" href="https://www.instagram.com/ridho.s10/" target="_blank">Ridho Syaputra</a></p>
-    </footer>
-    <!-- Akhir Footer -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
-
+<footer>
+    <p>Hak Cipta &copy; 2024 Ridho Syaputra</p>
+</footer>
 
 </body>
-
 </html>
