@@ -336,13 +336,18 @@
 
 @media screen and (max-width: 768px) {
  
- .navbar {
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center items horizontally */
+  .navbar {
+    flex-direction: row; /* Align elements horizontally */
+    justify-content: space-between; /* Distribute elements evenly */
+    align-items: center; /* Center items vertically */
   }
 
   .logo {
-    margin-bottom: 20px; /* Add some space below the logo */
+    order: -1; /* Move the logo to the beginning */
+  }
+
+  .burger {
+    margin-right: 20px; /* Add some space to the right of the burger icon */
   }
 
   .nav-links {
@@ -355,9 +360,6 @@
     margin: 10px 0; /* Add some space between nav links */
   }
 
-  .burger {
-    margin-top: 20px; /* Add some space above the burger icon */
-  }
 
 
   .home-section, .about-section {
