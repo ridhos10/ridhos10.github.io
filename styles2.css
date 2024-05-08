@@ -68,7 +68,7 @@
 
   .content p {
     font-family: impact, sans-serif; /* Menggunakan font fallback Arial */
-    font-size: 6.6667vh; /* Ukuran teks lebih besar */
+    font-size: 7vh; /* Ukuran teks lebih besar */
     margin-bottom: 40px;
     color: white; /* Warna teks menjadi abu-abu muda */
     letter-spacing: 0.25vh;
