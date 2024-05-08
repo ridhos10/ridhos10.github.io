@@ -93,7 +93,7 @@
 
 
     .home-content {
-      height: 120vh; /* Konten home akan menyesuaikan tinggi konten */
+      height: 100vh; /* Konten home akan menyesuaikan tinggi konten */
       padding: 50px 20px; /* Ruang padding diperbesar */
     }
 
@@ -110,7 +110,7 @@
   /* Media queries untuk responsif */
   @media screen and (max-width: 768px) {
     .home-content {
-      height: 110vh; /* Tinggi konten home menjadi 80% tinggi viewport pada layar kecil */
+      height: 100vh; /* Tinggi konten home menjadi 80% tinggi viewport pada layar kecil */
       background-size: 600px 600px; /* Ukuran gambar latar belakang diubah secara manual (lebar: 200px, tinggi: 300px) */
     }
   }
@@ -153,8 +153,8 @@
         font-size: 56px;
         text-align: center;
         margin-bottom: 20px; /* Jarak bawah dari teks h1 ke konten paragraf (p) */
-        -webkit-text-stroke: 1.5px darkred; /* Garis luar hitam */
-    text-stroke: 1.5px darkred; /* Garis luar hitam */
+        -webkit-text-stroke: 1px darkred; /* Garis luar hitam */
+    text-stroke: 1px darkred; /* Garis luar hitam */
     }
 
 
@@ -163,8 +163,8 @@
     color: white; /* Warna teks menjadi abu-abu muda */
     text-align: center;
     letter-spacing: 2px;
-     -webkit-text-stroke: 0.7px black; /* Garis luar hitam */
-    text-stroke: 0.7px black; /* Garis luar hitam */
+     -webkit-text-stroke: 0.5px black; /* Garis luar hitam */
+    text-stroke: 0.5px black; /* Garis luar hitam */
   }
 }
 
@@ -342,3 +342,10 @@
     .btn-social {
       margin: 10px;
     }
+
+@media screen and (max-width 768px) {
+.filterku {
+  width: 10px;
+  height:10px;
+
+}  
