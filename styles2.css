@@ -1,0 +1,344 @@
+/* Navbar */  
+/* Gunakan font Open Sans pada navbar */
+  .navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+  }
+
+
+  .navbar-brand {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 24px; /* Ubah ukuran font menjadi 24px */
+    letter-spacing: 1px; /* Tambahkan jarak antar huruf */
+  }
+  
+  
+
+    /* Warnai huruf R dan S menjadi merah */
+  .navbar-brand .text-danger {
+    color: red;
+  }
+
+
+
+
+ /* Style untuk konten home */
+.home-content {
+    background-color: #333; /* Warna latar belakang */
+    background-image: url('gambarhome.png'); /* Ganti 'path/to/your/image.jpg' dengan lokasi gambar Anda */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    height: 100vh; /* Tinggi konten home setara dengan tinggi viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile {
+    flex: 1; /* Agar foto profil memenuhi 1 bagian dari flex container */
+    text-align: center; /* Menengahkan foto profil */
+  }
+
+  .profile img {
+    width: 400px; /* Lebar foto profil */
+    height: 400px; /* Tinggi foto profil */
+    border-radius: 50%; /* Membuat sudut gambar menjadi lingkaran */
+    border: 5px solid black; /* Garis lingkaran hitam tebal */
+  }
+
+  .content {
+    flex: 2; /* Agar konten memenuhi 2 bagian dari flex container */
+    text-align: left;
+    padding: 0 20px;
+  }
+
+/* Style untuk teks di dalam konten home */
+  .content h1 {
+   font-family: 'Brush Script MT', cursive; /* Menggunakan font cursive */
+    font-size: 72px;
+    margin-bottom: 20px;
+    color: white; /* Warna teks menjadi putih */
+    -webkit-text-stroke: 2px darkred; /* Garis luar hitam */
+    text-stroke: 2px darkred; /* Garis luar hitam */
+  }
+
+  .content p {
+    font-family: impact, sans-serif; /* Menggunakan font fallback Arial */
+    font-size: 32px; /* Ukuran teks lebih besar */
+    margin-bottom: 40px;
+    color: white; /* Warna teks menjadi abu-abu muda */
+    letter-spacing: 2px;
+     -webkit-text-stroke: 1.5px black; /* Garis luar hitam */
+    text-stroke: 1.5px black; /* Garis luar hitam */
+  }
+
+  .download-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+ 
+
+ /* Media queries untuk responsif */
+  @media (max-width: 768px) {
+
+
+    .home-content {
+      height: 120vh; /* Konten home akan menyesuaikan tinggi konten */
+      padding: 50px 20px; /* Ruang padding diperbesar */
+    }
+
+    .home-content h1 {
+      font-size: 6vw; /* Ukuran font h1 menjadi lebih besar pada layar kecil */
+    }
+
+    .home-content p {
+      font-size: 3vw; /* Ukuran font paragraf juga disesuaikan */
+    }
+  }
+
+  /* Media queries untuk responsif */
+  /* Media queries untuk responsif */
+  @media (max-width: 768px) {
+    .home-content {
+      height: 110vh; /* Tinggi konten home menjadi 80% tinggi viewport pada layar kecil */
+      background-size: 600px 600px; /* Ukuran gambar latar belakang diubah secara manual (lebar: 200px, tinggi: 300px) */
+    }
+  }
+
+
+
+ @media only screen and (max-width: 600px) {
+   
+   .navbar {
+    height: 10%;
+    
+   }
+
+
+
+
+
+
+
+    /* Style untuk kontainer utama pada perangkat kecil */
+    .home-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Style untuk gambar profil pada perangkat kecil */
+    .profile {
+      padding-top: 70px;
+    }
+
+    .profile img {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 20px; /* Jarak antara gambar profil dengan teks h1 */
+    }
+
+    /* Style untuk teks h1 pada perangkat kecil */
+    .content h1 {
+        font-size: 56px;
+        text-align: center;
+        margin-bottom: 20px; /* Jarak bawah dari teks h1 ke konten paragraf (p) */
+        -webkit-text-stroke: 1.5px darkred; /* Garis luar hitam */
+    text-stroke: 1.5px darkred; /* Garis luar hitam */
+    }
+
+
+    .content p {
+    font-size: 20px; /* Ukuran teks lebih besar */
+    color: white; /* Warna teks menjadi abu-abu muda */
+    text-align: center;
+    letter-spacing: 2px;
+     -webkit-text-stroke: 0.7px black; /* Garis luar hitam */
+    text-stroke: 0.7px black; /* Garis luar hitam */
+  }
+}
+
+@media only screen and (max-width:
+600px) {
+  .download-button {
+    width: 100%;
+    text-align: center;
+    margin-left: 27%;
+    margin-top: 30%;
+
+  }
+}
+
+
+/*Profile*/
+/*About Section*/
+       .about-section {
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .qa-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+
+  .qa-container {
+    position: relative;
+    width: 80%;
+    max-width: 600px; /* Lebih lebar */
+    margin: 0 auto;
+  }
+
+  .qa-box {
+    display: none;
+    padding: 40px; /* Lebih besar */
+    background-color: #ffffff;
+    border: 2px solid #2e3192;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .qa-box h2 {
+    font-size: 24px; /* Lebih besar */
+    margin-bottom: 20px; /* Lebih besar */
+  }
+
+  .qa-box p {
+    font-size: 18px; /* Lebih besar */
+    line-height: 1.6;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #2e3192;
+    font-size: 24px;
+  }
+
+  .arrow.left {
+    left: 10px;
+  }
+
+  .arrow.right {
+    right: 10px;
+  }
+
+
+
+   /* Project */
+   /* Frame Style */
+  .custom-card-frame {
+    border: 2px solid #007bff; /* Ubah warna bingkai sesuai keinginan */
+    border-radius: 10px; /* Ubah radius sudut sesuai keinginan */
+    overflow: hidden; /* Hindari konten yang melampaui bingkai */
+  }
+
+  /* Shadow Effect */
+  .custom-card-frame:hover {
+    box-shadow: 0px 0px 15px rgba(0, 123, 255, 0.3); /* Ubah efek bayangan sesuai keinginan */
+  }
+
+
+  .modal-container {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 10%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 70%;
+  height: 80%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+ 
+}
+
+.close-btn {
+  position: absolute;
+  color: darkred;
+  font-size: 100px;
+  z-index: 1;
+  top: -50px;
+  right: -100px;
+  cursor: pointer;
+}
+
+.full-img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+ /* Media queries untuk perangkat dengan lebar layar kecil */
+ /* CSS untuk layar yang lebih kecil */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 80%; /* Mengurangi lebar modal untuk layar kecil */
+    height: 70%; /* Mengurangi tinggi modal untuk layar kecil */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .close {
+    font-size: 30px; /* Mengurangi ukuran font tombol close untuk layar kecil */
+  }
+
+  .full-img {
+    width: 500px; /* Mengatur lebar gambar untuk layar kecil */
+    height: 700px; /* Mengatur tinggi gambar untuk layar kecil */
+  }
+
+
+      .close-btn {
+    font-size: 100px; /* Ukuran font tombol "Close" */
+    color: darkred; /* Warna teks tombol "Close" */
+    cursor: pointer; /* Ubah kursor menjadi tanda penunjuk saat diarahkan ke tombol */
+    position: absolute; /* Posisi absolut untuk penempatan di pojok kanan atas modal */
+    top: -30px; /* Jarak dari bagian atas modal */
+    right: 10px; /* Jarak dari bagian kanan modal */
+    z-index: 1; /* Menempatkan tombol di atas gambar */
+  }
+
+  /* CSS untuk memberikan efek hover pada tombol "Close" */
+  .close:hover {
+    color: #555; /* Warna teks tombol "Close" saat dihover */
+  }
+    }
+
+
+/*KONTAK*/
+.contact-section {
+      background-color: black;
+      color: white;
+      padding: 50px 0;
+    }
+    .contact-icons {
+      text-align: center;
+    }
+    .contact-icons img {
+      width: 50px;
+      margin: 10px;
+    }
+    .btn-social {
+      margin: 10px;
+    }
