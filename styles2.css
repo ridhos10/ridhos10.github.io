@@ -108,7 +108,12 @@
       background-size: 600px 600px; /* Ukuran gambar latar belakang diubah secara manual (lebar: 200px, tinggi: 300px) */
     }
 
-    .navbar-collapse .nav-link
+    
+  }
+
+
+@media screen and (max-width:767px) {
+  .navbar-collapse .nav-link
     {background-color:rgb(33, 37, 41);
       padding: 10px 15px;
       margin: 3px 0;
@@ -121,10 +126,7 @@
     .navbar-nav {
       justify-content: flex-start;
     }
-  }
-
-
-
+}
  @media only screen and (max-width: 600px) {
    
    .navbar {
