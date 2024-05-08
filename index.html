@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INFORMATION TECHNOLOGY</title>
+  <!-- Bootstrap CSS -->
+  <link href="styles.css" rel="stylesheet">
+  <link href="styles2.css" rel="stylesheet">
+  <script src="script.js"></script>
+</head>
+<body>
+
+<!--NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#"><span class="text-danger">R</span>idho <span class="text-danger">S</span>yaputra</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projects">Project</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<!-- Konten Home -->
+<section id="home">
+<div class="home-content">
+  <div class="profile">
+    <img src="profile.png" alt="Profile Picture"> <!-- Ganti 'path/to/your/profile_picture.jpg' dengan lokasi foto profil Anda -->
+  </div>
+  <div class="content">
+    <h1>Hi, Saya Ridho</h1> <!-- Ubah teks menjadi "Hi, Saya Ridho" -->
+    <p id="quote"></p> <!-- Tag <p> untuk menampilkan quotes -->
+    <a href="cvridho.pdf" class="download-button">Unduh CV Saya </a>  
+  </div>
+</div>
+
+<script>
+  // Array quotes
+  var quotes = [
+    "&#34;Menjadi Pemimpin bukanlah sekedar tentang kekuatan, kecerdasan, kekayaan, atau pengalaman, melainkan tentang tanggung jawab.&#34;",
+    "&#34;I'll do my best.&#34;",
+    "&#34;Dunia bisa berubah hanya dengan satu secercah cahaya, di mana kebenaran dapat terlihat salah, dan kesalahan pun dapat terlihat benar.&#34;",
+    "&#34;You pick up a gun in anger, you ain't never gonna put it back down.&#34;",
+    "&#34;Hal tersulit adalah memaafkan diri sendiri.&#34;"
+  ];
+
+  var currentIndex = 0;
+
+  // Fungsi untuk menampilkan quotes secara berurutan
+  function showNextQuote() {
+    document.getElementById("quote").innerHTML = quotes[currentIndex];
+    currentIndex = (currentIndex + 1) % quotes.length;
+  }
+
+  // Menampilkan quote pertama saat halaman dimuat
+  showNextQuote();
+
+  // Mengganti quote setiap 5 detik
+  setInterval(showNextQuote, 5000);
+</script>
+</section>
+
+
+
+
+<!-- Konten Profile -->
+<section class="about-section" id="about">
+
+  <div class="qa-title">Frequently Asked Question</div>
+  <p>Klik Panah Untuk Melihat Pertanyaan Berikutnya.</p>
+  <div class="qa-container">
+
+    <div class="qa-box" id="qa-1">
+      <h2>Tentang Saya?</h2>
+      <p>Saya adalah seorang lulusan SMK Teknik Komputer dan Jaringan tahun 2020 yang memilih untuk menjalani gaya hidup sehat tanpa merokok, tanpa tindik atau tato, dan tanpa mengonsumsi minuman keras. Saya yakin bahwa pilihan-pilihan ini membantu saya menjaga fokus dan konsentrasi dalam mengejar impian dan mencapai tujuan hidup saya.
+      </p>
+      <div class="arrow right" onclick="nextQuestion(1)">&#10095;</div>
+    </div>
+
+    <div class="qa-box" id="qa-2">
+      <h2>Hobi Saya?</h2>
+      <p>Saya memiliki hobi membaca komik dan menonton film.
+         Dengan hobi saya ini, saya dapat meningkatkan kemampuan
+         bahasa Inggris saya.
+      </p>
+      <div class="arrow left" onclick="prevQuestion(2)">&#10094;</div>
+      <div class="arrow right" onclick="nextQuestion(2)">&#10095;</div>
+    </div>
+
+    <div class="qa-box" id="qa-3">
+      <h2>Sifat Baik Saya?</h2>
+      <p>Saya memiliki sejumlah sifat baik yang saya banggakan. Misalnya, saya memiliki rasa ingin tahu yang tinggi, yang mendorong saya untuk terus belajar dan mengembangkan diri. Saya juga kreatif dan visioner, mampu melihat potensi di setiap situasi dan menciptakan solusi inovatif. Selain itu, saya bertanggung jawab dan selalu siap mengambil tanggung jawab atas tindakan dan keputusan saya. Jiwa saya yang penuh empati dan penolong juga membuat saya senang membantu orang lain dan memberikan dukungan yang mereka butuhkan.</p>
+      <div class="arrow left" onclick="prevQuestion(3)">&#10094;</div>
+      <div class="arrow right" onclick="nextQuestion(3)">&#10095;</div>
+    </div>
+    <!-- Tambahkan lebih banyak pertanyaan jika diperlukan -->
+    <div class="qa-box" id="qa-4">
+      <h2>Sifat Buruk Saya?</h2>
+      <p>Saya perlu mengakui bahwa ada beberapa sifat buruk yang saya sadari dalam diri saya. Misalnya, saya seringkali terlalu arogan dan merasa bisa menyelesaikan segalanya sendiri. Selain itu, saya cenderung paranoid dan terlalu waspada terhadap situasi di sekitar saya, yang membuat sulit bagi saya untuk benar-benar rileks. Terkadang, ego saya juga dapat menghalangi kemampuan saya untuk berkolaborasi dengan orang lain.
+      </p>
+      <div class="arrow left" onclick="prevQuestion(4)">&#10094;</div>
+      <div class="arrow right" onclick="nextQuestion(4)">&#10095;</div>
+    </div>
+    <div class="qa-box" id="qa-5">
+      <h2>Skill Saya?</h2>
+      <p style="text-align: left;">
+          - Mahir menggunakan Microsoft Word, Excel, Power Point.(Membuat Surat, Membuat Table kasir dan Gudang menggunakan Vlookup, SUM, IF)<br>
+          - Menengah melakukan setting router Mikrotik (Konfigurasi dasar, WLAN, Firewall, VPN, Limit, Block web).<br>
+          - Menengah menggunakan Adobe Photoshop, Filmora, Ilustrator, Capcut.<br>
+          - Menengah memahami HTML, CSS, Database Mysql (Membuat web dan aplikasi).<br>
+          - Mensetting CCTV, VAR, Mesin Print.<br>
+          - Melakukan transaksi dan laporan penjualan.
+
+      </p>
+      <div class="arrow left" onclick="prevQuestion(5)">&#10094;</div>
+      <div class="arrow right" onclick="nextQuestion(5)">&#10095;</div>
+    </div>
+
+    <div class="qa-box" id="qa-6">
+      <h2>Motivasi Saya Bekerja?</h2>
+      <p>Saya ingin mencari pekerjaan di mana saya dapat bekerja tanpa harus berurusan dengan hal-hal yang bertentangan dengan keyakinan saya. Saya berkomitmen untuk memberikan yang terbaik dan bekerja keras agar dapat menjadi karyawan tetap yang berkontribusi secara positif bagi pertumbuhan dan kesuksesan perusahaan.
+    </p>
+      <div class="arrow left" onclick="prevQuestion(6)">&#10094;</div>
+      <div class="arrow right" onclick="nextQuestion(6)">&#10095;</div>
+    </div>
+
+    <div class="qa-box" id="qa-7">
+      <h2>Kenapa Harus Menerima Saya?</h2>
+      <p>Karena saya meyakini bahwa attitude merupakan aspek yang paling penting, saya mengutamakan sikap positif dalam segala hal daripada faktor-faktor lain seperti pendidikan, harta, atau keterampilan. Saya percaya bahwa sedikit calon pelamar yang memiliki attitude baik yang dapat saya tawarkan, dan saya yakin bahwa sikap saya yang positif, komitmen, dan dedikasi akan membawa dampak positif bagi perusahaan ini.
+    </p>
+      <div class="arrow left" onclick="prevQuestion(7)">&#10094;</div>
+      <div class="arrow right" onclick="nextQuestion(7)">&#10095;</div>
+    </div>
+
+     <div class="qa-box" id="qa-8">
+      <h2>Siap ditempatkan dimana saja?</h2>
+      <p>Saya siap ditempatkan di mana saja yang dibutuhkan oleh perusahaan. Saya memiliki fleksibilitas dan kesiapan untuk menyesuaikan diri dengan lingkungan kerja yang baru, serta siap untuk belajar dan beradaptasi dengan tugas dan tanggung jawab yang diberikan.
+    </p>
+      <div class="arrow left" onclick="prevQuestion(8)">&#10094;</div>
+      <div class="arrow right" onclick="nextQuestion(8)">&#10095;</div>
+    </div>
+
+    <div class="qa-box" id="qa-9">
+      <h2>Gaji Yang Diharapkan?</h2>
+      <p>Range gaji yang saya harapkan Rp. 3.000.000,00 - Rp. 5.000.000,00 atau 3 Juta - 5 Juta Rupiah.
+    </p>
+      <div class="arrow left" onclick="prevQuestion(9)">&#10094;</div>
+      <div class="arrow right" onclick="nextQuestion(9)">&#10095;</div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  document.getElementById('qa-1').style.display = 'block';
+
+  function nextQuestion(currentQuestion) {
+    var nextQuestion = currentQuestion + 1;
+    var currentBox = document.getElementById('qa-' + currentQuestion);
+    var nextBox = document.getElementById('qa-' + nextQuestion);
+
+    currentBox.style.display = 'none';
+    if (nextBox) {
+      nextBox.style.display = 'block';
+    } else {
+      document.getElementById('qa-1').style.display = 'block';
+    }
+  }
+
+  function prevQuestion(currentQuestion) {
+    var prevQuestion = currentQuestion - 1;
+    var currentBox = document.getElementById('qa-' + currentQuestion);
+    var prevBox = document.getElementById('qa-' + prevQuestion);
+
+    currentBox.style.display = 'none';
+    if (prevBox) {
+      prevBox.style.display = 'block';
+    } else {
+      var lastQuestion = document.querySelectorAll('.qa-box').length;
+      document.getElementById('qa-' + lastQuestion).style.display = 'block';
+    }
+  }
+</script>
+
+
+
+
+<!-- Konten Project -->
+<section id="projects" class="bg-light py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Projects</h2>
+    
+    <!-- Filter Buttons -->
+    <div class="text-center mb-4">
+      <button class="btn btn-primary filter-btn active" data-filter="all">All</button>
+      <button class="btn btn-primary filter-btn" data-filter="program">Program</button>
+      <button class="btn btn-primary filter-btn" data-filter="network">Network</button>
+      <button class="btn btn-primary filter-btn" data-filter="design">Design</button>
+      <button class="btn btn-primary filter-btn" data-filter="other">Other</button>
+    </div>
+    
+    <!-- Projects -->
+    <div class="row" style="display: flex;">
+
+    <!-- Project 1 -->
+    <div class="col-md-4 project-item network" style="padding-bottom: 15px;">
+      <div class="card custom-card-frame" >
+      <img src="dokumentasipemasanganfiber.jpg" class="card-img-top w-100" alt="Fiber Mall Cepat" style="height: 60vh; overflow-y: auto;">
+      <div class="card-body">
+      <h5 class="card-title">Proses Pemasangan Fiber di Mall</h5>
+      <p class="card-text">Sebagai teknisi NEXT1, tugas saya adalah memastikan pemasangan Internet di area Mall berjalan dengan optimal dan sesuai dengan kebutuhan klien, sehingga dapat digunakan dengan lancar dan memuaskan bagi para pengguna.</p>
+  
+<button class="btn btn-primary detail-btn">Detail</button>
+
+
+      </div>
+      </div>
+  </div>
+
+
+  <!-- Project 2 -->
+    <div class="col-md-4 project-item network" style="padding-bottom: 15px;">
+      <div class="card custom-card-frame" >
+      <img src="dokumentasipemasanganfiber2.jpg" class="card-img-top w-100" alt="Fiber Ruko Cepat" style="height: 60vh; overflow-y: auto;">
+      <div class="card-body">
+      <h5 class="card-title">Proses Pemasangan Fiber Untuk Ruko</h5>
+      <p class="card-text">Sebagai teknisi Next1, saya bertanggung jawab memastikan pemasangan Internet untuk ruko berjalan lancar, sehingga memenuhi kebutuhan klien dengan optimal dan memberikan pengalaman pengguna yang memuaskan.</p>
+      <button class="btn btn-primary detail-btn">Detail</button>
+      </div>
+      </div>
+  </div>
+
+
+<!-- Project 3 -->
+ <div class="col-md-4 project-item network" style="padding-bottom: 15px;">
+      <div class="card custom-card-frame" >
+      <img src="ModemFO.jpeg" class="card-img-top w-100" alt="Pemasangan Fiber Cepat" style="height: 60vh; overflow-y: auto;">
+      <div class="card-body">
+      <h5 class="card-title">Hasil Pemasangan Modem Fiber</h5>
+      <p class="card-text">Sebagai seorang teknisi, saya harus memastikan hasil pemasangan perangkat Internet yang rapi dan berkualitas untuk memenuhi standar kualitas dan kepuasan klien.</p>
+      <button class="btn btn-primary detail-btn">Detail</button>
+      </div>
+      </div>
+  </div>
+    
+
+    <!-- Project 4 -->
+ <div class="col-md-4 project-item network" style="padding-bottom: 15px;">
+      <div class="card custom-card-frame" >
+      <img src="HasilPemasanganModemCard.jpg" class="card-img-top w-100" alt="Project 1 Image" style="height: 60vh; overflow-y: auto;">
+      <div class="card-body">
+      <h5 class="card-title">Hasil Pemasangan Modem Card</h5>
+      <p class="card-text">Saya juga bertanggung jawab dalam pemasangan modem card dan perangkat MikroTik sebagai solusi backup atau untuk outlet-outlet outdoor serta di mal yang tidak memiliki akses jalur fiber, memastikan infrastruktur jaringan tetap berjalan dengan lancar dan dapat diandalkan.</p>
+      <button class="btn btn-primary detail-btn">Detail</button>
+      </div>
+      </div>
+  </div>
+    
+    <!-- Project 5 -->
+ <div class="col-md-4 project-item network" style="padding-bottom: 15px;">
+      <div class="card custom-card-frame" >
+      <img src="AllPerangkatOffice.jpg" class="card-img-top w-100" alt="Perangkat MikroTik" style="height: 60vh; overflow-y: auto;">
+      <div class="card-body">
+      <h5 class="card-title">Beberapa Perangkat Yang Saya Gunakan</h5>
+      <p class="card-text">Selain melakukan pengaturan modem, saya juga bertanggung jawab untuk melakukan konfigurasi pada perangkat MikroTik seperti RB931haP mini, RB941, RBSXT, RBwAPR-2ND, dan berbagai merek akses point lainnya, memastikan infrastruktur jaringan beroperasi dengan efisien dan optimal sesuai kebutuhan klien.</p>
+      <button class="btn btn-primary detail-btn">Detail</button>
+      </div>
+      </div>
+  </div>
+
+  <!-- Project 6 -->
+ <div class="col-md-4 project-item network" style="padding-bottom: 15px;">
+      <div class="card custom-card-frame" >
+      <img src="CrimpingLan.jpg" class="card-img-top w-100" alt="Crimping Lan" style="height: 60vh; overflow-y: auto;">
+      <div class="card-body">
+      <h5 class="card-title">Crimping Lan</h5>
+      <p class="card-text">Sebagai seorang teknisi, saya juga melakukan pengecekan dan crimping ulang kabel LAN untuk memastikan aliran data berjalan lancar dan konsisten, sehingga infrastruktur jaringan dapat beroperasi secara optimal.</p>
+    <button class="btn btn-primary detail-btn">Detail</button>
+      </div>
+      </div>
+  </div>
+
+ <!-- Project 7 -->
+ <div class="col-md-4 project-item design" style="padding-bottom: 15px;">
+      <div class="card custom-card-frame" >
+      <img src="membuatlogosmk43d.gif" class="card-img-top w-100" alt="Membuat Logo 3D" style="height: 60vh; overflow-y: auto;">
+      <div class="card-body">
+      <h5 class="card-title">Membuat logo SMK 4 3D</h5>
+      <p class="card-text">Saya juga memiliki pengalaman dalam membantu sekolah untuk membuat logo 3D, menghadirkan desain yang kreatif dan menarik untuk memperkuat identitas visual mereka.</p>
+    <button class="btn btn-primary detail-btn">Detail</button>
+      </div>
+      </div>
+  </div>
+
+  <!-- Project 8 -->
+ <div class="col-md-4 project-item design" style="padding-bottom: 15px;">
+      <div class="card custom-card-frame" >
+      <img src="membuatlogowika3d.jpg" class="card-img-top w-100" alt="Logo WIKA 3D" style="height: 60vh; overflow-y: auto;">
+      <div class="card-body">
+      <h5 class="card-title">Membuat Logo WIKA 3D</h5>
+      <p class="card-text">Ketika saya menjalani magang di WIKA REKAYASA KONSTRUKSI, saya dipercaya untuk membuat model logo mereka dalam bentuk 3D, memberikan kontribusi yang berarti dalam mengembangkan identitas visual perusahaan tersebut.</p>
+       <button class="btn btn-primary detail-btn">Detail</button>
+      </div>
+      </div>
+  </div>
+
+  <!-- Project 8 -->
+ <div class="col-md-4 project-item other" style="padding-bottom: 15px;">
+      <div class="card custom-card-frame" >
+      <img src="membersihkanperangkatwarnet.jpg" class="card-img-top w-100" alt="Membersihkan Store" style="height: 60vh; overflow-y: auto;">
+      <div class="card-body">
+      <h5 class="card-title">Membersihkan Perangkat</h5>
+      <p class="card-text">Sebagai Crew Store Internet Gaming Cafe di Gamer Village, tanggung jawab saya meliputi menjaga kebersihan ruang toko, kafe, warnet, toilet, serta perangkat yang ada, memastikan lingkungan yang bersih dan nyaman bagi para pengunjung untuk menikmati pengalaman gaming yang optimal.</p>
+       <button class="btn btn-primary detail-btn">Detail</button>
+      </div>
+      </div>
+  </div>
+
+  <!-- Project 8 -->
+ <div class="col-md-4 project-item other" style="padding-bottom: 15px;">
+      <div class="card custom-card-frame" >
+      <img src="pemasanganperangkat.jpg" class="card-img-top w-100" alt="Pemasangan Perangkat Untuk User" style="height: 60vh; overflow-y: auto;">
+      <div class="card-body">
+      <h5 class="card-title">Pemasangan Perangkat Office</h5>
+      <p class="card-text">Ketika saya menjalani magang di WIKA REKAYA KONSTRUKSI, tugas saya meliputi penggantian perangkat yang digunakan oleh pengguna kantor dengan perangkat yang baru, memastikan ketersediaan infrastruktur teknologi yang handal dan sesuai dengan kebutuhan operasional perusahaan.</p>
+     <button class="btn btn-primary detail-btn">Detail</button>
+      </div>
+      </div>
+  </div>
+
+  <!-- Project 9 -->
+ <div class="col-md-4 project-item other" style="padding-bottom: 15px;">
+      <div class="card custom-card-frame" >
+      <img src="menghitungstockdanrestockgudang.jpg" class="card-img-top w-100" alt="Jobdesk Gudang" style="height: 60vh; overflow-y: auto;">
+      <div class="card-body">
+      <h5 class="card-title">Melakukan Restock Gudang</h5>
+      <p class="card-text">Ketika bekerja di Gamer Village, tanggung jawab saya adalah memastikan stok barang sesuai dengan shift sebelumnya dan melakukan restok untuk shift saya, sehingga pengunjung dapat menikmati pengalaman gaming tanpa hambatan.</p>
+<button class="btn btn-primary detail-btn">Detail</button>
+      </div>
+      </div>
+  </div>
+
+  <!-- Project 10 -->
+ <div class="col-md-4 project-item other" style="padding-bottom: 15px;">
+      <div class="card custom-card-frame" >
+      <img src="melayanipelanggan.jpg" class="card-img-top w-100" alt="Transaksi Crew Store" style="height: 60vh; overflow-y: auto;">
+      <div class="card-body">
+      <h5 class="card-title">Melakukan Transaksi Dengan Pelanggan</h5>
+      <p class="card-text">Selain itu, di Gamer Village, saya juga bertanggung jawab memastikan bahwa transaksi berjalan lancar dan para pelanggan merasa puas dengan layanan yang diberikan, menciptakan pengalaman bermain yang menyenangkan dan memuaskan bagi semua pengunjung.</p>
+    <button class="btn btn-primary detail-btn">Detail</button>
+      </div>
+      </div>
+  </div>
+
+  <!-- Project 11 -->
+ <div class="col-md-4 project-item program" style="padding-bottom: 15px;">
+      <div class="card custom-card-frame" >
+      <img src="formlogin.png" class="card-img-top w-100" alt="Database form login" style="height: 60vh; overflow-y: auto;">
+      <div class="card-body">
+      <h5 class="card-title">Membuat Form Login Untuk Aplikasi atau Web</h5>
+      <p class="card-text">Ketika saya menjalani magang di WIKA REKAYA KONSTRUKSI, saya ditugaskan untuk membuat sistem login dengan database MySQL. Untuk demo, Anda dapat melihatnya di <a href="https://youtu.be/NnFJDT2ykFY?si=yoEFDUmLZ3ID31vV">https://youtu.be/NnFJDT2ykFY?si=yoEFDUmLZ3ID31vV</a>.</p>
+     <button class="btn btn-primary detail-btn">Detail</button>
+      </div>
+      </div>
+    </div>
+
+      <!-- Project 12 -->
+ <div class="col-md-4 project-item other" style="padding-bottom: 15px;">
+      <div class="card custom-card-frame" >
+      <img src="systemdatastock.png" class="card-img-top w-100" alt="System Gudang" style="height: 60vh; overflow-y: auto;">
+      <div class="card-body">
+      <h5 class="card-title">Membuat System Data Stock by Excel</h5>
+      <p class="card-text">Saya juga pernah ditugaskan untuk membuat sistem gudang menggunakan Excel, dimana saya memanfaatkan fungsi SUM, IF, dan VLOOKUP untuk mempermudah pembuatan laporan pergantian shift. Hal ini membantu dalam mengoptimalkan pengelolaan gudang dan penyusunan laporan dengan lebih efisien. Untuk demo bisa dilihat <a href="https://youtu.be/hUizKvtpLu0?si=qnNwTb0_DqoUxObr">https://youtu.be/hUizKvtpLu0?si=qnNwTb0_DqoUxObr</a></p>
+     <button class="btn btn-primary detail-btn">Detail</button>
+      </div>
+      </div>
+  </div>
+
+  <!-- Project 13 -->
+ <div class="col-md-4 project-item design" style="padding-bottom: 15px;">
+      <div class="card custom-card-frame" >
+      <img src="membuatilustrasi.png" class="card-img-top w-100" alt="Ilutrasi Mudah" style="height: 60vh; overflow-y: auto;">
+      <div class="card-body">
+      <h5 class="card-title">Membuat ART</h5>
+      <p class="card-text">Saya juga dapat membuat ilustrasi sederhana jika dibutuhkan :).</p>
+ <button class="btn btn-primary detail-btn">Detail</button>
+      </div>
+      </div>
+  </div>
+
+  <!-- Project 14 -->
+ <div class="col-md-4 project-item program" style="padding-bottom: 15px;">
+      <div class="card custom-card-frame" >
+      <img src="membuatwebportofoliopribadi.png" class="card-img-top w-100" alt="Simple Portofolio" style="height: 60vh; overflow-y: auto;">
+      <div class="card-body">
+      <h5 class="card-title">Membuat Web Portofolio Pribadi</h5>
+      <p class="card-text">Saya dapat membuat web portofolio pribadi statis menggunakan HTML dan CSS.</p>
+     <button class="btn btn-primary detail-btn">Detail</button>
+      </div>
+      </div>
+  </div>
+
+  <!-- Project 15 -->
+ <div class="col-md-4 project-item network" style="padding-bottom: 15px;">
+      <div class="card custom-card-frame" >
+      <img src="idcard.jpg" class="card-img-top w-100" alt="ID Card" style="height: 60vh; overflow-y: auto;">
+      <div class="card-body">
+      <h5 class="card-title">ID Card</h5>
+      <p class="card-text">Sebagai seorang teknisi, saya diwajibkan membawa ID card saat bertugas sebagai tanda pengenal resmi saya.</p>
+      <button class="btn btn-primary detail-btn">Detail</button>
+      </div>
+      </div>
+  </div>
+
+
+  <!-- Project 16 -->
+ <div class="col-md-4 project-item other" style="padding-bottom: 15px;">
+      <div class="card custom-card-frame" >
+      <img src="akhirmagang.jpg" class="card-img-top w-100" alt="Akhir Magang" style="height: 60vh; overflow-y: auto;">
+      <div class="card-body">
+      <h5 class="card-title">Akhir Magang</h5>
+      <p class="card-text">Part of journey is end</p>
+      <button class="btn btn-primary detail-btn">Detail</button>
+      </div>
+      </div>
+  </div>
+
+
+ <!-- Project 17 -->
+ <div class="col-md-4 project-item network" style="padding-bottom: 15px;">
+      <div class="card custom-card-frame" >
+      <img src="MonitoringJaringanInternet.jpg" class="card-img-top w-100" alt="Monitoring Network" style="height: 60vh; overflow-y: auto;">
+      <div class="card-body">
+      <h5 class="card-title">Monitoring Network</h5>
+      <p class="card-text">Ketika tidak ada pemasangan yang perlu dilakukan, saya diwajibkan untuk berada dalam posisi siaga, memantau jaringan internet klien dengan menggunakan PRTG.</p>
+      <button class="btn btn-primary detail-btn">Detail</button>
+      </div>
+      </div>
+  </div>
+
+   <!-- Project 18 -->
+ <div class="col-md-4 project-item network" style="padding-bottom: 15px;">
+      <div class="card custom-card-frame" >
+      <img src="Laporan.jpg" class="card-img-top w-100" alt="Laporan Monitoring Network" style="height: 60vh; overflow-y: auto;">
+      <div class="card-body">
+      <h5 class="card-title">Laporan Monitoring Network</h5>
+      <p class="card-text">Saya juga bertanggung jawab untuk menyusun laporan harian mengenai masalah internet yang dialami oleh klien.</p>
+      <button class="btn btn-primary detail-btn">Detail</button>
+      </div>
+      </div>
+  </div>
+
+  <!-- Project 19 -->
+ <div class="col-md-4 project-item program" style="padding-bottom: 15px;">
+      <div class="card custom-card-frame" >
+      <img src="webkayu.png" class="card-img-top w-100" alt="web kayu" style="height: 60vh; overflow-y: auto;">
+      <div class="card-body">
+      <h5 class="card-title">Pembuatan Web Untuk Identitas Pabrik Kayu</h5>
+      <p class="card-text">Saya pernah diminta oleh sebuah pabrik kayu untuk membuatkan sebuah website yang mencerminkan identitas perusahaan mereka. Untuk melihat demo, Anda dapat mengunjungi link <a href="https://youtu.be/NB8-4YLBKW8?si=T-m_6Wj06dEAYE_2">https://youtu.be/NB8-4YLBKW8?si=T-m_6Wj06dEAYE_2</a>.</p>
+      <button class="btn btn-primary detail-btn">Detail</button>
+      </div>
+      </div>
+  </div>
+
+<div class="modal-container">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <img class="full-img" src="" alt="">
+    </div>
+  </div>
+
+
+
+ 
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectItems = document.querySelectorAll('.project-item');
+
+  filterButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      const filter = this.dataset.filter;
+      filterButtons.forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+      this.classList.add('active');
+
+      projectItems.forEach(function(item) {
+        if (filter === 'all' || item.classList.contains(filter)) {
+          item.style.display = 'block'; // Tampilkan proyek jika sesuai dengan filter atau filter adalah "all"
+        } else {
+          item.style.display = 'none'; // Sembunyikan proyek jika tidak sesuai dengan filter
+        }
+      });
+    });
+  });
+});
+
+// card 
+document.addEventListener('DOMContentLoaded', function () {
+  const detailButtons = document.querySelectorAll('.detail-btn');
+  const modalContainer = document.querySelector('.modal-container');
+  const fullImg = document.querySelector('.full-img');
+  const closeButton = document.querySelector('.close-btn');
+
+  detailButtons.forEach(button => {
+    button.addEventListener('click', function () {
+      const imgSrc = this.parentElement.previousElementSibling.src;
+      fullImg.src = imgSrc;
+      modalContainer.style.display = 'block';
+    });
+  });
+
+  closeButton.addEventListener('click', function () {
+  console.log("Tombol close diklik"); // Periksa apakah fungsi ini dijalankan saat tombol close diklik
+  modalContainer.style.display = 'none';
+});
+
+  modalContainer.addEventListener('click', function (event) {
+    if (event.target === modalContainer) {
+      modalContainer.style.display = 'none';
+    }
+  });
+});
+</script>
+
+
+  
+
+</section>
+
+
+
+
+
+
+<!-- Contact-->
+<section class="contact-section" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-center">Contact Me</h2>
+          <div class="contact-icons">
+            <img src="gmail.png" alt="Gmail Logo">
+            <a href="mailto:syahputraridho3@gmail.com" class="btn btn-primary btn-social">Email</a>
+            <img src="whatsapp.png" alt="WhatsApp Logo">
+            <a href="https://wa.me/6287884306840" class="btn btn-success btn-social">WhatsApp</a>
+            <img src="instagram.png" alt="Instagram Logo">
+            <a href="https://www.instagram.com/ridho.s10?igsh=MWxnM2tjc2FjZWVpag==" class="btn btn-danger btn-social">Instagram</a>
+            <img src="facebook.png" alt="Facebook Logo">
+            <a href="https://www.facebook.com/ridho.syaputra.12139?mibextid=ZbWKwL" class="btn btn-info btn-social">Facebook</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
