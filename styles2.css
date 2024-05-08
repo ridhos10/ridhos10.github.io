@@ -59,21 +59,21 @@
 /* Style untuk teks di dalam konten home */
   .content h1 {
    font-family: 'Brush Script MT', cursive; /* Menggunakan font cursive */
-    font-size: 72px;
+    font-size: 15vh;
     margin-bottom: 20px;
     color: white; /* Warna teks menjadi putih */
-    -webkit-text-stroke: 2px darkred; /* Garis luar hitam */
-    text-stroke: 2px darkred; /* Garis luar hitam */
+    -webkit-text-stroke: 0.25vh darkred; /* Garis luar hitam */
+    text-stroke: 0.25vh darkred; /* Garis luar hitam */
   }
 
   .content p {
     font-family: impact, sans-serif; /* Menggunakan font fallback Arial */
-    font-size: 32px; /* Ukuran teks lebih besar */
+    font-size: 6.6667vh; /* Ukuran teks lebih besar */
     margin-bottom: 40px;
     color: white; /* Warna teks menjadi abu-abu muda */
-    letter-spacing: 2px;
-     -webkit-text-stroke: 1.5px black; /* Garis luar hitam */
-    text-stroke: 1.5px black; /* Garis luar hitam */
+    letter-spacing: 0.25vh;
+     -webkit-text-stroke: 0.31vh black; /* Garis luar hitam */
+    text-stroke: 0.31vh black; /* Garis luar hitam */
   }
 
   .download-button {
@@ -89,35 +89,43 @@
  
 
  /* Media queries untuk responsif */
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
 
 
     .home-content {
-      height: 100vh; /* Konten home akan menyesuaikan tinggi konten */
+      height: 120vh; /* Konten home akan menyesuaikan tinggi konten */
       padding: 50px 20px; /* Ruang padding diperbesar */
     }
 
-    .home-content h1 {
-      font-size: 6vw; /* Ukuran font h1 menjadi lebih besar pada layar kecil */
-    }
-
-    .home-content p {
-      font-size: 3vw; /* Ukuran font paragraf juga disesuaikan */
-    }
+    
   }
 
   /* Media queries untuk responsif */
   /* Media queries untuk responsif */
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     .home-content {
-      height: 100vh; /* Tinggi konten home menjadi 80% tinggi viewport pada layar kecil */
+      height: 110vh; /* Tinggi konten home menjadi 80% tinggi viewport pada layar kecil */
       background-size: 600px 600px; /* Ukuran gambar latar belakang diubah secara manual (lebar: 200px, tinggi: 300px) */
     }
+
+    .navbar-collapse .nav-link
+    {background-color:rgb(33, 37, 41);
+      padding: 10px 15px;
+      margin: 3px 0;
+
+
+      border-radius: 5px;
+     
+    }
+
+    .navbar-nav {
+      justify-content: flex-start;
+    }
   }
 
 
 
- @media screen and (max-width: 768px) {
+ @media only screen and (max-width: 600px) {
    
    .navbar {
     height: 10%;
@@ -153,8 +161,8 @@
         font-size: 56px;
         text-align: center;
         margin-bottom: 20px; /* Jarak bawah dari teks h1 ke konten paragraf (p) */
-        -webkit-text-stroke: 1px darkred; /* Garis luar hitam */
-    text-stroke: 1px darkred; /* Garis luar hitam */
+        -webkit-text-stroke: 1.5px darkred; /* Garis luar hitam */
+    text-stroke: 1.5px darkred; /* Garis luar hitam */
     }
 
 
@@ -163,13 +171,13 @@
     color: white; /* Warna teks menjadi abu-abu muda */
     text-align: center;
     letter-spacing: 2px;
-     -webkit-text-stroke: 0.3px black; /* Garis luar hitam */
-    text-stroke: 0.3px black; /* Garis luar hitam */
+     -webkit-text-stroke: 0.7px black; /* Garis luar hitam */
+    text-stroke: 0.7px black; /* Garis luar hitam */
   }
 }
 
-@media screen and (max-width:
-768px) {
+@media only screen and (max-width:
+600px) {
   .download-button {
     width: 100%;
     text-align: center;
@@ -290,7 +298,7 @@
 
  /* Media queries untuk perangkat dengan lebar layar kecil */
  /* CSS untuk layar yang lebih kecil */
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .modal-content {
     width: 80%; /* Mengurangi lebar modal untuk layar kecil */
     height: 70%; /* Mengurangi tinggi modal untuk layar kecil */
@@ -330,22 +338,15 @@
 .contact-section {
       background-color: black;
       color: white;
-      padding: 50px 0;
+      padding: 10.42vh 0;
     }
     .contact-icons {
       text-align: center;
     }
     .contact-icons img {
-      width: 50px;
-      margin: 10px;
+      width: 10.42vh;
+      margin: 2.08vh;
     }
     .btn-social {
-      margin: 10px;
+      margin: 2.08vh;
     }
-
-@media screen and (max-width 768px) {
-.filterku {
-  width: 10px;
-  height:10px;
-
-}  
