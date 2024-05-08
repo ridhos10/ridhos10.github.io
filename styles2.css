@@ -72,8 +72,8 @@
     margin-bottom: 40px;
     color: white; /* Warna teks menjadi abu-abu muda */
     letter-spacing: 0.25vh;
-     -webkit-text-stroke: 0.31vh black; /* Garis luar hitam */
-    text-stroke: 0.31vh black; /* Garis luar hitam */
+     -webkit-text-stroke: 0.2vh black; /* Garis luar hitam */
+    text-stroke: 0.2vh black; /* Garis luar hitam */
   }
 
   .download-button {
