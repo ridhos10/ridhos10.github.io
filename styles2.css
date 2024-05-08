@@ -89,7 +89,7 @@
  
 
  /* Media queries untuk responsif */
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
 
 
     .home-content {
@@ -108,7 +108,7 @@
 
   /* Media queries untuk responsif */
   /* Media queries untuk responsif */
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     .home-content {
       height: 110vh; /* Tinggi konten home menjadi 80% tinggi viewport pada layar kecil */
       background-size: 600px 600px; /* Ukuran gambar latar belakang diubah secara manual (lebar: 200px, tinggi: 300px) */
@@ -117,7 +117,7 @@
 
 
 
- @media only screen and (max-width: 600px) {
+ @media screen and (max-width: 768px) {
    
    .navbar {
     height: 10%;
@@ -168,8 +168,8 @@
   }
 }
 
-@media only screen and (max-width:
-600px) {
+@media screen and (max-width:
+768px) {
   .download-button {
     width: 100%;
     text-align: center;
@@ -290,7 +290,7 @@
 
  /* Media queries untuk perangkat dengan lebar layar kecil */
  /* CSS untuk layar yang lebih kecil */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .modal-content {
     width: 80%; /* Mengurangi lebar modal untuk layar kecil */
     height: 70%; /* Mengurangi tinggi modal untuk layar kecil */
