@@ -89,7 +89,7 @@
  
 
  /* Media queries untuk responsif */
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
 
 
     .home-content {
@@ -102,7 +102,7 @@
 
   /* Media queries untuk responsif */
   /* Media queries untuk responsif */
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     .home-content {
       height: 110vh; /* Tinggi konten home menjadi 80% tinggi viewport pada layar kecil */
       background-size: 600px 600px; /* Ukuran gambar latar belakang diubah secara manual (lebar: 200px, tinggi: 300px) */
@@ -127,7 +127,7 @@
       justify-content: flex-start;
     }
 }
- @media only screen and (max-width: 600px) {
+ @media screen and (max-width: 600px) {
    
    .navbar {
     height: 10%;
@@ -178,7 +178,7 @@
   }
 }
 
-@media only screen and (max-width:
+@media screen and (max-width:
 600px) {
   .download-button {
     width: 100%;
