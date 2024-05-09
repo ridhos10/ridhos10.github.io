@@ -138,9 +138,8 @@ body {
     font-family: impact, sans-serif;
     text-align: center;
     letter-spacing: 2px;
-    -webkit-text-stroke: 0.1vh black;
-    text-stroke: 0.1vh black;
-    web-shadow:0.05vh 0.05vh 0 black;
+    -webkit-text-stroke: 0.5px black;
+    text-stroke: 0.5px black;
   }
 }
 
@@ -216,9 +215,8 @@ body {
      font-family: impact, sans-serif;
     text-align: center;
     letter-spacing: 2px;
-      -webkit-text-stroke: 0.1vh black;
-    text-stroke: 0.1vh black;
-    web-shadow:0.05vh 0.05vh 0 black;
+      -webkit-text-stroke: 0.5px black;
+    text-stroke: 0.5px black;
    }
 }
 
