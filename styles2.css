@@ -130,6 +130,7 @@ body {
     -webkit-text-stroke: 1.5px darkred;
     text-stroke: 1.5px darkred;
   }
+@import url('https://fonts.googleapis.com/css2?family=Impact&display=swap');
 
   .content p {
     font-size: 24px;
