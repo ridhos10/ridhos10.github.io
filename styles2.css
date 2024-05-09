@@ -130,13 +130,13 @@ body {
     -webkit-text-stroke: 1.5px darkred;
     text-stroke: 1.5px darkred;
   }
-@import url('https://fonts.googleapis.com/css2?family=Impact&display=swap');
+
 
   .content p {
     font-size: 24px;
     font-stretch: extra-expanded;
     color: white;
-    font-family: Roboto Condensed, sans-serif;
+    font-family: Georgia, serif;
     text-align: center;
     letter-spacing: 2px;
     webkit-text-stroke:0;
@@ -213,14 +213,13 @@ body {
     }
 
 
-   @import url('https://fonts.googleapis.com/css2?family=Impact&display=swap');
 
 
    .content p {
     font-size: 24px; /* Ukuran teks lebih besar */
      font-stretch: extra-expanded;
     color: white; /* Warna teks menjadi abu-abu muda */
-     font-family: Roboto Condensed, sans-serif;
+     font-family: Georgia, serif;
     text-align: center;
     letter-spacing: 2px;
      webkit-text-stroke:0;
