@@ -104,7 +104,7 @@
   /* Media queries untuk responsif */
   @media screen and (max-width: 768px) {
     .home-content {
-      height: 100vh; /* Tinggi konten home menjadi 80% tinggi viewport pada layar kecil */
+      height: 90vh; /* Tinggi konten home menjadi 80% tinggi viewport pada layar kecil */
       background-size: 600px 800px; /* Ukuran gambar latar belakang diubah secara manual (lebar: 200px, tinggi: 300px) */
     }
 
@@ -169,7 +169,7 @@
 
 
     .content p {
-    font-size: 20px; /* Ukuran teks lebih besar */
+    font-size: 24px; /* Ukuran teks lebih besar */
     color: white; /* Warna teks menjadi abu-abu muda */
     text-align: center;
     letter-spacing: 2px;
