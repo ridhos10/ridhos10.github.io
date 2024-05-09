@@ -126,7 +126,7 @@ body {
     font-size: 56px;
     text-align: center;
     margin-bottom: 20px;
-    margin-top: 10px;
+    margin-top: 5px;
     -webkit-text-stroke: 1.5px darkred;
     text-stroke: 1.5px darkred;
   }
@@ -198,7 +198,7 @@ body {
     .content h1 {
         font-size: 56px;
         text-align: center;
-      margin-top:10px;
+      margin-top:5px;
         margin-bottom: 20px; /* Jarak bawah dari teks h1 ke konten paragraf (p) */
         -webkit-text-stroke: 1.5px darkred; /* Garis luar hitam */
     text-stroke: 1.5px darkred; /* Garis luar hitam */
