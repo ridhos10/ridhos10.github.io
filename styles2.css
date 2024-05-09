@@ -139,9 +139,8 @@ body {
 
   .content p {
     font-size: 24px;
-    font-stretch: extra-expanded;
     color: white;
-    font-family: Impact, sans-serif;
+    font-family: Georgia, serif;
     text-align: center;
     letter-spacing: 2px;
     webkit-text-stroke:0;
@@ -222,9 +221,8 @@ body {
 
    .content p {
     font-size: 24px; /* Ukuran teks lebih besar */
-     font-stretch: extra-expanded;
     color: white; /* Warna teks menjadi abu-abu muda */
-     font-family: Impact, sans-serif;
+     font-family: Georgia, serif;
     text-align:center;
     letter-spacing: 2px;
      webkit-text-stroke:0;
