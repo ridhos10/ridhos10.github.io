@@ -115,7 +115,7 @@ body {
     flex-direction: column;
     align-items: center;
     background-position: center;
-    background-size: 600px 120vh; /* Atur gambar latar belakang agar menutupi seluruh area */
+    background-size: cover; /* Atur gambar latar belakang agar menutupi seluruh area */
   }
 
   .profile {
