@@ -110,7 +110,7 @@ body {
     width: 100%;
     margin-top:0;
     padding-top:0;
-    height: 100%;
+    height: 150vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -187,7 +187,7 @@ body {
     /* Style untuk kontainer utama pada perangkat kecil */
     .home-content {
       width: 100%;
-      height:100%;
+      height:150vh;
       margin-top:0;
       padding-top:0;
         display: flex;
