@@ -134,7 +134,7 @@ body {
 
   .content p {
     font-size: 24px;
-    font-stretch: expanded;
+    font-stretch: extra-expanded;
     color: white;
     font-family: Roboto Condensed, sans-serif;
     text-align: center;
@@ -218,7 +218,7 @@ body {
 
    .content p {
     font-size: 24px; /* Ukuran teks lebih besar */
-     font-stretch: expanded;
+     font-stretch: extra-expanded;
     color: white; /* Warna teks menjadi abu-abu muda */
      font-family: Roboto Condensed, sans-serif;
     text-align: center;
