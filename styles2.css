@@ -1,6 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Impact&display=swap');
 
 
 body {
@@ -19,7 +19,7 @@ body {
 
 
   .navbar-brand {
-    font-family: 'Arial Black', sans-serif;
+    font-family: Arial Black, sans-serif;
     font-size: 24px; /* Ubah ukuran font menjadi 24px */
     letter-spacing: 1px; /* Tambahkan jarak antar huruf */
   }
@@ -141,7 +141,7 @@ body {
     font-size: 24px;
     font-stretch: extra-expanded;
     color: white;
-    font-family: Georgia, serif;
+    font-family: Impact, sans-serif;
     text-align: center;
     letter-spacing: 2px;
     webkit-text-stroke:0;
@@ -224,8 +224,8 @@ body {
     font-size: 24px; /* Ukuran teks lebih besar */
      font-stretch: extra-expanded;
     color: white; /* Warna teks menjadi abu-abu muda */
-     font-family: Georgia, serif;
-    text-align: center;
+     font-family: Impact, sans-serif;
+    text-align:center;
     letter-spacing: 2px;
      webkit-text-stroke:0;
      text-stroke:0;
