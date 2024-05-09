@@ -110,12 +110,12 @@ body {
     width: 100%;
     margin-top:0;
     padding-top:0;
-    height: 150vh;
+    height: 120vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-position: center;
-    background-size: cover; /* Atur gambar latar belakang agar menutupi seluruh area */
+    background-size: 600px 120vh; /* Atur gambar latar belakang agar menutupi seluruh area */
   }
 
   .profile {
@@ -187,14 +187,14 @@ body {
     /* Style untuk kontainer utama pada perangkat kecil */
     .home-content {
       width: 100%;
-      height:150vh;
+      height:120vh;
       margin-top:0;
       padding-top:0;
         display: flex;
         flex-direction: column;
         align-items: center;
       background-position:center;
-      background-size: cover;}
+      background-size: 600px 120vh;}
 
     /* Style untuk gambar profil pada perangkat kecil */
     .profile {
