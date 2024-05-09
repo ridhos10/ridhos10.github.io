@@ -95,7 +95,7 @@
 
 
     .home-content {
-      height: 100vh; /* Konten home akan menyesuaikan tinggi konten */
+      height: 120vh; /* Konten home akan menyesuaikan tinggi konten */
       padding: 10px; /* Ruang padding diperbesar */
     }
 
@@ -106,8 +106,8 @@
   /* Media queries untuk responsif */
   @media screen and (max-width: 768px) {
     .home-content {
-      height: 100vh; /* Tinggi konten home menjadi 80% tinggi viewport pada layar kecil */
-      background-size: 600px 100vh; /* Ukuran gambar latar belakang diubah secara manual (lebar: 200px, tinggi: 300px) */
+      height: 120vh; /* Tinggi konten home menjadi 80% tinggi viewport pada layar kecil */
+      background-size: 600px 120vh; /* Ukuran gambar latar belakang diubah secara manual (lebar: 200px, tinggi: 300px) */
     }
 
     
