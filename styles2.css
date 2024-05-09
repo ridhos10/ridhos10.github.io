@@ -101,7 +101,7 @@
       
     }
     .background-image {
-      background-size:auto 150vh;
+      background-size:600px 150vh;
     }
 
     
@@ -164,9 +164,13 @@
     }
 
 
-    .content p {
+   @import url('https://fonts.googleapis.com/css2?family=Impact&display=swap');
+
+
+   .content p {
     font-size: 24px; /* Ukuran teks lebih besar */
     color: white; /* Warna teks menjadi abu-abu muda */
+     font-family: 'Impact', sans-serif;
     text-align: center;
     letter-spacing: 2px;
      -webkit-text-stroke: 0.5px black; /* Garis luar hitam */
