@@ -138,6 +138,8 @@ body {
     font-family: impact, sans-serif;
     text-align: center;
     letter-spacing: 2px;
+    webkit-text-stroke:0;
+    text-stroke:0;
     text-shadow: 
     -1px -1px 0 black,  
      1px -1px 0 black,
@@ -219,6 +221,8 @@ body {
      font-family: impact, sans-serif;
     text-align: center;
     letter-spacing: 2px;
+     webkit-text-stroke:0;
+     text-stroke:0;
       text-shadow: 
     -1px -1px 0 black,  
      1px -1px 0 black,
