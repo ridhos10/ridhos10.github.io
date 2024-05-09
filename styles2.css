@@ -29,6 +29,7 @@
     background-image: url('gambarhome.png'); /* Ganti 'path/to/your/image.jpg' dengan lokasi gambar Anda */
     background-size: cover;
     background-position: center;
+    background-repeat:no-repeat;
     color: white;
     text-align: center;
     padding: 20px;
@@ -72,8 +73,9 @@
     margin-bottom: 40px;
     color: white; /* Warna teks menjadi abu-abu muda */
     letter-spacing: 0.25vh;
-     -webkit-text-stroke: 0.15vh black; /* Garis luar hitam */
-    text-stroke: 0.15vh black; /* Garis luar hitam */
+     -webkit-text-stroke: 0.08vh black; /* Garis luar hitam */
+    text-stroke: 0.08vh black; /* Garis luar hitam */
+    text-shadow: 0.08vh 0.08vh 0 black;
   }
 
   .download-button {
@@ -94,7 +96,7 @@
 
     .home-content {
       height: 100vh; /* Konten home akan menyesuaikan tinggi konten */
-      padding: 50px 20px; /* Ruang padding diperbesar */
+      padding: 10px; /* Ruang padding diperbesar */
     }
 
     
