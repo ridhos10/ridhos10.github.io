@@ -133,7 +133,7 @@ body {
 @import url('https://fonts.googleapis.com/css2?family=Impact&display=swap');
 
   .content p {
-    font-size: 24px;
+    font-size: 12px;
     color: white;
     font-family: impact, sans-serif;
     text-align: center;
@@ -211,7 +211,7 @@ body {
 
 
    .content p {
-    font-size: 24px; /* Ukuran teks lebih besar */
+    font-size: 12px; /* Ukuran teks lebih besar */
     color: white; /* Warna teks menjadi abu-abu muda */
      font-family: impact, sans-serif;
     text-align: center;
