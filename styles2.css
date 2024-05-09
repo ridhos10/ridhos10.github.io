@@ -140,18 +140,18 @@ body {
 
 
   .content p {
-    font-size: 26px;
+    font-size: 24px;
     color: white;
     font-family: Georgia, serif;
     text-align: center;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     webkit-text-stroke:0;
     text-stroke:0;
     text-shadow: 
-    -1px -1px 0 black,  
-     1px -1px 0 black,
-    -1px  1px 0 black,
-     1px  1px 0 black;
+    -0.5px -0.5px 0 black,  
+     0.5px -0.5px 0 black,
+    -0.5px  0.5px 0 black,
+     0.5px  0.5px 0 black;
     
   }
 }
@@ -222,18 +222,18 @@ body {
 
 
    .content p {
-    font-size: 26px; /* Ukuran teks lebih besar */
+    font-size: 24px; /* Ukuran teks lebih besar */
     color: white; /* Warna teks menjadi abu-abu muda */
      font-family: Georgia, serif;
     text-align:center;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
      webkit-text-stroke:0;
      text-stroke:0;
       text-shadow: 
-    -1px -1px 0 black,  
-     1px -1px 0 black,
-    -1px  1px 0 black,
-     1px  1px 0 black;
+    -0.5px -0.5px 0 black,  
+     0.5px -0.5px 0 black,
+    -0.5px  0.5px 0 black,
+     0.5px  0.5px 0 black;
    }
 }
 
