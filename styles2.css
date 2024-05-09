@@ -118,7 +118,7 @@ body {
   .profile img {
     width: 200px;
     height: 200px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     margin-top:60px;
   }
 
@@ -190,7 +190,7 @@ body {
     .profile img {
         width: 200px;
         height: 200px;
-        margin-bottom: 10px;/* Jarak antara gambar profil dengan teks h1 */
+        margin-bottom: 5px;/* Jarak antara gambar profil dengan teks h1 */
   margin-top:60px;
     }
 
