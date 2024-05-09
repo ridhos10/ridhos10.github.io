@@ -20,6 +20,7 @@ body {
 
   .navbar-brand {
     font-family: Arial Black, sans-serif;
+    font-weight:bold;
     font-size: 24px; /* Ubah ukuran font menjadi 24px */
     letter-spacing: 1px; /* Tambahkan jarak antar huruf */
   }
@@ -138,7 +139,7 @@ body {
 
 
   .content p {
-    font-size: 24px;
+    font-size: 26px;
     color: white;
     font-family: Georgia, serif;
     text-align: center;
@@ -220,7 +221,7 @@ body {
 
 
    .content p {
-    font-size: 24px; /* Ukuran teks lebih besar */
+    font-size: 26px; /* Ukuran teks lebih besar */
     color: white; /* Warna teks menjadi abu-abu muda */
      font-family: Georgia, serif;
     text-align:center;
