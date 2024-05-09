@@ -110,7 +110,7 @@
   .profile img {
     width: 200px;
     height: 200px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .content h1 {
@@ -178,7 +178,7 @@
     .profile img {
         width: 200px;
         height: 200px;
-        margin-bottom: 20px; /* Jarak antara gambar profil dengan teks h1 */
+        margin-bottom: 10px; /* Jarak antara gambar profil dengan teks h1 */
     }
 
     /* Style untuk teks h1 pada perangkat kecil */
