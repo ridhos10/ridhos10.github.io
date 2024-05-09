@@ -110,13 +110,14 @@
   .profile img {
     width: 200px;
     height: 200px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 
   .content h1 {
     font-size: 56px;
     text-align: center;
     margin-bottom: 20px;
+    margin-top: 10px;
     -webkit-text-stroke: 1.5px darkred;
     text-stroke: 1.5px darkred;
   }
@@ -178,13 +179,14 @@
     .profile img {
         width: 200px;
         height: 200px;
-        margin-bottom: 10px; /* Jarak antara gambar profil dengan teks h1 */
+        margin-bottom: 20px; /* Jarak antara gambar profil dengan teks h1 */
     }
 
     /* Style untuk teks h1 pada perangkat kecil */
     .content h1 {
         font-size: 56px;
         text-align: center;
+      margin-top:10px;
         margin-bottom: 20px; /* Jarak bawah dari teks h1 ke konten paragraf (p) */
         -webkit-text-stroke: 1.5px darkred; /* Garis luar hitam */
     text-stroke: 1.5px darkred; /* Garis luar hitam */
