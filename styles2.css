@@ -100,12 +100,6 @@
       padding:10px;
       
     }
-    .background-image {
-      background-size:cover;
-      background-position:center;
-      background-repeat:no-repeat;
-      
-    }
 
     
   }
@@ -144,6 +138,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+      background-position:center;
+      background-size:cover;
     }
 
     /* Style untuk gambar profil pada perangkat kecil */
