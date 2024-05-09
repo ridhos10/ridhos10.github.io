@@ -105,7 +105,7 @@
   @media screen and (max-width: 768px) {
     .home-content {
       height: 100vh; /* Tinggi konten home menjadi 80% tinggi viewport pada layar kecil */
-      background-size: 600px 500px; /* Ukuran gambar latar belakang diubah secara manual (lebar: 200px, tinggi: 300px) */
+      background-size: 600px 700px; /* Ukuran gambar latar belakang diubah secara manual (lebar: 200px, tinggi: 300px) */
     }
 
     
