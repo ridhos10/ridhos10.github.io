@@ -110,7 +110,7 @@ body {
     width: 100%;
     margin-top:0;
     padding-top:0;
-    height: 150vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -187,14 +187,14 @@ body {
     /* Style untuk kontainer utama pada perangkat kecil */
     .home-content {
       width: 100%;
-      height:150vh;
+      height:100%vh;
       margin-top:0;
       padding-top:0;
         display: flex;
         flex-direction: column;
         align-items: center;
       background-position:center;
-      background-size: 600px 150vh; }
+      background-size: cover;}
 
     /* Style untuk gambar profil pada perangkat kecil */
     .profile {
