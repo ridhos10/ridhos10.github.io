@@ -98,7 +98,6 @@
     height: 150vh;
     display: flex;
     padding-top:60px;
-    margin-top:60px;
     flex-direction: column;
     align-items: center;
     background-position: center;
@@ -169,7 +168,6 @@
       width: 100%;
       height:150vh;
       padding-top:60px;
-      margin-top:60px;
         display: flex;
         flex-direction: column;
         align-items: center;
