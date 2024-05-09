@@ -123,12 +123,13 @@
 
     /* Style untuk kontainer utama pada perangkat kecil */
     .home-content {
+      width: 100%;
       height:150vh;
         display: flex;
         flex-direction: column;
         align-items: center;
       background-position:center;
-      background-size: 60px 150vh; }
+      background-size: 300px 150vh; }
 
     /* Style untuk gambar profil pada perangkat kecil */
     .profile {
