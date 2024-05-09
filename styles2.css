@@ -90,24 +90,18 @@
 
  
 
- /* Media queries untuk responsif */
+
+  
+  /* Media queries untuk responsif */
+  /* Media queries untuk responsif */
   @media screen and (max-width: 768px) {
-
-
     .home-content {
-      height: 120vh; /* Konten home akan menyesuaikan tinggi konten */
-      padding: 10px; /* Ruang padding diperbesar */
+      height: 150vh; /* Tinggi konten home menjadi 80% tinggi viewport pada layar kecil */
+      padding:10px;
+      
     }
-
-    
-  }
-
-  /* Media queries untuk responsif */
-  /* Media queries untuk responsif */
-  @media screen and (max-width: 768px) {
-    .home-content {
-      height: 120vh; /* Tinggi konten home menjadi 80% tinggi viewport pada layar kecil */
-      background-size: 600px 120vh; /* Ukuran gambar latar belakang diubah secara manual (lebar: 200px, tinggi: 300px) */
+    .background-image {
+      background-size:auto 150vh;
     }
 
     
