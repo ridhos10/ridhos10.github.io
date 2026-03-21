@@ -1,596 +1,1298 @@
+html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>INFORMATION TECHNOLOGY</title>
-  <!-- Bootstrap CSS -->
-  <link href="styles.css" rel="stylesheet">
-  <link href="styles2.css" rel="stylesheet">
-  <script src="script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Technical Support & Operations Specialist dengan pengalaman troubleshooting, networking, dan maintenance sistem">
+<title>Ridho Syaputra | Technical Support & Operations Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="htt...ap" rel="stylesheet">
+<style>
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family:'Inter',sans-serif; color:#f1f5f9; background:#020617; overflow-x:hidden; }
+a { text-decoration:none; }
+
+/* ===== BACKGROUND ===== */
+#bg-canvas { position:fixed; top:0; left:0; width:100%; height:100%; z-index:-3; pointer-events:none; }
+
+.aurora {
+  position:fixed; top:0; left:0; width:100%; height:100%;
+  z-index:-2; pointer-events:none; overflow:hidden;
+}
+.aurora::before {
+  content:'';
+  position:absolute; top:-40%; left:-20%;
+  width:70%; height:80%;
+  background: radial-gradient(ellipse, rgba(59,130,246,0.08) 0%, transparent 70%);
+  animation: auroraMove1 12s ease-in-out infinite alternate;
+}
+.aurora::after {
+  content:'';
+  position:absolute; top:-20%; right:-20%;
+  width:60%; height:70%;
+  background: radial-gradient(ellipse, rgba(99,102,241,0.06) 0%, transparent 70%);
+  animation: auroraMove2 15s ease-in-out infinite alternate;
+}
+@keyframes auroraMove1 { 0%{transform:translate(0,0) scale(1);} 100%{transform:translate(8%,12%) scale(1.15);} }
+@keyframes auroraMove2 { 0%{transform:translate(0,0) scale(1);} 100%{transform:translate(-8%,8%) scale(1.2);} }
+
+.grid-bg {
+  position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1;
+  background-image:
+    linear-gradient(rgba(59,130,246,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,130,246,0.035) 1px, transparent 1px);
+  background-size:80px 80px;
+  pointer-events:none;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+}
+
+/* ===== CONTAINER ===== */
+.container { max-width:1100px; margin:auto; padding:0 5%; }
+
+/* ===== NAVBAR ===== */
+nav {
+  position:fixed; top:0; left:0; width:100%;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:16px 5%; z-index:9999;
+  background:rgba(2,6,23,0.5);
+  backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px);
+  border-bottom:1px solid rgba(59,130,246,0.08);
+  transition:all 0.4s ease;
+}
+nav.scrolled {
+  background:rgba(2,6,23,0.9);
+  padding:11px 5%;
+  box-shadow:0 4px 40px rgba(0,0,0,0.5), 0 1px 0 rgba(59,130,246,0.1);
+}
+.logo {
+  font-family:'JetBrains Mono',monospace;
+  font-size:18px; font-weight:600; color:#3b82f6;
+  position:relative;
+}
+.logo-cursor {
+  display:inline-block; width:2px; height:1.1em;
+  background:#3b82f6; margin-left:1px;
+  vertical-align:middle;
+  animation:blink 1s step-end infinite;
+}
+@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0;} }
+
+nav ul { display:flex; gap:26px; list-style:none; }
+nav ul a {
+  color:#94a3b8; font-size:13px; font-weight:500;
+  transition:color 0.2s; position:relative; padding-bottom:3px;
+}
+nav ul a::after {
+  content:''; position:absolute; bottom:0; left:0;
+  width:0; height:1.5px; background:#3b82f6;
+  transition:width 0.3s ease; border-radius:2px;
+}
+nav ul a:hover { color:#e2e8f0; }
+nav ul a:hover::after { width:100%; }
+
+.nav-cv {
+  padding:8px 20px;
+  background:linear-gradient(135deg,#3b82f6,#2563eb);
+  color:white!important; border-radius:8px;
+  font-size:13px; font-weight:600;
+  transition:all 0.3s ease;
+  box-shadow:0 0 20px rgba(59,130,246,0.25);
+  position:relative; overflow:hidden;
+}
+.nav-cv::before {
+  content:'';
+  position:absolute; top:0; left:-100%;
+  width:100%; height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);
+  transition:left 0.4s ease;
+}
+.nav-cv:hover::before { left:100%; }
+.nav-cv:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(59,130,246,0.45); color:white!important; }
+
+.hamburger { display:none; cursor:pointer; flex-direction:column; gap:5px; }
+.hamburger span { display:block; width:24px; height:2px; background:#cbd5e1; border-radius:2px; transition:0.3s; }
+.mobile-menu {
+  display:none; flex-direction:column; gap:0;
+  background:rgba(2,6,23,0.98);
+  border-bottom:1px solid rgba(59,130,246,0.1);
+  position:fixed; top:58px; left:0; width:100%; z-index:9998;
+  backdrop-filter:blur(20px);
+}
+.mobile-menu a {
+  color:#94a3b8; font-size:15px;
+  padding:14px 5%; border-bottom:1px solid rgba(255,255,255,0.04);
+  transition:background 0.2s, color 0.2s;
+}
+.mobile-menu a:hover { color:#e2e8f0; background:rgba(59,130,246,0.05); }
+.mobile-menu.open { display:flex; }
+
+/* ===== SECTION BASE ===== */
+section { padding:100px 0; scroll-margin-top:80px; }
+
+/* ===== HERO ===== */
+.hero {
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding-top:80px;
+}
+
+.hero-wrapper {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  align-items:center;
+  gap:80px;
+  width:100%;
+}
+
+.hero-content {
+  max-width:600px;
+}
+
+.status-badge {
+  display:inline-flex; align-items:center; gap:10px;
+  padding:7px 18px; margin-bottom:28px;
+  border:1px solid rgba(34,197,94,0.3); border-radius:50px;
+  font-size:12px; font-weight:600; color:#22c55e;
+  background:rgba(34,197,94,0.06); letter-spacing:0.5px; text-transform:uppercase;
+  animation:badgePulse 3s ease infinite;
+}
+
+@keyframes badgePulse {
+  0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,0);}
+  50%{box-shadow:0 0 0 6px rgba(34,197,94,0.06);}
+}
+.status-badge .dot {
+  width:7px; height:7px; background:#22c55e; border-radius:50%;
+  box-shadow:0 0 10px #22c55e, 0 0 20px rgba(34,197,94,0.4);
+  animation:pulseDot 2s ease infinite;
+}
+@keyframes pulseDot { 0%,100%{transform:scale(1);opacity:1;} 50%{transform:scale(1.6);opacity:0.6;} }
+
+.hero-eyebrow {
+  font-family:'JetBrains Mono',monospace; font-size:13px;
+  color:#3b82f6; letter-spacing:2.5px; text-transform:uppercase;
+  margin-bottom:16px; opacity:0.75;
+}
+
+.hero h1 {
+  font-size:clamp(44px,7.5vw,80px); font-weight:900;
+  line-height:1.02; margin-bottom:10px; letter-spacing:-2.5px; color:#f8fafc;
+}
+.hero h1 .highlight {
+  background:linear-gradient(135deg,#3b82f6 0%,#60a5fa 40%,#a5f3fc 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  background-clip:text;
+  position:relative;
+}
+.hero h1 .highlight::after {
+  content:'';
+  position:absolute; bottom:-4px; left:0; right:0; height:2px;
+  background:linear-gradient(90deg,#3b82f6,#60a5fa,transparent);
+  border-radius:2px;
+}
+
+.hero-sub {
+  font-size:18px; color:#60a5fa; font-weight:500;
+  margin-bottom:28px; display:flex; align-items:center; gap:12px;
+  min-height:28px;
+}
+.hero-sub .line { width:28px; height:2px; background:#3b82f6; border-radius:2px; flex-shrink:0; }
+.hero-sub .typed-text { border-right:2px solid #3b82f6; padding-right:3px; }
+
+.hero-desc {
+  color:#94a3b8; font-size:16px; line-height:1.85; margin-bottom:36px; max-width:540px;
+}
+
+.btn-group { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:48px; }
+
+.btn {
+  padding:13px 28px; border-radius:10px; font-size:14px; font-weight:600;
+  transition:all 0.3s ease; cursor:pointer; border:none;
+  letter-spacing:0.3px; display:inline-flex; align-items:center; gap:8px;
+  position:relative; overflow:hidden;
+}
+.btn-primary {
+  background:linear-gradient(135deg,#3b82f6,#2563eb); color:white;
+  box-shadow:0 4px 24px rgba(59,130,246,0.4);
+}
+.btn-primary::before {
+  content:''; position:absolute; top:0; left:-100%; width:100%; height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);
+  transition:left 0.4s ease;
+}
+.btn-primary:hover::before { left:100%; }
+.btn-primary:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(59,130,246,0.55); }
+
+.btn-outline {
+  border:1.5px solid rgba(59,130,246,0.4); color:#cbd5e1;
+  background:rgba(59,130,246,0.05); backdrop-filter:blur(10px);
+}
+.btn-outline:hover {
+  border-color:#3b82f6; color:#60a5fa;
+  background:rgba(59,130,246,0.1); transform:translateY(-3px);
+  box-shadow:0 0 20px rgba(59,130,246,0.15);
+}
+
+.hero-stats {
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:0;
+  border:1px solid rgba(255,255,255,0.07);
+  border-radius:16px;
+  overflow:hidden;
+  background:rgba(255,255,255,0.02);
+  backdrop-filter:blur(10px);
+  position:relative;
+}
+.hero-stats::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:1px;
+  background:linear-gradient(90deg,transparent,rgba(59,130,246,0.3),transparent);
+}
+.hero-stat {
+  padding:24px 20px;
+  border-right:1px solid rgba(255,255,255,0.06);
+  transition:background 0.3s;
+  text-align:center;
+}
+.hero-stat:hover { background:rgba(59,130,246,0.04); }
+.hero-stat:last-child { border-right:none; }
+.hero-stat h3 { font-size:24px; color:#3b82f6; font-weight:800; letter-spacing:-0.5px; }
+.hero-stat p { font-size:11px; color:#64748b; margin-top:6px; font-weight:500; letter-spacing:0.5px; text-transform:uppercase; }
+
+/* HERO IMAGE */
+.hero-image {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+}
+
+.hero-image img {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(59,130,246,0.4);
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.5),
+    0 0 40px rgba(59,130,246,0.25);
+  transition: all 0.4s ease;
+  background-color: #020617;
+  padding-top: 3px;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.7),
+    0 0 60px rgba(59,130,246,0.5);
+}
+
+.hero-image::before {
+  content:'';
+  position:absolute;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(59,130,246,0.25), transparent 70%);
+  filter: blur(60px);
+  z-index:-1;
+}
+
+/* ===== SECTION TITLES ===== */
+.section-tag {
+  display:inline-block; font-family:'JetBrains Mono',monospace;
+  font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase;
+  color:#3b82f6; margin-bottom:12px; position:relative; padding-left:20px;
+}
+.section-tag::before {
+  content:''; position:absolute; left:0; top:50%;
+  transform:translateY(-50%); width:12px; height:2px; background:#3b82f6;
+}
+
+.section-title {
+  font-size:clamp(28px,4vw,44px); font-weight:800; margin-bottom:14px;
+  letter-spacing:-1.5px; color:#f8fafc; line-height:1.08;
+}
+
+.section-sub { color:#64748b; font-size:15px; max-width:500px; line-height:1.75; }
+
+.text-center { text-align:center; }
+.text-center .section-sub { margin:0 auto; }
+.text-center .section-tag { padding-left:0; }
+.text-center .section-tag::before { display:none; }
+
+/* ===== DIVIDER ===== */
+.section-divider {
+  width:60px; height:3px; margin:0 auto 0;
+  background:linear-gradient(90deg,#3b82f6,#60a5fa);
+  border-radius:2px; margin-top:16px;
+}
+
+/* ===== ABOUT ===== */
+.about-grid {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:70px; align-items:center; margin-top:56px;
+}
+
+.about-text p { color:#94a3b8; font-size:15px; line-height:1.9; margin-bottom:18px; }
+
+.value-card {
+  display:flex; gap:16px; align-items:flex-start;
+  padding:20px 22px; border-radius:14px;
+  border:1px solid rgba(255,255,255,0.06);
+  background:rgba(255,255,255,0.02);
+  transition:all 0.4s ease; margin-bottom:14px;
+  position:relative; overflow:hidden;
+}
+.value-card::before {
+  content:''; position:absolute; top:0; left:0;
+  width:3px; height:100%;
+  background:linear-gradient(180deg,#3b82f6,transparent);
+  opacity:0; transition:opacity 0.3s;
+}
+.value-card:hover {
+  border-color:rgba(59,130,246,0.3);
+  background:rgba(59,130,246,0.04);
+  transform:translateX(6px);
+  box-shadow:0 8px 30px rgba(0,0,0,0.2);
+}
+.value-card:hover::before { opacity:1; }
+.value-icon {
+  width:42px; height:42px; border-radius:10px;
+  background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.2);
+  display:flex; align-items:center; justify-content:center;
+  font-size:18px; flex-shrink:0;
+  transition:transform 0.3s ease;
+}
+.value-card:hover .value-icon { transform:scale(1.1) rotate(5deg); }
+.value-card h4 { font-size:14px; color:#f1f5f9; font-weight:600; margin-bottom:4px; }
+.value-card p { font-size:13px; color:#64748b; line-height:1.55; }
+
+/* ===== SKILLS ===== */
+.skills-grid {
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:20px; margin-top:56px;
+}
+
+.skill-card {
+  padding:28px 22px; border-radius:18px;
+  background:rgba(15,23,42,0.6);
+  border:1px solid rgba(255,255,255,0.07);
+  transition:all 0.4s cubic-bezier(0.4,0,0.2,1);
+  position:relative; overflow:hidden; backdrop-filter:blur(10px);
+}
+.skill-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg,transparent,var(--skill-color),transparent);
+  opacity:0; transition:opacity 0.4s;
+}
+.skill-card::after {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(circle at 50% 0%, rgba(59,130,246,0.05), transparent 70%);
+  opacity:0; transition:opacity 0.4s;
+}
+.skill-card:hover { transform:translateY(-10px); border-color:rgba(59,130,246,0.2); box-shadow:0 24px 60px rgba(0,0,0,0.45); }
+.skill-card:hover::before { opacity:1; }
+.skill-card:hover::after { opacity:1; }
+
+.skill-icon {
+  width:52px; height:52px; border-radius:14px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:24px; margin-bottom:18px;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:transform 0.3s ease;
+}
+.skill-card:hover .skill-icon { transform:scale(1.12) rotate(-3deg); }
+.skill-card h3 { font-size:14px; font-weight:700; margin-bottom:16px; color:#f1f5f9; letter-spacing:0.2px; }
+.skill-card ul { list-style:none; }
+.skill-card li {
+  font-size:12px; color:#64748b;
+  padding:6px 0 6px 16px; border-bottom:1px solid rgba(255,255,255,0.04);
+  position:relative; font-weight:500; transition:color 0.2s;
+}
+.skill-card li:last-child { border-bottom:none; }
+.skill-card:hover li { color:#94a3b8; }
+.skill-card li::before {
+  content:"▸"; position:absolute; left:0; color:#3b82f6;
+  font-size:10px; top:7px;
+}
+
+/* ===== EXPERIENCE ===== */
+.exp-list { margin-top:56px; display:flex; flex-direction:column; gap:12px; }
+
+.exp-item {
+  border:1px solid rgba(255,255,255,0.07); border-radius:18px;
+  overflow:hidden; transition:all 0.3s ease;
+  background:rgba(15,23,42,0.5); backdrop-filter:blur(10px);
+}
+.exp-item:hover { border-color:rgba(59,130,246,0.15); }
+.exp-item.open {
+  border-color:rgba(59,130,246,0.3);
+  box-shadow:0 0 30px rgba(59,130,246,0.06);
+}
+
+.exp-header {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:20px 26px; background:rgba(255,255,255,0.02);
+  cursor:pointer; user-select:none; transition:background 0.3s;
+}
+.exp-header:hover { background:rgba(255,255,255,0.04); }
+.exp-header-left { display:flex; align-items:center; gap:18px; }
+
+.exp-badge {
+  width:48px; height:48px; border-radius:14px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:22px; flex-shrink:0;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:transform 0.3s ease;
+}
+
+.exp-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.exp-item.open .exp-badge { transform:scale(1.05); }
+.exp-meta h3 { font-size:15px; font-weight:700; color:#f1f5f9; }
+.exp-meta span { font-size:12px; color:#64748b; margin-top:3px; display:block; font-weight:500; }
+
+.exp-link { color:#f1f5f9; transition:color 0.2s; position:relative; }
+.exp-link:hover { color:#3b82f6; }
+.exp-link::after {
+  content:''; position:absolute; left:0; bottom:-1px;
+  width:0; height:1px; background:#3b82f6; transition:width 0.3s ease;
+}
+.exp-link:hover::after { width:100%; }
+
+.exp-arrow-wrap {
+  width:32px; height:32px; border-radius:8px;
+  border:1px solid rgba(255,255,255,0.08);
+  display:flex; align-items:center; justify-content:center;
+  transition:all 0.35s ease; color:#64748b; font-size:14px; flex-shrink:0;
+}
+.exp-item.open .exp-arrow-wrap {
+  background:rgba(59,130,246,0.1); border-color:rgba(59,130,246,0.35);
+  color:#3b82f6; transform:rotate(180deg);
+}
+
+.exp-body {
+  display:none; padding:22px 26px;
+  border-top:1px solid rgba(255,255,255,0.05);
+  background:rgba(0,0,0,0.1);
+}
+.exp-item.open .exp-body { display:block; animation:bodyReveal 0.3s ease; }
+@keyframes bodyReveal { from{opacity:0;transform:translateY(-8px);} to{opacity:1;transform:translateY(0);} }
+
+.project-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:14px; }
+
+.project-card {
+  border-radius:14px; overflow:hidden;
+  border:1px solid rgba(255,255,255,0.07);
+  background:rgba(255,255,255,0.02); transition:all 0.4s ease;
+}
+.project-card:hover {
+  border-color:rgba(59,130,246,0.3); transform:translateY(-5px);
+  box-shadow:0 16px 40px rgba(0,0,0,0.4);
+}
+.project-card img {
+  width:100%; aspect-ratio:16/9; object-fit:cover;
+  display:block; background:#1e293b;
+  transition:transform 0.5s ease;
+}
+.project-card:hover img { transform:scale(1.05); }
+.project-info { padding:14px 16px; }
+.project-info h4 { font-size:13px; font-weight:600; margin-bottom:6px; color:#f1f5f9; }
+.project-info p { font-size:12px; color:#64748b; line-height:1.55; }
+
+/* ===== FAQ ===== */
+.faq-list {
+  margin-top:56px; display:flex; flex-direction:column; gap:10px;
+  max-width:780px; margin-left:auto; margin-right:auto;
+}
+
+.faq-item {
+  border:1px solid rgba(255,255,255,0.07); border-radius:14px;
+  overflow:hidden; transition:all 0.3s; background:rgba(15,23,42,0.4);
+}
+.faq-item:hover { border-color:rgba(59,130,246,0.15); }
+.faq-item.open { border-color:rgba(59,130,246,0.3); box-shadow:0 0 20px rgba(59,130,246,0.05); }
+
+.faq-q {
+  width:100%; display:flex; justify-content:space-between; align-items:center;
+  padding:18px 22px; background:rgba(255,255,255,0.02); cursor:pointer;
+  text-align:left; color:#e2e8f0; font-size:14px; font-weight:600;
+  border:none; transition:background 0.2s; gap:12px;
+}
+.faq-q:hover { background:rgba(255,255,255,0.04); }
+.faq-num { font-family:'JetBrains Mono',monospace; font-size:11px; color:#3b82f6; font-weight:600; flex-shrink:0; opacity:0.8; }
+.faq-arrow {
+  width:28px; height:28px; border-radius:7px;
+  border:1px solid rgba(255,255,255,0.08);
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; color:#64748b; font-size:12px; transition:all 0.35s;
+}
+.faq-item.open .faq-arrow {
+  background:rgba(59,130,246,0.1); border-color:rgba(59,130,246,0.3);
+  color:#3b82f6; transform:rotate(180deg);
+}
+.faq-a { display:none; padding:0 22px 20px; border-top:1px solid rgba(255,255,255,0.04); }
+.faq-item.open .faq-a { display:block; animation:bodyReveal 0.3s ease; }
+.faq-a p { font-size:14px; color:#94a3b8; line-height:1.85; padding-top:16px; }
+.faq-a ul {font-size:14px; color:#94a3b8; line-height:1.85; padding-top:16px;}
+
+/* ===== CONTACT ===== */
+.contact { text-align:center; }
+
+.contact-cards {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:20px; margin:52px 0 0;
+}
+
+.contact-card {
+  padding:36px 22px; border-radius:18px;
+  background:rgba(15,23,42,0.6);
+  border:1px solid rgba(255,255,255,0.07);
+  transition:all 0.4s cubic-bezier(0.4,0,0.2,1);
+  text-decoration:none; display:block;
+  position:relative; overflow:hidden; backdrop-filter:blur(10px);
+}
+.contact-card::before {
+  content:''; position:absolute; bottom:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg,transparent,#3b82f6,transparent);
+  opacity:0; transition:opacity 0.3s;
+}
+.contact-card::after {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(circle at 50% 100%, rgba(59,130,246,0.06), transparent 60%);
+  opacity:0; transition:opacity 0.4s;
+}
+.contact-card:hover {
+  border-color:rgba(59,130,246,0.35); transform:translateY(-8px);
+  background:rgba(59,130,246,0.04); box-shadow:0 24px 60px rgba(0,0,0,0.35);
+}
+.contact-card:hover::before { opacity:1; }
+.contact-card:hover::after { opacity:1; }
+
+.contact-icon {
+  width:58px; height:58px; border-radius:16px;
+  background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.2);
+  display:flex; align-items:center; justify-content:center;
+  font-size:26px; margin:0 auto 18px;
+  transition:transform 0.3s ease;
+}
+.contact-card:hover .contact-icon { transform:scale(1.1) rotate(-5deg); }
+.contact-card .c-label {
+  font-size:11px; color:#64748b; text-transform:uppercase;
+  letter-spacing:1.5px; margin-bottom:6px; font-weight:600;
+  font-family:'JetBrains Mono',monospace;
+}
+.contact-card .c-val { font-size:14px; color:#e2e8f0; font-weight:600; }
+.contact-icon img { max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+
+}
+
+/* ===== SLIDER INFINITE LOOP ===== */
+.slider-wrapper {
+  overflow:hidden;
+  margin-top:56px;
+  padding:20px 0;
+  border-radius:20px;
+  position:relative;
+}
+.slider-wrapper::before,.slider-wrapper::after {
+  content:''; position:absolute; top:0; bottom:0; width:150px; z-index:2; pointer-events:none;
+}
+.slider-wrapper::before { left:0; background:linear-gradient(90deg,#020617,transparent); }
+.slider-wrapper::after { right:0; background:linear-gradient(-90deg,#020617,transparent); }
+.slider-wrapper:hover .slider-track {
+  animation-play-state: paused;
+}
+
+.slider-track {
+  display:flex;
+  gap:20px;
+  animation: slide 25s linear infinite; /* lebih cepat */
+  width: max-content; /* penting biar tidak glitch */
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.slide-item {
+  position:relative;
+  min-width:240px;
+  height:240px;
+  border-radius:16px;
+  overflow:hidden;
+  flex-shrink:0;
+  transition:border-color 0.3s;
+  border:1px solid rgba(255,255,255,0.07);
+}
+
+.slide-item:hover { border-color:rgba(59,130,246,0.3); }
+.slide-item img {
+  width:100%; height:100%; object-fit:cover;
+  transition:transform 0.5s ease, filter 0.5s ease;
+}
+.overlay {
+  position:absolute; bottom:0; left:0; width:100%;
+  padding:18px 14px;
+  background:linear-gradient(to top,rgba(2,6,23,0.95),rgba(2,6,23,0.5),transparent);
+  color:white; opacity:0; transform:translateY(8px); transition:all 0.4s ease;
+}
+.overlay h4 { margin:0; font-size:13px; font-weight:700; color:#60a5fa; }
+.overlay p { margin:4px 0 0; font-size:11px; opacity:0.8; }
+.slide-item:hover img { transform:scale(1.1); filter:brightness(0.65); }
+.slide-item:hover .overlay { opacity:1; transform:translateY(0); }
+
+/* ===== FOOTER ===== */
+footer {
+  text-align:center; padding:36px 20px;
+  border-top:1px solid rgba(255,255,255,0.05);
+  font-size:13px; color:#334155; font-weight:500;
+  position:relative;
+}
+footer::before {
+  content:''; position:absolute; top:0; left:50%; transform:translateX(-50%);
+  width:200px; height:1px;
+  background:linear-gradient(90deg,transparent,rgba(59,130,246,0.4),transparent);
+}
+
+/* ===== FADE IN ===== */
+.fade-in { opacity:0; transform:translateY(32px); transition:opacity 0.75s ease, transform 0.75s ease; }
+.fade-in.visible { opacity:1; transform:translateY(0); }
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .about-grid { grid-template-columns:1fr; gap:40px; }
+  .skills-grid { grid-template-columns:repeat(2,1fr); }
+  .contact-cards { grid-template-columns:1fr; max-width:360px; margin-left:auto; margin-right:auto; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+  .hero-wrapper { grid-template-columns:1fr; gap:40px; }
+  .hero-image { margin-top:30px; }
+}
+
+@media(max-width:640px){
+  nav ul,.nav-cv { display:none; }
+  .hamburger { display:flex; }
+  .skills-grid { grid-template-columns:1fr; }
+  .hero-stats { grid-template-columns: 1fr; }
+  .project-grid { grid-template-columns:1fr; }
+  .contact-cards { grid-template-columns: 1fr; }
+  .hero h1 { letter-spacing:-1px; }
+  .slide-item { min-width:80vw; height:240px; }
+}
+
+</style>
 </head>
 <body>
 
-<!--NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="#"><span class="text-danger">R</span>idho <span class="text-danger">S</span>yaputra</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#projects">Project</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
-      </ul>
-    </div>
+<canvas id="bg-canvas"></canvas>
+<div class="aurora"></div>
+<div class="grid-bg"></div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="logo">&lt;RS/&gt;<span class="logo-cursor"></span></div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="cv.pdf" class="nav-cv" download>⬇ Download CV</a>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
   </div>
 </nav>
-
-
-
-<!-- Konten Home -->
-<section id="home">
-<div class="home-content">
-  <div class="profile">
-    <img src="profile.png" alt="Profile Picture"> <!-- Ganti 'path/to/your/profile_picture.jpg' dengan lokasi foto profil Anda -->
-  </div>
-  <div class="content">
-    <h1>Hi, Saya Ridho</h1> <!-- Ubah teks menjadi "Hi, Saya Ridho" -->
-    <p id="quote"></p> <!-- Tag <p> untuk menampilkan quotes -->
-    <a href="cvridho.pdf" class="download-button">Unduh CV Saya </a>  
-  </div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" onclick="closeMenu()">Home</a>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#skills" onclick="closeMenu()">Skills</a>
+  <a href="#experience" onclick="closeMenu()">Experience</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
 </div>
 
-<script>
-  // Array quotes
-  var quotes = [
-    "&#34;Menjadi Pemimpin bukanlah sekedar tentang kekuatan, kecerdasan, kekayaan, atau pengalaman, melainkan tentang tanggung jawab.&#34;",
-    "&#34;I'll do my best.&#34;",
-    "&#34;Dunia bisa berubah hanya dengan satu secercah cahaya, di mana kebenaran dapat terlihat salah, dan kesalahan pun dapat terlihat benar.&#34;",
-    "&#34;You pick up a gun in anger, you ain't never gonna put it back down.&#34;",
-    "&#34;Hal tersulit adalah memaafkan diri sendiri.&#34;"
-  ];
+<!-- HERO -->
+<section id="home" class="hero">
+<div class="container">
+<div class="hero-wrapper">
 
-  var currentIndex = 0;
+<!-- TEXT -->
+<div class="hero-content">
+<p class="status-badge"><span class="dot"></span>READY FOR WORK</p>
+<h1>Saya <span class="highlight">Ridho Syaputra</span></h1>
 
-  // Fungsi untuk menampilkan quotes secara berurutan
-  function showNextQuote() {
-    document.getElementById("quote").innerHTML = quotes[currentIndex];
-    currentIndex = (currentIndex + 1) % quotes.length;
-  }
+<div class="hero-sub">
+<div class="line"></div>
+<span id="typedText" class="typed-text"></span>
+</div>
 
-  // Menampilkan quote pertama saat halaman dimuat
-  showNextQuote();
+<p class="hero-desc">
+Technical Support & Operations Specialist dengan pengalaman troubleshooting,
+networking, dan maintenance sistem.
+</p>
 
-  // Mengganti quote setiap 5 detik
-  setInterval(showNextQuote, 5000);
-</script>
+<div class="btn-group">
+  <a href="#contact" class="btn btn-primary">Hubungi Saya</a>
+  <a href="#about" class="btn btn-outline">Tentang Saya</a>
+</div>
+
+<!-- STATS -->
+<div class="hero-stats">
+<div class="hero-stat"><h3>4+</h3><p>Tahun</p></div>
+<div class="hero-stat"><h3>4</h3><p>Perusahaan</p></div>
+<div class="hero-stat"><h3>Hardware</h3><p>Support</p></div>
+<div class="hero-stat"><h3>Networking</h3><p>Maintenance</p></div>
+</div>
+
+</div>
+
+<!-- IMAGE -->
+<div class="hero-image">
+<img src="fotoprofile/ridhos2.png" alt="Ridho">
+</div>
+
+</div>
+</div>
 </section>
 
 
-
-
-<!-- Konten Profile -->
-<section class="about-section" id="about">
-
-  <div class="qa-title">Frequently Asked Question</div>
-  <p>Klik Panah Untuk Melihat Pertanyaan Berikutnya.</p>
-  <div class="qa-container">
-
-    <div class="qa-box" id="qa-1">
-      <h2>Tentang Saya?</h2>
-      <p>Saya adalah seorang lulusan SMK Teknik Komputer dan Jaringan tahun 2020 yang memilih untuk menjalani gaya hidup sehat tanpa merokok, tanpa tindik atau tato, dan tanpa mengonsumsi minuman keras. Saya yakin bahwa pilihan-pilihan ini membantu saya menjaga fokus dan konsentrasi dalam mengejar impian dan mencapai tujuan hidup saya.
-      </p>
-      <div class="arrow right" onclick="nextQuestion(1)">&#10095;</div>
-    </div>
-
-    <div class="qa-box" id="qa-2">
-      <h2>Hobi Saya?</h2>
-      <p>Saya memiliki hobi membaca komik dan menonton film.
-         Dengan hobi saya ini, saya dapat meningkatkan kemampuan
-         bahasa Inggris saya.
-      </p>
-      <div class="arrow left" onclick="prevQuestion(2)">&#10094;</div>
-      <div class="arrow right" onclick="nextQuestion(2)">&#10095;</div>
-    </div>
-
-    <div class="qa-box" id="qa-3">
-      <h2>Sifat Baik Saya?</h2>
-      <p>Saya memiliki sejumlah sifat baik yang saya banggakan. Misalnya, saya memiliki rasa ingin tahu yang tinggi, yang mendorong saya untuk terus belajar dan mengembangkan diri. Saya juga kreatif dan visioner, mampu melihat potensi di setiap situasi dan menciptakan solusi inovatif. Selain itu, saya bertanggung jawab dan selalu siap mengambil tanggung jawab atas tindakan dan keputusan saya. Jiwa saya yang penuh empati dan penolong juga membuat saya senang membantu orang lain dan memberikan dukungan yang mereka butuhkan.</p>
-      <div class="arrow left" onclick="prevQuestion(3)">&#10094;</div>
-      <div class="arrow right" onclick="nextQuestion(3)">&#10095;</div>
-    </div>
-    <!-- Tambahkan lebih banyak pertanyaan jika diperlukan -->
-    <div class="qa-box" id="qa-4">
-      <h2>Sifat Buruk Saya?</h2>
-      <p>Saya perlu mengakui bahwa ada beberapa sifat buruk yang saya sadari dalam diri saya. Misalnya, saya seringkali terlalu arogan dan merasa bisa menyelesaikan segalanya sendiri. Selain itu, saya cenderung paranoid dan terlalu waspada terhadap situasi di sekitar saya, yang membuat sulit bagi saya untuk benar-benar rileks. Terkadang, ego saya juga dapat menghalangi kemampuan saya untuk berkolaborasi dengan orang lain.
-      </p>
-      <div class="arrow left" onclick="prevQuestion(4)">&#10094;</div>
-      <div class="arrow right" onclick="nextQuestion(4)">&#10095;</div>
-    </div>
-    <div class="qa-box" id="qa-5">
-      <h2>Skill Saya?</h2>
-      <p style="text-align: left;">
-          - Mahir menggunakan Microsoft Word, Excel, Power Point.(Membuat Surat, Membuat Table kasir dan Gudang menggunakan Vlookup, SUM, IF)<br>
-          - Menengah melakukan setting router Mikrotik (Konfigurasi dasar, WLAN, Firewall, VPN, Limit, Block web).<br>
-          - Menengah menggunakan Adobe Photoshop, Filmora, Ilustrator, Capcut.<br>
-          - Menengah memahami HTML, CSS, Database Mysql (Membuat web dan aplikasi).<br>
-          - Mensetting CCTV, VAR, Mesin Print.<br>
-          - Melakukan transaksi dan laporan penjualan.
-
-      </p>
-      <div class="arrow left" onclick="prevQuestion(5)">&#10094;</div>
-      <div class="arrow right" onclick="nextQuestion(5)">&#10095;</div>
-    </div>
-
-    <div class="qa-box" id="qa-6">
-      <h2>Motivasi Saya Bekerja?</h2>
-      <p>Saya ingin mencari pekerjaan di mana saya dapat bekerja tanpa harus berurusan dengan hal-hal yang bertentangan dengan keyakinan saya. Saya berkomitmen untuk memberikan yang terbaik dan bekerja keras agar dapat menjadi karyawan tetap yang berkontribusi secara positif bagi pertumbuhan dan kesuksesan perusahaan.
-    </p>
-      <div class="arrow left" onclick="prevQuestion(6)">&#10094;</div>
-      <div class="arrow right" onclick="nextQuestion(6)">&#10095;</div>
-    </div>
-
-    <div class="qa-box" id="qa-7">
-      <h2>Kenapa Harus Menerima Saya?</h2>
-      <p>Karena saya meyakini bahwa attitude merupakan aspek yang paling penting, saya mengutamakan sikap positif dalam segala hal daripada faktor-faktor lain seperti pendidikan, harta, atau keterampilan. Saya percaya bahwa sedikit calon pelamar yang memiliki attitude baik yang dapat saya tawarkan, dan saya yakin bahwa sikap saya yang positif, komitmen, dan dedikasi akan membawa dampak positif bagi perusahaan ini.
-    </p>
-      <div class="arrow left" onclick="prevQuestion(7)">&#10094;</div>
-      <div class="arrow right" onclick="nextQuestion(7)">&#10095;</div>
-    </div>
-
-     <div class="qa-box" id="qa-8">
-      <h2>Siap ditempatkan dimana saja?</h2>
-      <p>Saya siap ditempatkan di mana saja yang dibutuhkan oleh perusahaan. Saya memiliki fleksibilitas dan kesiapan untuk menyesuaikan diri dengan lingkungan kerja yang baru, serta siap untuk belajar dan beradaptasi dengan tugas dan tanggung jawab yang diberikan.
-    </p>
-      <div class="arrow left" onclick="prevQuestion(8)">&#10094;</div>
-      <div class="arrow right" onclick="nextQuestion(8)">&#10095;</div>
-    </div>
-
-    <div class="qa-box" id="qa-9">
-      <h2>Gaji Yang Diharapkan?</h2>
-      <p>Range gaji yang saya harapkan Rp. 2.000.000,00 - Rp. 5.000.000,00 atau 2 Juta - 5 Juta Rupiah.
-    </p>
-      <div class="arrow left" onclick="prevQuestion(9)">&#10094;</div>
-      <div class="arrow right" onclick="nextQuestion(9)">&#10095;</div>
-    </div>
-
-  </div>
-</section>
-
-<script>
-  document.getElementById('qa-1').style.display = 'block';
-
-  function nextQuestion(currentQuestion) {
-    var nextQuestion = currentQuestion + 1;
-    var currentBox = document.getElementById('qa-' + currentQuestion);
-    var nextBox = document.getElementById('qa-' + nextQuestion);
-
-    currentBox.style.display = 'none';
-    if (nextBox) {
-      nextBox.style.display = 'block';
-    } else {
-      document.getElementById('qa-1').style.display = 'block';
-    }
-  }
-
-  function prevQuestion(currentQuestion) {
-    var prevQuestion = currentQuestion - 1;
-    var currentBox = document.getElementById('qa-' + currentQuestion);
-    var prevBox = document.getElementById('qa-' + prevQuestion);
-
-    currentBox.style.display = 'none';
-    if (prevBox) {
-      prevBox.style.display = 'block';
-    } else {
-      var lastQuestion = document.querySelectorAll('.qa-box').length;
-      document.getElementById('qa-' + lastQuestion).style.display = 'block';
-    }
-  }
-</script>
-
-
-
-
-<!-- Konten Project -->
-<section id="projects" class="bg-light py-5">
+<!-- ABOUT -->
+<section id="about">
   <div class="container">
-    <h2 class="text-center mb-4">Projects</h2>
-    
-    <!-- Filter Buttons -->
-    <div class="text-center mb-4 ">
-      <button class="btn btn-primary filter-btn active" data-filter="all" style="margin-bottom:5px;">All</button>
-      <button class="btn btn-primary filter-btn" data-filter="program" style="margin-bottom:5px;">Program</button>
-      <button class="btn btn-primary filter-btn" data-filter="network" style="margin-bottom: 5px;">Network</button>
-      <button class="btn btn-primary filter-btn" data-filter="design" style="margin-bottom: 5px;">Design</button>
-      <button class="btn btn-primary filter-btn" data-filter="other"style="margin-bottom:5px;">Other</button>
-    </div>
-    
-    <!-- Projects -->
-    <div class="row" style="display: flex;">
-
-      <!-- Project 1 -->
-    <div class="col-md-4 project-item program" style="padding-bottom: 15px;">
-      <div class="card custom-card-frame" >
-      <img src="aplikasikasir.png" class="card-img-top w-100" alt="Fiber Mall Cepat" style="height: 60vh; overflow-y: auto;">
-      <div class="card-body">
-      <h5 class="card-title">Membuat Aplikasi POS Kasir Sederhana</h5>
-      <p class="card-text">Saya pernah membuat aplikasi pos kasir desktop sederhana dengan menggunakan php mysql. Yang memiliki sistem login, data stock, transaksi dan history penjualan
-      demo : <a href="https://youtu.be/GV9RhYCcAbI?si=F3hyAZcKFwdGiwrh">https://youtu.be/GV9RhYCcAbI?si=F3hyAZcKFwdGiwrh</a></p>
-  
-<button class="btn btn-primary detail-btn">Detail</button>
-
-
+    <span class="section-tag fade-in">Tentang Saya</span>
+    <h2 class="section-title fade-in">Siapa Saya?</h2>
+    <div class="about-grid">
+      <div class="about-text fade-in">
+        <p>Saya adalah individu yang memiliki pengalaman kerja di berbagai bidang operasional dan pelayanan. Terbiasa bekerja secara disiplin, bertanggung jawab, serta mampu mengikuti standar kerja yang telah ditetapkan perusahaan.</p>
+        <p>Saya memiliki rasa ingin tahu yang tinggi, kreatif, dan berpikir ke depan. Saya bekerja secara efisien, jujur serta memiliki empati yang baik dan kepedulian terhadap pekerjaan. Saya mampu bekerja secara individu maupun dalam tim.</p>
       </div>
-      </div>
-  </div>
-
-    <!-- Project 1 -->
-    <div class="col-md-4 project-item network" style="padding-bottom: 15px;">
-      <div class="card custom-card-frame" >
-      <img src="dokumentasipemasanganfiber.jpg" class="card-img-top w-100" alt="Fiber Mall Cepat" style="height: 60vh; overflow-y: auto;">
-      <div class="card-body">
-      <h5 class="card-title">Proses Pemasangan Fiber di Mall</h5>
-      <p class="card-text">Sebagai teknisi NEXT1, tugas saya adalah memastikan pemasangan Internet di area Mall berjalan dengan optimal dan sesuai dengan kebutuhan klien, sehingga dapat digunakan dengan lancar dan memuaskan bagi para pengguna.</p>
-  
-<button class="btn btn-primary detail-btn">Detail</button>
-
-
-      </div>
-      </div>
-  </div>
-
-
-  <!-- Project 2 -->
-    <div class="col-md-4 project-item network" style="padding-bottom: 15px;">
-      <div class="card custom-card-frame" >
-      <img src="dokumentasipemasanganfiber2.jpg" class="card-img-top w-100" alt="Fiber Ruko Cepat" style="height: 60vh; overflow-y: auto;">
-      <div class="card-body">
-      <h5 class="card-title">Proses Pemasangan Fiber Untuk Ruko</h5>
-      <p class="card-text">Sebagai teknisi Next1, saya bertanggung jawab memastikan pemasangan Internet untuk ruko berjalan lancar, sehingga memenuhi kebutuhan klien dengan optimal dan memberikan pengalaman pengguna yang memuaskan.</p>
-      <button class="btn btn-primary detail-btn">Detail</button>
-      </div>
-      </div>
-  </div>
-
-
-<!-- Project 3 -->
- <div class="col-md-4 project-item network" style="padding-bottom: 15px;">
-      <div class="card custom-card-frame" >
-      <img src="ModemFO.jpeg" class="card-img-top w-100" alt="Pemasangan Fiber Cepat" style="height: 60vh; overflow-y: auto;">
-      <div class="card-body">
-      <h5 class="card-title">Hasil Pemasangan Modem Fiber</h5>
-      <p class="card-text">Sebagai seorang teknisi, saya harus memastikan hasil pemasangan perangkat Internet yang rapi dan berkualitas untuk memenuhi standar kualitas dan kepuasan klien.</p>
-      <button class="btn btn-primary detail-btn">Detail</button>
-      </div>
-      </div>
-  </div>
-    
-
-    <!-- Project 4 -->
- <div class="col-md-4 project-item network" style="padding-bottom: 15px;">
-      <div class="card custom-card-frame" >
-      <img src="HasilPemasanganModemCard.jpg" class="card-img-top w-100" alt="Project 1 Image" style="height: 60vh; overflow-y: auto;">
-      <div class="card-body">
-      <h5 class="card-title">Hasil Pemasangan Modem Card</h5>
-      <p class="card-text">Saya juga bertanggung jawab dalam pemasangan modem card dan perangkat MikroTik sebagai solusi backup atau untuk outlet-outlet outdoor serta di mal yang tidak memiliki akses jalur fiber, memastikan infrastruktur jaringan tetap berjalan dengan lancar dan dapat diandalkan.</p>
-      <button class="btn btn-primary detail-btn">Detail</button>
-      </div>
-      </div>
-  </div>
-    
-    <!-- Project 5 -->
- <div class="col-md-4 project-item network" style="padding-bottom: 15px;">
-      <div class="card custom-card-frame" >
-      <img src="AllPerangkatOffice.jpg" class="card-img-top w-100" alt="Perangkat MikroTik" style="height: 60vh; overflow-y: auto;">
-      <div class="card-body">
-      <h5 class="card-title">Beberapa Perangkat Yang Saya Gunakan</h5>
-      <p class="card-text">Selain melakukan pengaturan modem, saya juga bertanggung jawab untuk melakukan konfigurasi pada perangkat MikroTik seperti RB931haP mini, RB941, RBSXT, RBwAPR-2ND, dan berbagai merek akses point lainnya, memastikan infrastruktur jaringan beroperasi dengan efisien dan optimal sesuai kebutuhan klien.</p>
-      <button class="btn btn-primary detail-btn">Detail</button>
-      </div>
-      </div>
-  </div>
-
-  <!-- Project 6 -->
- <div class="col-md-4 project-item network" style="padding-bottom: 15px;">
-      <div class="card custom-card-frame" >
-      <img src="CrimpingLan.jpg" class="card-img-top w-100" alt="Crimping Lan" style="height: 60vh; overflow-y: auto;">
-      <div class="card-body">
-      <h5 class="card-title">Crimping Lan</h5>
-      <p class="card-text">Sebagai seorang teknisi, saya juga melakukan pengecekan dan crimping ulang kabel LAN untuk memastikan aliran data berjalan lancar dan konsisten, sehingga infrastruktur jaringan dapat beroperasi secara optimal.</p>
-    <button class="btn btn-primary detail-btn">Detail</button>
-      </div>
-      </div>
-  </div>
-
- <!-- Project 7 -->
- <div class="col-md-4 project-item design" style="padding-bottom: 15px;">
-      <div class="card custom-card-frame" >
-      <img src="membuatlogosmk43d.gif" class="card-img-top w-100" alt="Membuat Logo 3D" style="height: 60vh; overflow-y: auto;">
-      <div class="card-body">
-      <h5 class="card-title">Membuat logo SMK 4 3D</h5>
-      <p class="card-text">Saya juga memiliki pengalaman dalam membantu sekolah untuk membuat logo 3D, menghadirkan desain yang kreatif dan menarik untuk memperkuat identitas visual mereka.</p>
-    <button class="btn btn-primary detail-btn">Detail</button>
-      </div>
-      </div>
-  </div>
-
-  <!-- Project 8 -->
- <div class="col-md-4 project-item design" style="padding-bottom: 15px;">
-      <div class="card custom-card-frame" >
-      <img src="membuatlogowika3d.jpg" class="card-img-top w-100" alt="Logo WIKA 3D" style="height: 60vh; overflow-y: auto;">
-      <div class="card-body">
-      <h5 class="card-title">Membuat Logo WIKA 3D</h5>
-      <p class="card-text">Ketika saya menjalani magang di WIKA REKAYASA KONSTRUKSI, saya dipercaya untuk membuat model logo mereka dalam bentuk 3D, memberikan kontribusi yang berarti dalam mengembangkan identitas visual perusahaan tersebut.</p>
-       <button class="btn btn-primary detail-btn">Detail</button>
-      </div>
-      </div>
-  </div>
-
-  <!-- Project 8 -->
- <div class="col-md-4 project-item other" style="padding-bottom: 15px;">
-      <div class="card custom-card-frame" >
-      <img src="membersihkanperangkatwarnet.jpg" class="card-img-top w-100" alt="Membersihkan Store" style="height: 60vh; overflow-y: auto;">
-      <div class="card-body">
-      <h5 class="card-title">Membersihkan Perangkat</h5>
-      <p class="card-text">Sebagai Crew Store Internet Gaming Cafe di Gamer Village, tanggung jawab saya meliputi menjaga kebersihan ruang toko, kafe, warnet, toilet, serta perangkat yang ada, memastikan lingkungan yang bersih dan nyaman bagi para pengunjung untuk menikmati pengalaman gaming yang optimal.</p>
-       <button class="btn btn-primary detail-btn">Detail</button>
-      </div>
-      </div>
-  </div>
-
-  <!-- Project 8 -->
- <div class="col-md-4 project-item other" style="padding-bottom: 15px;">
-      <div class="card custom-card-frame" >
-      <img src="pemasanganperangkat.jpg" class="card-img-top w-100" alt="Pemasangan Perangkat Untuk User" style="height: 60vh; overflow-y: auto;">
-      <div class="card-body">
-      <h5 class="card-title">Pemasangan Perangkat Office</h5>
-      <p class="card-text">Ketika saya menjalani magang di WIKA REKAYA KONSTRUKSI, tugas saya meliputi penggantian perangkat yang digunakan oleh pengguna kantor dengan perangkat yang baru, memastikan ketersediaan infrastruktur teknologi yang handal dan sesuai dengan kebutuhan operasional perusahaan.</p>
-     <button class="btn btn-primary detail-btn">Detail</button>
-      </div>
-      </div>
-  </div>
-
-  <!-- Project 9 -->
- <div class="col-md-4 project-item other" style="padding-bottom: 15px;">
-      <div class="card custom-card-frame" >
-      <img src="menghitungstockdanrestockgudang.jpg" class="card-img-top w-100" alt="Jobdesk Gudang" style="height: 60vh; overflow-y: auto;">
-      <div class="card-body">
-      <h5 class="card-title">Melakukan Restock Gudang</h5>
-      <p class="card-text">Ketika bekerja di Gamer Village, tanggung jawab saya adalah memastikan stok barang sesuai dengan shift sebelumnya dan melakukan restok untuk shift saya, sehingga pengunjung dapat menikmati pengalaman gaming tanpa hambatan.</p>
-<button class="btn btn-primary detail-btn">Detail</button>
-      </div>
-      </div>
-  </div>
-
-  <!-- Project 10 -->
- <div class="col-md-4 project-item other" style="padding-bottom: 15px;">
-      <div class="card custom-card-frame" >
-      <img src="melayanipelanggan.jpg" class="card-img-top w-100" alt="Transaksi Crew Store" style="height: 60vh; overflow-y: auto;">
-      <div class="card-body">
-      <h5 class="card-title">Melakukan Transaksi Dengan Pelanggan</h5>
-      <p class="card-text">Selain itu, di Gamer Village, saya juga bertanggung jawab memastikan bahwa transaksi berjalan lancar dan para pelanggan merasa puas dengan layanan yang diberikan, menciptakan pengalaman bermain yang menyenangkan dan memuaskan bagi semua pengunjung.</p>
-    <button class="btn btn-primary detail-btn">Detail</button>
-      </div>
-      </div>
-  </div>
-
-  <!-- Project 11 -->
- <div class="col-md-4 project-item program" style="padding-bottom: 15px;">
-      <div class="card custom-card-frame" >
-      <img src="formlogin.png" class="card-img-top w-100" alt="Database form login" style="height: 60vh; overflow-y: auto;">
-      <div class="card-body">
-      <h5 class="card-title">Membuat Form Login Untuk Aplikasi atau Web</h5>
-      <p class="card-text">Ketika saya menjalani magang di WIKA REKAYA KONSTRUKSI, saya ditugaskan untuk membuat sistem login dengan database MySQL. Untuk demo, Anda dapat melihatnya di <a href="https://youtu.be/NnFJDT2ykFY?si=yoEFDUmLZ3ID31vV">https://youtu.be/NnFJDT2ykFY?si=yoEFDUmLZ3ID31vV</a>.</p>
-     <button class="btn btn-primary detail-btn">Detail</button>
-      </div>
-      </div>
-    </div>
-
-      <!-- Project 12 -->
- <div class="col-md-4 project-item other" style="padding-bottom: 15px;">
-      <div class="card custom-card-frame" >
-      <img src="systemdatastock.png" class="card-img-top w-100" alt="System Gudang" style="height: 60vh; overflow-y: auto;">
-      <div class="card-body">
-      <h5 class="card-title">Membuat System Data Stock by Excel</h5>
-      <p class="card-text">Saya juga pernah ditugaskan untuk membuat sistem gudang menggunakan Excel, dimana saya memanfaatkan fungsi SUM, IF, dan VLOOKUP untuk mempermudah pembuatan laporan pergantian shift. Hal ini membantu dalam mengoptimalkan pengelolaan gudang dan penyusunan laporan dengan lebih efisien. Untuk demo bisa dilihat <a href="https://youtu.be/hUizKvtpLu0?si=qnNwTb0_DqoUxObr">https://youtu.be/hUizKvtpLu0?si=qnNwTb0_DqoUxObr</a></p>
-     <button class="btn btn-primary detail-btn">Detail</button>
-      </div>
-      </div>
-  </div>
-
-  <!-- Project 13 -->
- <div class="col-md-4 project-item design" style="padding-bottom: 15px;">
-      <div class="card custom-card-frame" >
-      <img src="membuatilustrasi.png" class="card-img-top w-100" alt="Ilutrasi Mudah" style="height: 60vh; overflow-y: auto;">
-      <div class="card-body">
-      <h5 class="card-title">Membuat ART</h5>
-      <p class="card-text">Saya juga dapat membuat ilustrasi sederhana jika dibutuhkan :).</p>
- <button class="btn btn-primary detail-btn">Detail</button>
-      </div>
-      </div>
-  </div>
-
-  <!-- Project 14 -->
- <div class="col-md-4 project-item program" style="padding-bottom: 15px;">
-      <div class="card custom-card-frame" >
-      <img src="membuatwebportofoliopribadi.png" class="card-img-top w-100" alt="Simple Portofolio" style="height: 60vh; overflow-y: auto;">
-      <div class="card-body">
-      <h5 class="card-title">Membuat Web Portofolio Pribadi</h5>
-      <p class="card-text">Saya dapat membuat web portofolio pribadi statis menggunakan HTML dan CSS.</p>
-     <button class="btn btn-primary detail-btn">Detail</button>
-      </div>
-      </div>
-  </div>
-
-  <!-- Project 15 -->
- <div class="col-md-4 project-item network" style="padding-bottom: 15px;">
-      <div class="card custom-card-frame" >
-      <img src="idcard.jpg" class="card-img-top w-100" alt="ID Card" style="height: 60vh; overflow-y: auto;">
-      <div class="card-body">
-      <h5 class="card-title">ID Card</h5>
-      <p class="card-text">Sebagai seorang teknisi, saya diwajibkan membawa ID card saat bertugas sebagai tanda pengenal resmi saya.</p>
-      <button class="btn btn-primary detail-btn">Detail</button>
-      </div>
-      </div>
-  </div>
-
-
-  <!-- Project 16 -->
- <div class="col-md-4 project-item other" style="padding-bottom: 15px;">
-      <div class="card custom-card-frame" >
-      <img src="akhirmagang.jpg" class="card-img-top w-100" alt="Akhir Magang" style="height: 60vh; overflow-y: auto;">
-      <div class="card-body">
-      <h5 class="card-title">Akhir Magang</h5>
-      <p class="card-text">Part of journey is end</p>
-      <button class="btn btn-primary detail-btn">Detail</button>
-      </div>
-      </div>
-  </div>
-
-
- <!-- Project 17 -->
- <div class="col-md-4 project-item network" style="padding-bottom: 15px;">
-      <div class="card custom-card-frame" >
-      <img src="MonitoringJaringanInternet.jpg" class="card-img-top w-100" alt="Monitoring Network" style="height: 60vh; overflow-y: auto;">
-      <div class="card-body">
-      <h5 class="card-title">Monitoring Network</h5>
-      <p class="card-text">Ketika tidak ada pemasangan yang perlu dilakukan, saya diwajibkan untuk berada dalam posisi siaga, memantau jaringan internet klien dengan menggunakan PRTG.</p>
-      <button class="btn btn-primary detail-btn">Detail</button>
-      </div>
-      </div>
-  </div>
-
-   <!-- Project 18 -->
- <div class="col-md-4 project-item network" style="padding-bottom: 15px;">
-      <div class="card custom-card-frame" >
-      <img src="Laporan.jpg" class="card-img-top w-100" alt="Laporan Monitoring Network" style="height: 60vh; overflow-y: auto;">
-      <div class="card-body">
-      <h5 class="card-title">Laporan Monitoring Network</h5>
-      <p class="card-text">Saya juga bertanggung jawab untuk menyusun laporan harian mengenai masalah internet yang dialami oleh klien.</p>
-      <button class="btn btn-primary detail-btn">Detail</button>
-      </div>
-      </div>
-  </div>
-
-  <!-- Project 19 -->
- <div class="col-md-4 project-item program" style="padding-bottom: 15px;">
-      <div class="card custom-card-frame" >
-      <img src="webkayu.png" class="card-img-top w-100" alt="web kayu" style="height: 60vh; overflow-y: auto;">
-      <div class="card-body">
-      <h5 class="card-title">Pembuatan Web Untuk Identitas Pabrik Kayu</h5>
-      <p class="card-text">Saya pernah diminta oleh sebuah pabrik kayu untuk membuatkan sebuah website yang mencerminkan identitas perusahaan mereka. Untuk melihat demo, Anda dapat mengunjungi link <a href="https://youtu.be/NB8-4YLBKW8?si=T-m_6Wj06dEAYE_2">https://youtu.be/NB8-4YLBKW8?si=T-m_6Wj06dEAYE_2</a>.
-      Hasil atau jika anda ingin membeli kayu (bukan promosi) <a href:"https://kayualamindonesiaku.github.io/">https://kayualamindonesiaku.github.io/</a></p>
-        
-      <button class="btn btn-primary detail-btn">Detail</button>
-      </div>
-      </div>
-  </div>
-
-<div class="modal-container">
-    <div class="modal-content">
-      <span class="close-btn">&times;</span>
-      <img class="full-img" src="" alt="">
-    </div>
-  </div>
-
-
-
- 
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const projectItems = document.querySelectorAll('.project-item');
-
-  filterButtons.forEach(function(button) {
-    button.addEventListener('click', function() {
-      const filter = this.dataset.filter;
-      filterButtons.forEach(function(btn) {
-        btn.classList.remove('active');
-      });
-      this.classList.add('active');
-
-      projectItems.forEach(function(item) {
-        if (filter === 'all' || item.classList.contains(filter)) {
-          item.style.display = 'block'; // Tampilkan proyek jika sesuai dengan filter atau filter adalah "all"
-        } else {
-          item.style.display = 'none'; // Sembunyikan proyek jika tidak sesuai dengan filter
-        }
-      });
-    });
-  });
-});
-
-// card 
-document.addEventListener('DOMContentLoaded', function () {
-  const detailButtons = document.querySelectorAll('.detail-btn');
-  const modalContainer = document.querySelector('.modal-container');
-  const fullImg = document.querySelector('.full-img');
-  const closeButton = document.querySelector('.close-btn');
-
-  detailButtons.forEach(button => {
-    button.addEventListener('click', function () {
-      const imgSrc = this.parentElement.previousElementSibling.src;
-      fullImg.src = imgSrc;
-      modalContainer.style.display = 'block';
-    });
-  });
-
-  closeButton.addEventListener('click', function () {
-  console.log("Tombol close diklik"); // Periksa apakah fungsi ini dijalankan saat tombol close diklik
-  modalContainer.style.display = 'none';
-});
-
-  modalContainer.addEventListener('click', function (event) {
-    if (event.target === modalContainer) {
-      modalContainer.style.display = 'none';
-    }
-  });
-});
-</script>
-
-
-  
-
-</section>
-
-
-
-
-
-
-<!-- Contact-->
-<section class="contact-section" id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h2 class="text-center">Contact Me</h2>
-          <div class="contact-icons">
-            <img src="gmail.png" alt="Gmail Logo">
-            <a href="mailto:syahputraridho3@gmail.com" class="btn btn-primary btn-social">Email</a><br>
-            <img src="whatsapp.png" alt="WhatsApp Logo">
-            <a href="https://wa.me/6287884306840" class="btn btn-success btn-social">WhatsApp</a><br>
-            <img src="instagram.png" alt="Instagram Logo">
-            <a href="https://www.instagram.com/ridho.s10?igsh=MWxnM2tjc2FjZWVpag==" class="btn btn-danger btn-social">Instagram</a><br>
-            <img src="facebook.png" alt="Facebook Logo">
-            <a href="https://www.facebook.com/ridho.syaputra.12139?mibextid=ZbWKwL" class="btn btn-info btn-social">Facebook</a>
-          </div>
+      <div class="fade-in">
+        <div class="value-card">
+          <div class="value-icon">🛡️</div>
+          <div><h4>Integritas</h4><p>Bekerja dengan kejujuran dan tanggung jawab tinggi.</p></div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">💼</div>
+          <div><h4>Profesional</h4><p>Menyelesaikan pekerjaan dengan standar kerja yang baik.</p></div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">✅</div>
+          <div><h4>Disiplin</h4><p>Tidak merokok, tidak minum alkohol, dan tidak berjudi.</p></div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-tag fade-in">Keahlian</span>
+      <h2 class="section-title fade-in">Kemampuan Teknis</h2>
+      <p class="section-sub fade-in">Kemampuan teknis yang saya kuasai selama bertahun-tahun</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card fade-in" style="--skill-color:#3b82f6">
+        <div class="skill-icon" style="background:rgba(59,130,246,0.1);border-color:rgba(59,130,246,0.2)">🖥️</div>
+        <h3>Hardware</h3>
+        <ul>
+          <li>Perakitan & Troubleshooting PC</li>
+          <li>Install Windows</li>
+          <li>Maintenance Perangkat</li>
+        </ul>
+      </div>
+      <div class="skill-card fade-in" style="--skill-color:#a855f7">
+        <div class="skill-icon" style="background:rgba(168,85,247,0.1);border-color:rgba(168,85,247,0.2)">🧠</div>
+        <h3>Software</h3>
+        <ul>
+          <li>Troubleshooting Software</li>
+          <li>Microsoft Office</li>
+          <li>Adobe Photoshop</li>
+          <li>HTML, CSS, JavaScript</li>
+        </ul>
+      </div>
+      <div class="skill-card fade-in" style="--skill-color:#22c55e">
+        <div class="skill-icon" style="background:rgba(34,197,94,0.1);border-color:rgba(34,197,94,0.2)">🌐</div>
+        <h3>Networking</h3>
+        <ul>
+          <li>Crimping LAN</li>
+          <li>Router & Switch</li>
+          <li>Access Point Setup</li>
+        </ul>
+      </div>
+      <div class="skill-card fade-in" style="--skill-color:#f97316">
+        <div class="skill-icon" style="background:rgba(249,115,22,0.1);border-color:rgba(249,115,22,0.2)">🛠️</div>
+        <h3>IT Support</h3>
+        <ul>
+          <li>Troubleshooting Printer</li>
+          <li>Konfigurasi CCTV</li>
+          <li>Mesin EDC</li>
+          <li>Remote Support</li>
+          <li>Stock OP Name</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-tag fade-in">Pengalaman Kerja</span>
+      <h2 class="section-title fade-in">Perjalanan Profesional</h2>
+      <p class="section-sub fade-in">Klik panah bawah untuk melihat proyek yang dikerjakan</p>
+    </div>
+    <div class="exp-list">
+
+      <!-- WIKA -->
+      <div class="exp-item fade-in">
+        <div class="exp-header" onclick="toggleExp(this)">
+          <div class="exp-header-left">
+            <div class="exp-badge" style="background:rgba(59,130,246,0.1);border-color:rgba(59,130,246,0.2)"><img src="logowika.png"></div>
+            <div class="exp-meta">
+              <h3><a href="https://wikarekon.co.id/id/" target="_blank" class="exp-link">WIKA Rekayasa Konstruksi</a></h3>
+              <span>Pengalaman Pertama · 7 proyek</span>
+            </div>
+          </div>
+          <div class="exp-arrow-wrap">▾</div>
+        </div>
+        <div class="exp-body">
+          <div class="project-grid">
+
+            <div class="project-card"><img src="portofoliowika/prosesupgradedanpemasanganperangkat.jpg" alt="PC Office" onclick="showImage(this.src)"><div class="project-info"><h4>Pemasangan & Troubleshooting PC Office</h4><p>Melakukan instalasi, konfigurasi, serta troubleshooting perangkat komputer kantor untuk memastikan performa optimal dan mendukung kelancaran operasional.</p>
+            </div></div>
+
+            <div class="project-card"><img src="portofoliowika/formlogin.png" alt="Form Login" onclick="showImage(this.src)"><div class="project-info"><h4>Pengembangan Form Login (HTML, PHP & MySQL)</h4><p>Membangun sistem autentikasi berbasis web menggunakan HTML, PHP, dan MySQL untuk meningkatkan keamanan akses pengguna pada aplikasi internal.</p>
+            </div></div>
+
+            <div class="project-card"><img src="portofoliowika/membuatlogowika3d.jpg" alt="Logo 3D" onclick="showImage(this.src)"><div class="project-info"><h4>Animasi Logo 3D Sederhana</h4><p>Mendesain, mengubah, membuat animasi logo 3D sebagai media visual branding menggunakan software desain grafis.</p></div></div>
+
+            <div class="project-card"><img src="portofoliowika/membuatlogosmk43d.gif" alt="Logo 3D" onclick="showImage(this.src)"><div class="project-info"><h4>Animasi Logo 3D Sederhana</h4><p>Mendesain, mengubah, membuat animasi logo 3D sebagai media visual branding menggunakan software desain grafis.</p></div></div>
+
+            <div class="project-card"><img src="portofoliowika/aplikasikasir.png" alt="Kasir POS" onclick="showImage(this.src)"><div class="project-info"><h4>Aplikasi Kasir (POS) Sederhana</h4><p>Membangun aplikasi kasir berbasis web untuk mencatat transaksi penjualan, mengelola data produk, dan menghasilkan laporan sederhana.</p></div></div>
+
+            <div class="project-card"><img src="portofoliowika/editingvideolaporanhasilpkl.jpeg" alt="Editing Video" onclick="showImage(this.src)"><div class="project-info"><h4>Editing Video</h4><p>Mengedit dan menyusun video laporan hasil PKL agar lebih informatif, menarik, dan mudah dipahami.</p></div></div>
+
+            <div class="project-card"><img src="portofoliowika/membuatilustrasi.png" alt="Kasir POS" onclick="showImage(this.src)"><div class="project-info"><h4>Membuat ART Sederhana</h4><p>Mendesain ilustrasi grafis sederhana menggunakan Adobe Photoshop untuk kebutuhan visual.</p></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEXT1 -->
+      <div class="exp-item fade-in">
+        <div class="exp-header" onclick="toggleExp(this)">
+          <div class="exp-header-left">
+            <div class="exp-badge" style="background:rgba(34,197,94,0.1);border-color:rgba(34,197,94,0.2)"><img src="logonext1.png"></div>
+            <div class="exp-meta">
+              <h3><a href="https://next1.id/" target="_blank" class="exp-link">NEXT1</a></h3>
+              <span>ISP Networking · 7 proyek</span>
+            </div>
+          </div>
+          <div class="exp-arrow-wrap">▾</div>
+        </div>
+        <div class="exp-body">
+          <div class="project-grid">
+
+            <div class="project-card"><img src="portofolionext1/perangkatyangdigunakan.jpeg" alt="perangkat yang digunakan" onclick="showImage(this.src)"><div class="project-info"><h4>Konfigurasi dan Pemasangan Perangkat</h4><p>Melakukan instalasi dan konfigurasi perangkat jaringan internet di lokasi pelanggan untuk memastikan koneksi berjalan stabil.</p></div></div>
+
+            <div class="project-card"><img src="portofolionext1/pemotetandilapangan.jpeg" alt="doumentasi dilapangan" onclick="showImage(this.src)"><div class="project-info"><h4>Proses Pemasangan Fiber Optik</h4><p>Melakukan instalasi kabel dan perangkat fiber optik, termasuk konfigurasi modem untuk koneksi internet berkecepatan tinggi.</p></div></div>
+
+            <div class="project-card"><img src="portofolionext1/membuatplantopologi.jpeg" alt="pembuatan topologi" onclick="showImage(this.src)"><div class="project-info"><h4>Mempersiapkan Topologi</h4><p>Mendesain dan menyesuaikan topologi jaringan sesuai kebutuhan pelanggan agar efisien dan mudah dikelola.</p></div></div>
+
+            <div class="project-card"><img src="portofolionext1/MonitoringJaringanInternet.jpg" alt="monitoring jaringan" onclick="showImage(this.src)"><div class="project-info"><h4>Monitoring Jaringan via VPN</h4><p>Melakukan pemantauan jaringan pelanggan secara remote menggunakan VPN untuk memastikan performa tetap optimal.</p></div></div>
+
+            <div class="project-card"><img src="portofolionext1/Laporan.jpg" alt="Laporan Ticket Harian" onclick="showImage(this.src)"><div class="project-info"><h4>Laporan Ticket</h4><p>Menyusun laporan harian terkait penyelesaian masalah jaringan berdasarkan sistem ticketing.</p></div></div>
+
+            <div class="project-card"><img src="portofolionext1/hasilpemasanganperangkat1.jpeg" alt="Dokumentasi Perangkat Terpasang" onclick="showImage(this.src)"><div class="project-info"><h4>Hasil Pemasangan</h4><p>Dokumentasi hasil instalasi perangkat jaringan sebagai bukti pekerjaan dan evaluasi kualitas.</p></div></div>
+
+            <div class="project-card"><img src="portofolionext1/hasilpemasanganperangkat2.jpeg" alt="Dokumentasi Perangkat Terpasang 2" onclick="showImage(this.src)"><div class="project-info"><h4>Hasil Pemasangan</h4><p>Dokumentasi hasil instalasi perangkat jaringan sebagai bukti pekerjaan dan evaluasi kualitas.</p></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GAMER VILLAGE -->
+      <div class="exp-item fade-in">
+        <div class="exp-header" onclick="toggleExp(this)">
+          <div class="exp-header-left">
+            <div class="exp-badge" style="background:rgba(168,85,247,0.1);border-color:rgba(168,85,247,0.2)"><img src="logogamervillage.png"></div>
+            <div class="exp-meta">
+              <h3><a href="https://www.instagram.com/esportgamervillage/" target="_blank" class="exp-link">Gamer Village</a></h3>
+              <span>IT & Operasional · 5 proyek</span>
+            </div>
+          </div>
+          <div class="exp-arrow-wrap">▾</div>
+        </div>
+        <div class="exp-body">
+          <div class="project-grid">
+            <div class="project-card"><img src="portofoliogamervillage/maintenancedanmembersihkanperangkatwarnet.jpg" alt="Maintenance Perangkat" onclick="showImage(this.src)"><div class="project-info"><h4>Maintenance & Pembersihan Perangkat</h4><p>Melakukan perawatan rutin dan pembersihan perangkat komputer untuk menjaga performa dan umur perangkat.</p></div></div>
+
+            <div class="project-card"><img src="portofoliogamervillage/melayanipelanggan.jpg" alt="Melayani Pelanggan" onclick="showImage(this.src)"><div class="project-info"><h4>Pelayanan Pelanggan</h4><p>Memberikan pelayanan yang ramah, cepat, dan responsif kepada pelanggan dalam penggunaan fasilitas.</p></div></div>
+
+            <div class="project-card"><img src="portofoliogamervillage/menghitungstockdanrestockgudang.jpg" alt="Stock OP Name" onclick="showImage(this.src)"><div class="project-info"><h4>Manajemen Stok & Stock Opname</h4><p>Mengelola stok barang serta melakukan pengecekan rutin untuk memastikan ketersediaan dan keakuratan data.</p></div></div>
+
+            <div class="project-card"><img src="portofoliogamervillage/systemdatastock.png" alt="Laporan Harian" onclick="showImage(this.src)"><div class="project-info"><h4>Laporan Closing (Microsoft Excel)</h4><p>Membuat laporan operasional harian menggunakan rumus Excel seperti SUM, IF, dan VLOOKUP untuk analisis data.</p></div></div>
+
+            <div class="project-card"><img src="portofoliogamervillage/monitoringbilling.jpeg" alt="Monitoring Billing" onclick="showImage(this.src)"><div class="project-info"><h4>Monitoring Billing</h4><p>Memastikan sistem billing berjalan dengan normal dan menangani kendala yang muncul secara cepat.</p></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VISIONET -->
+      <div class="exp-item fade-in">
+        <div class="exp-header" onclick="toggleExp(this)">
+          <div class="exp-header-left">
+            <div class="exp-badge" style="background:rgba(249,115,22,0.1);border-color:rgba(249,115,22,0.2)"><img src="logovisionet.png"></div>
+            <div class="exp-meta">
+              <h3><a href="https://www.visionet.co.id/" target="_blank" class="exp-link">PT Visionet Data Internasional</a></h3>
+              <span>Perbankan & IT · 16 proyek</span>
+            </div>
+          </div>
+          <div class="exp-arrow-wrap">▾</div>
+        </div>
+        <div class="exp-body">
+          <div class="project-grid">
+            <div class="project-card"><img src="portofoliovdi/pergantianmesinedc.jpeg" alt="pergantianmesinedc" onclick="showImage(this.src)"><div class="project-info">
+              <h4>Pergantian Mesin EDC</h4><p>Melakukan penggantian perangkat EDC serta memastikan perangkat berfungsi dengan baik sesuai standar operasional.</p>
+              </div></div>
+
+            <div class="project-card"><img src="portofoliovdi/maintenancemesinedc.jpeg" alt="maintenancemesinedc" onclick="showImage(this.src)"><div class="project-info">
+              <h4>Preventive Maintenance EDC</h4><p>Melakukan perawatan berkala untuk menjaga performa dan keandalan mesin EDC.</p>
+              </div></div>
+
+            <div class="project-card"><img src="portofoliovdi/pemasanganmesinedc.jpeg" alt="pemasanganmesinedc" onclick="showImage(this.src)"><div class="project-info">
+              <h4>Instalasi Mesin EDC</h4><p>Melakukan pemasangan dan konfigurasi mesin EDC di lokasi merchant sesuai prosedur.</p>
+              </div></div>
+
+            <div class="project-card"><img src="portofoliovdi/maintenancedvrcctv.jpeg" alt="maintenancedvrcctv" onclick="showImage(this.src)"><div class="project-info">
+              <h4>Perbaikan DVR CCTV</h4><p>Melakukan troubleshooting dan perbaikan DVR CCTV untuk memastikan sistem keamanan berjalan optimal.</p>
+              </div></div>
+
+            <div class="project-card"><img src="portofoliovdi/pengecekanrekamandvrcctv.jpeg" alt="pengecekanrekamandvrcctv" onclick="showImage(this.src)"><div class="project-info">
+              <h4>Pengecekan Rekaman CCTV</h4><p>Melakukan pengecekan hasil rekaman CCTV untuk memastikan sistem recording berjalan dengan baik.</p>
+                </div></div>
+
+            <div class="project-card"><img src="portofoliovdi/pergantianhardiskdvr.png" alt="pergantianhardiskdvr" onclick="showImage(this.src)"><div class="project-info">
+              <h4>Pergantian Hardisk DVR</h4><p>Melakukan penggantian hardisk DVR serta memastikan sistem penyimpanan berjalan normal.</p>
+                </div></div>
+
+            <div class="project-card"><img src="portofoliovdi/maintenanceprinter.png" alt="maintenanceprinter" onclick="showImage(this.src)"><div class="project-info">
+              <h4>Perbaikan Printer</h4><p>Melakukan troubleshooting dan perbaikan printer untuk memastikan perangkat siap digunakan.</p>
+              </div></div>
+
+            <div class="project-card"><img src="portofoliovdi/pemasanganminipc.jpeg" alt="pemasanganminipc" onclick="showImage(this.src)"><div class="project-info">
+              <h4>Pemasangan Mini PC Office</h4><p>Melakukan instalasi dan konfigurasi mini PC Mandiri Utama Finance untuk mendukung kebutuhan operasional kantor.</p>  
+              </div></div>
+
+            <div class="project-card"><img src="portofoliovdi/standarisasisoftwarepcoffice.jpeg" alt="standarisasisoftwarepcoffice" onclick="showImage(this.src)"><div class="project-info">
+              <h4>Instalasi & Standarisasi Software</h4><p>Melakukan instalasi serta standarisasi software pada PC Office Bank BTN sesuai kebijakan kantor.</p>
+              </div></div>
+
+            <div class="project-card"><img src="portofoliovdi/pemasanganpcantirancimbcileungsi.png" alt="pcantrian" onclick="showImage(this.src)"><div class="project-info">
+              <h4>Pemasangan PC Antrian Bank</h4><p>Melakukan instalasi dan konfigurasi PC antrian BANK CIMB Niaga untuk mendukung sistem layanan pelanggan di bank.</p>
+              </div></div>
+
+            <div class="project-card"><img src="portofoliovdi/pergantianfasciaatm.png" alt="fasciaatm" onclick="showImage(this.src)"><div class="project-info">
+              <h4>Pergantian Fascia ATM</h4><p>Melakukan penggantian komponen fascia ATM BANK NOBU sebagai bagian dari perawatan dan peningkatan tampilan mesin.</p>
+              </div></div>
+
+            <div class="project-card"><img src="portofoliovdi/konfigurasimesinatm.jpeg" alt="konfigurasimesinatmi" onclick="showImage(this.src)"><div class="project-info">
+              <h4>Perbaikan Mesin ATM</h4><p>Melakukan troubleshooting dan perbaikan mesin ATM untuk memastikan operasional tetap berjalan normal.</p>
+              </div></div>
+
+            <div class="project-card"><img src="portofoliovdi/pergantianswitchbjbcibubur.png" alt="switchbjbcibubur" onclick="showImage(this.src)"><div class="project-info"><h4>Pergantian Switch Bank BJB Cibubur</h4><p>Melakukan perawatan rutin dan pembersihan perangkat komputer untuk menjaga performa dan umur perangkat.</p></div></div>
+
+            <div class="project-card"><img src="portofoliovdi/pergantianswitchbjbcimanggis.png" alt="switchbjbcimanggis" onclick="showImage(this.src)"><div class="project-info">
+              <h4>Pergantian Switch Jaringan</h4><p>Melakukan penggantian dan konfigurasi switch jaringan Bank BJB untuk memastikan konektivitas tetap stabil.</p>
+              </div></div>
+
+            <div class="project-card"><img src="portofoliovdi/pergantianswitchbjbjatimakmur.png" alt="switchbjbjatimakmur" onclick="showImage(this.src)"><div class="project-info">
+              <h4>Pergantian Switch Jaringan</h4><p>Melakukan penggantian dan konfigurasi switch jaringan Bank BJB untuk memastikan konektivitas tetap stabil.</p>
+              </div></div>
+
+            <div class="project-card"><img src="portofoliovdi/pergantianswitchbjbkrangganmas.png" alt="switchbjbkrangganmas" onclick="showImage(this.src)"><div class="project-info">
+              <h4>Pergantian Switch Jaringan</h4><p>Melakukan penggantian dan konfigurasi switch jaringan Bank BJB untuk memastikan konektivitas tetap stabil.</p>
+              </div></div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:rgba(255,255,255,0.01)">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-tag fade-in">FAQ</span>
+      <h2 class="section-title fade-in">Pertanyaan Umum</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item fade-in">
+        <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-num">01</span><span>Apa motivasi Anda bekerja?</span><span class="faq-arrow">▾</span></button>
+        <div class="faq-a"><p>Saya ingin bekerja di lingkungan yang sejalan dengan nilai dan keyakinan saya. Saya berkomitmen memberikan yang terbaik, bekerja keras, serta terus meningkatkan kemampuan diri agar berkembang menjadi karyawan tetap yang berkontribusi positif bagi perusahaan.</p></div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-num">02</span><span>Apa hobi Anda?</span><span class="faq-arrow">▾</span></button>
+        <div class="faq-a"><p>Saya memiliki hobi membaca komik dan menonton film. Dengan hobi ini, saya dapat meningkatkan kemampuan bahasa Inggris saya.</p></div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-num">03</span><span>Apa kelebihan diri Anda?</span><span class="faq-arrow">▾</span></button>
+        <div class="faq-a"><ul>
+  <li>Jujur dan memiliki tanggung jawab tinggi dalam setiap pekerjaan.</li>
+  <li>Rajin, disiplin, serta memiliki kepedulian yang baik terhadap tugas dan hasil kerja.</li>
+  <li>Kreatif dan memiliki rasa ingin tahu yang tinggi untuk terus belajar hal baru.</li>
+  <li>Mampu berpikir ke depan dan mempertimbangkan dampak dari setiap keputusan.</li>
+  <li>Terbiasa belajar dari pengalaman untuk meningkatkan kualitas diri dan pekerjaan.</li>
+</ul></div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-num">04</span><span>Apa kekurangan diri Anda?</span><span class="faq-arrow">▾</span></button>
+        <div class="faq-a"><ul>
+  <li>Terkadang memiliki sudut pandang yang terlalu positif (naif), namun terus belajar untuk lebih realistis dalam menilai situasi.</li>
+  <li>Masih meningkatkan kepercayaan diri dalam mengambil keputusan dan menyampaikan ide, sehingga terbiasa mempersiapkan diri dengan lebih matang.</li>
+  <li>Cenderung terlalu berhati-hati dalam beberapa situasi, namun hal ini membantu saya lebih teliti dan meminimalisir kesalahan.</li>
+</ul></div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-num">05</span><span>Kenapa kami harus menerima Anda?</span><span class="faq-arrow">▾</span></button>
+        <div class="faq-a"><p>Karena saya meyakini attitude adalah aspek paling penting. Saya mengutamakan sikap positif, komitmen, dan dedikasi yang akan membawa dampak positif bagi perusahaan.</p></div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-num">06</span><span>Siap ditempatkan di mana saja?</span><span class="faq-arrow">▾</span></button>
+        <div class="faq-a"><p>Ya, saya siap ditempatkan di mana saja yang dibutuhkan perusahaan. Saya memiliki fleksibilitas dan kesiapan menyesuaikan diri dengan lingkungan kerja baru.</p></div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-num">07</span><span>Berapa ekspektasi gaji Anda?</span><span class="faq-arrow">▾</span></button>
+        <div class="faq-a"><p>Range gaji yang saya harapkan Rp. 3.000.000 – Rp. 5.000.000 atau dapat disesuaikan dengan kebijakan perusahaan.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="container">
+    <span class="section-tag fade-in">Kontak</span>
+    <h2 class="section-title fade-in">Hubungi Saya</h2>
+    <p class="section-sub fade-in" style="margin:10px auto 0">Terbuka untuk peluang kerja baru atau kolaborasi. Jangan ragu untuk menghubungi saya.</p>
+    <div class="contact-cards">
+      <a href="mailto:syahputraridho3@gmail.com" class="contact-card fade-in">
+        <div class="contact-icon"><img src="gmail.png"></div>
+        <p class="c-label">Email</p>
+        <p class="c-val">syahputraridho3@gmail.com</p>
+      </a>
+      <a href="https://wa.me/6287884306940" class="contact-card fade-in" target="_blank">
+        <div class="contact-icon"><img src="whatsapp.png"></div>
+        <p class="c-label">WhatsApp</p>
+        <p class="c-val">087884306940</p>
+      </a>
+      <a href="https://www.linkedin.com/in/ridho-syaputra-8a1777149/" class="contact-card fade-in" target="_blank">
+        <div class="contact-icon"><img src="linkedin.png"></div>
+        <p class="c-label">LinkedIn</p>
+        <p class="c-val">RIDHO SYAPUTRA</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- SLIDER -->
+  <div class="container" style="padding-top:0">
+    <h2 class="fade-in" style="text-align:center; margin:60px 0 30px; font-size:28px; letter-spacing:3px; color:#3b82f6; font-family:'JetBrains Mono', monospace; position:relative;">
+      MY JOURNEY
+      <span style="display:block; width:60px; height:2px; background:#3b82f6; margin:10px auto 0;"></span>
+    </h2>
+    <div class="slider-wrapper">
+      <div class="slider-track" id="sliderTrack">
+
+        <div class="slide-item"><img src="myjourney/akhirmagang.jpg" onclick="showImage(this.src)"><div class="overlay"><h4>PT WIKA REKAYASA KONSTRUKSI</h4><p>Foto Bersama Team IT</p></div></div>
+        <div class="slide-item"><img src="myjourney/bukbernext1.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>NEXT1</h4><p>Foto Bersama Team Next1 Jakarta</p></div></div>
+        <div class="slide-item"><img src="myjourney/idcardnext1.jpg" onclick="showImage(this.src)"><div class="overlay"><h4>NEXT1</h4><p>Foto ID Card NEXT1</p></div></div>
+        <div class="slide-item"><img src="myjourney/teamvdi.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Foto Team VDI Jakarta Timur</p></div></div>
+        <div class="slide-item"><img src="myjourney/absensipemasanganminipc.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Pemasangan Mini PC Mandiri Utama Finance Cibubur</p></div></div>
+        <div class="slide-item"><img src="myjourney/pcantriancimb.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Pemasangan PC Antrian CIMB Cileungsi</p></div></div>
+        <div class="slide-item"><img src="myjourney/bukber1.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Foto Team VDI Jakarta Timur Halim</p></div></div>
+        <div class="slide-item"><img src="myjourney/bukber2.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Foto Team VDI Jakarta Timur Halim</p></div></div>
+        <div class="slide-item"><img src="myjourney/preparasimesinedc.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Proses Preparasi Mesin EDC</p></div></div>
+        <div class="slide-item"><img src="myjourney/pemasanganmesinedcpanin.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Foto Bersama PIC Merchant Hyam Empuk Metland</p></div></div>
+        <div class="slide-item"><img src="myjourney/sosialisasimerchant.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Foto Bersama PIC Bakso A Fung Mall Ciputra Cibubur</p></div></div>
+        <div class="slide-item"><img src="myjourney/bukber4.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Foto Team VDI Jakarta Timur Halim</p></div></div>
+        <div class="slide-item"><img src="myjourney/fotobersamapicbjbcibubur.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Foto Bersama PIC BJB Cibubur</p></div></div>
+        <div class="slide-item"><img src="myjourney/fotobersamapicbjbcimanggis.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Foto Bersama PIC BJB Cimanggis</p></div></div>
+        <div class="slide-item"><img src="myjourney/fotobersamapicbjbjatimakmur.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Foto Bersama PIC BJB Jatimakmur</p></div></div>
+        <div class="slide-item"><img src="myjourney/fotobersamapicbjbkrangganmas.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Foto Bersama PIC BJB Kranggan Mas</p></div></div>
+        <div class="slide-item"><img src="myjourney/konfigurasimesinatm.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Maintenance Mesin ATM</p></div></div>
+        <div class="slide-item"><img src="myjourney/visionet.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Profile Visionet</p></div></div>
+        <div class="slide-item"><img src="myjourney/edc1.png" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Potret Bersama PIC Kopi Tarik Andalan Living World Kota Wisata</p></div></div>
+        <div class="slide-item"><img src="myjourney/edc2.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Potret Bersama PIC Klinik 24 Ciangsana</p></div></div>
+        <div class="slide-item"><img src="myjourney/edc3.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Potret Bersama PIC Dapur Solo Living World Kota Wisata</p></div></div>
+        <div class="slide-item"><img src="myjourney/edc4.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Potret Bersama PIC Tawan Living World Kota Wisata</p></div></div>
+        
+        <!-- DUPLIKAT untuk infinite loop -->
+        <div class="slide-item"><img src="myjourney/akhirmagang.jpg" onclick="showImage(this.src)"><div class="overlay"><h4>PT WIKA REKAYASA KONSTRUKSI</h4><p>Foto Bersama Team IT</p></div></div>
+        <div class="slide-item"><img src="myjourney/bukbernext1.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>NEXT1</h4><p>Foto Bersama Team Next1 Jakarta</p></div></div>
+        <div class="slide-item"><img src="myjourney/idcardnext1.jpg" onclick="showImage(this.src)"><div class="overlay"><h4>NEXT1</h4><p>Foto ID Card NEXT1</p></div></div>
+        <div class="slide-item"><img src="myjourney/teamvdi.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Foto Team VDI Jakarta Timur</p></div></div>
+        <div class="slide-item"><img src="myjourney/absensipemasanganminipc.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Pemasangan Mini PC Mandiri Utama Finance Cibubur</p></div></div>
+        <div class="slide-item"><img src="myjourney/pcantriancimb.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Pemasangan PC Antrian CIMB Cileungsi</p></div></div>
+        <div class="slide-item"><img src="myjourney/bukber1.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Foto Team VDI Jakarta Timur Halim</p></div></div>
+        <div class="slide-item"><img src="myjourney/bukber2.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Foto Team VDI Jakarta Timur Halim</p></div></div>
+        <div class="slide-item"><img src="myjourney/preparasimesinedc.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Proses Preparasi Mesin EDC</p></div></div>
+        <div class="slide-item"><img src="myjourney/pemasanganmesinedcpanin.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Foto Bersama PIC Merchant Hyam Empuk Metland</p></div></div>
+        <div class="slide-item"><img src="myjourney/sosialisasimerchant.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Foto Bersama PIC Bakso A Fung Mall Ciputra Cibubur</p></div></div>
+        <div class="slide-item"><img src="myjourney/bukber4.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Foto Team VDI Jakarta Timur Halim</p></div></div>
+        <div class="slide-item"><img src="myjourney/fotobersamapicbjbcibubur.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Foto Bersama PIC BJB Cibubur</p></div></div>
+        <div class="slide-item"><img src="myjourney/fotobersamapicbjbcimanggis.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Foto Bersama PIC BJB Cimanggis</p></div></div>
+        <div class="slide-item"><img src="myjourney/fotobersamapicbjbjatimakmur.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Foto Bersama PIC BJB Jatimakmur</p></div></div>
+        <div class="slide-item"><img src="myjourney/fotobersamapicbjbkrangganmas.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Foto Bersama PIC BJB Kranggan Mas</p></div></div>
+        <div class="slide-item"><img src="myjourney/konfigurasimesinatm.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Maintenance Mesin ATM</p></div></div>
+        <div class="slide-item"><img src="myjourney/visionet.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Profile Visionet</p></div></div>
+        <div class="slide-item"><img src="myjourney/edc1.png" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Potret Bersama PIC Kopi Tarik Andalan Living World Kota Wisata</p></div></div>
+        <div class="slide-item"><img src="myjourney/edc2.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Potret Bersama PIC Klinik 24 Ciangsana</p></div></div>
+        <div class="slide-item"><img src="myjourney/edc3.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Potret Bersama PIC Dapur Solo Living World Kota Wisata</p></div></div>
+        <div class="slide-item"><img src="myjourney/edc4.jpeg" onclick="showImage(this.src)"><div class="overlay"><h4>VISIONET</h4><p>Potret Bersama PIC Tawan Living World Kota Wisata</p></div></div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal untuk fullscreen image -->
+<div id="imageModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); align-items:center; justify-content:center; z-index:99999;">
+  <span style="position:absolute; top:20px; right:30px; font-size:30px; color:#fff; cursor:pointer;" onclick="closeImage()">✖</span>
+  <img id="fullImage" src="" style="max-width:90%; max-height:90%; border-radius:8px; box-shadow:0 4px 20px rgba(0,0,0,0.5);">
+</div>
+
+<footer>© 2026 <span style="color:#3b82f6">Ridho Syaputra</span>. All rights reserved.</footer>
+
+<script>
+
+function showImage(src) {
+  document.getElementById('fullImage').src = src;
+  document.getElementById('imageModal').style.display = 'flex';
+}
+function closeImage() {
+  document.getElementById('imageModal').style.display = 'none';
+}
+
+// ===== PARTICLES =====
+const canvas = document.getElementById('bg-canvas');
+const ctx = canvas.getContext('2d');
+let W = canvas.width = window.innerWidth;
+let H = canvas.height = window.innerHeight;
+const particles = [];
+for (let i = 0; i < 80; i++) {
+  particles.push({
+    x: Math.random()*W, y: Math.random()*H,
+    r: Math.random()*1.8+0.2,
+    vx: (Math.random()-0.5)*0.25,
+    vy: (Math.random()-0.5)*0.25,
+    o: Math.random()*0.35+0.05
+  });
+}
+let mx = W/2, my = H/2;
+window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+
+function drawParticles() {
+  ctx.clearRect(0,0,W,H);
+  particles.forEach((p, i) => {
+    particles.slice(i+1).forEach(p2 => {
+      const dx = p.x - p2.x, dy = p.y - p2.y;
+      const dist = Math.sqrt(dx*dx+dy*dy);
+      if (dist < 130) {
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+        ctx.lineTo(p2.x, p2.y);
+        ctx.strokeStyle = 'rgba(59,130,246,'+(0.06*(1-dist/130))+')';
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+    });
+  });
+  particles.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+    ctx.fillStyle = 'rgba(59,130,246,'+p.o+')';
+    ctx.fill();
+    const dx = mx - p.x, dy = my - p.y;
+    const dist = Math.sqrt(dx*dx+dy*dy);
+    if (dist < 200) {
+      p.x += dx * 0.0003;
+      p.y += dy * 0.0003;
+    }
+    p.x += p.vx; p.y += p.vy;
+    if(p.x<0) p.x=W; if(p.x>W) p.x=0;
+    if(p.y<0) p.y=H; if(p.y>H) p.y=0;
+  });
+  requestAnimationFrame(drawParticles);
+}
+drawParticles();
+window.addEventListener('resize', () => {
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+});
+
+// ===== NAVBAR =====
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ===== MOBILE MENU =====
+function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+// ===== ACCORDION =====
+function toggleExp(header) { header.closest('.exp-item').classList.toggle('open'); }
+function toggleFaq(btn) { btn.closest('.faq-item').classList.toggle('open'); }
+
+// ===== TYPING EFFECT =====
+const phrases = ['Technical Support', 'Operations Specialist', 'Field Technician', 'Problem Solver'];
+let phraseIdx = 0, charIdx = 0, deleting = false;
+const typedEl = document.getElementById('typedText');
+function typeWriter() {
+  const current = phrases[phraseIdx];
+  if (!deleting) {
+    typedEl.textContent = current.slice(0, charIdx+1);
+    charIdx++;
+    if (charIdx === current.length) { deleting = true; setTimeout(typeWriter, 1800); return; }
+  } else {
+    typedEl.textContent = current.slice(0, charIdx-1);
+    charIdx--;
+    if (charIdx === 0) { deleting = false; phraseIdx = (phraseIdx+1) % phrases.length; }
+  }
+  setTimeout(typeWriter, deleting ? 50 : 80);
+}
+typeWriter();
+
+// ===== FADE IN =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+
+
+</script>
 
 </body>
 </html>
