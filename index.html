@@ -273,17 +273,19 @@ section { padding:100px 0; scroll-margin-top:80px; }
 }
 
 .hero-image img {
-  width: 320px;
+   width: 320px;
   height: 320px;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center 20%;
   border: 3px solid rgba(59,130,246,0.4);
+
+  background: radial-gradient(circle at 50% 30%, rgba(59,130,246,0.2), #020617 70%);
+
   box-shadow:
     0 10px 40px rgba(0,0,0,0.5),
     0 0 40px rgba(59,130,246,0.25);
-  transition: all 0.4s ease;
-  background-color: #020617;
-  padding-top: 3px;
+  
 }
 
 .hero-image img:hover {
@@ -848,7 +850,7 @@ networking, dan maintenance sistem.
 
 <!-- IMAGE -->
 <div class="hero-image">
-<img src="fotoprofile/ridhos2.png" alt="Ridho">
+<img src="fotoprofile/ridhos6.png" alt="Ridho">
 </div>
 
 </div>
