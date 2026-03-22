@@ -373,6 +373,92 @@ section { padding:100px 0; scroll-margin-top:80px; }
 .value-card h4 { font-size:14px; color:#f1f5f9; font-weight:600; margin-bottom:4px; }
 .value-card p { font-size:13px; color:#64748b; line-height:1.55; }
 
+
+
+/* ===== VALUE GRID ORIGINAL TEXT ===== */
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.value-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 18px;
+  border-radius: 14px;
+
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(59,130,246,0.08);
+
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover */
+.value-box:hover {
+  transform: translateY(-4px);
+  border-color: rgba(59,130,246,0.3);
+  background: rgba(59,130,246,0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* icon */
+.value-box .value-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+
+  background: rgba(59,130,246,0.1);
+  border: 1px solid rgba(59,130,246,0.2);
+
+  flex-shrink: 0;
+}
+
+/* text */
+.value-box p {
+  font-size: 14px;
+  color: #cbd5e1;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* garis kiri efek */
+.value-box::before {
+  content:'';
+  position:absolute;
+  left:0;
+  top:0;
+  width:3px;
+  height:100%;
+  background:#3b82f6;
+  opacity:0;
+  transition:0.3s;
+}
+
+.value-box:hover::before {
+  opacity:1;
+}
+
+/* responsive */
+@media(max-width:640px){
+  .value-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
 /* ===== SKILLS ===== */
 .skills-grid {
   display:grid; grid-template-columns:repeat(4,1fr);
@@ -770,6 +856,7 @@ networking, dan maintenance sistem.
 </section>
 
 
+
 <!-- ABOUT -->
 <section id="about">
   <div class="container">
@@ -795,6 +882,31 @@ networking, dan maintenance sistem.
         </div>
       </div>
     </div>
+    <div class="value-grid fade-in">
+
+  <div class="value-box">
+    <div class="value-icon">🔥</div>
+    <p>Kalah Koneksi menang Aksi</p>
+  </div>
+
+  <div class="value-box">
+    <div class="value-icon">🧠</div>
+    <p>Kalah Modal menang Akal</p>
+  </div>
+
+  <div class="value-box">
+    <div class="value-icon">💪</div>
+    <p>Kalah Percaya Diri menang Bukti</p>
+  </div>
+
+  <div class="value-box">
+    <div class="value-icon">🎯</div>
+    <p>Kalah Pendidikan menang Pengalaman</p>
+  </div>
+
+</div>
+
+
   </div>
 </section>
 
@@ -1011,7 +1123,7 @@ networking, dan maintenance sistem.
               <h4>Pergantian Fascia ATM</h4><p>Melakukan penggantian komponen fascia ATM BANK NOBU sebagai bagian dari perawatan dan peningkatan tampilan mesin.</p>
               </div></div>
 
-            <div class="project-card"><img src="portofoliovdi/konfigurasimesinatm.jpeg" alt="konfigurasimesinatmi" onclick="showImage(this.src)"><div class="project-info">
+            <div class="project-card"><img src="portofoliovdi/konfigurasimesinatm.jpeg" alt="konfigurasimesinatm" onclick="showImage(this.src)"><div class="project-info">
               <h4>Perbaikan Mesin ATM</h4><p>Melakukan troubleshooting dan perbaikan mesin ATM untuk memastikan operasional tetap berjalan normal.</p>
               </div></div>
 
@@ -1046,7 +1158,7 @@ networking, dan maintenance sistem.
     <div class="faq-list">
       <div class="faq-item fade-in">
         <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-num">01</span><span>Apa motivasi Anda bekerja?</span><span class="faq-arrow">▾</span></button>
-        <div class="faq-a"><p>Saya ingin bekerja di lingkungan yang sejalan dengan nilai dan keyakinan saya. Saya berkomitmen memberikan yang terbaik, bekerja keras, serta terus meningkatkan kemampuan diri agar berkembang menjadi karyawan tetap yang berkontribusi positif bagi perusahaan.</p></div>
+        <div class="faq-a"><p>Saya ingin bekerja di lingkungan yang sejalan dengan nilai dan keyakinan yang saya pegang, sehingga saya dapat bekerja secara konsisten tanpa pengaruh negatif yang dapat mengubah sikap dan prinsip kerja saya. Saya berkomitmen untuk memberikan yang terbaik dalam setiap tanggung jawab, bekerja keras, serta terus meningkatkan kemampuan diri agar dapat memberikan kontribusi nyata bagi perusahaan. Selain itu, saya juga memiliki keinginan untuk mempelajari hal-hal baru dan membangun relasi yang baik di lingkungan kerja.</p></div>
       </div>
       <div class="faq-item fade-in">
         <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-num">02</span><span>Apa hobi Anda?</span><span class="faq-arrow">▾</span></button>
@@ -1072,7 +1184,7 @@ networking, dan maintenance sistem.
       </div>
       <div class="faq-item fade-in">
         <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-num">05</span><span>Kenapa kami harus menerima Anda?</span><span class="faq-arrow">▾</span></button>
-        <div class="faq-a"><p>Karena saya meyakini attitude adalah aspek paling penting. Saya mengutamakan sikap positif, komitmen, dan dedikasi yang akan membawa dampak positif bagi perusahaan.</p></div>
+        <div class="faq-a"><p>Saya meyakini bahwa attitude adalah aspek paling penting dalam bekerja. Oleh karena itu, saya selalu mengutamakan sikap positif, komitmen, dan dedikasi dalam setiap tanggung jawab yang saya jalankan, karena hal tersebut dapat memberikan dampak positif bagi perusahaan. Selain itu, saya terbiasa mempersiapkan segala sesuatu dengan matang sebelum memulai pekerjaan, guna meminimalkan potensi masalah serta memastikan setiap tugas dapat diselesaikan secara efektif dan efisien.</p></div>
       </div>
       <div class="faq-item fade-in">
         <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-num">06</span><span>Siap ditempatkan di mana saja?</span><span class="faq-arrow">▾</span></button>
@@ -1174,7 +1286,7 @@ networking, dan maintenance sistem.
 </section>
 
 <!-- Modal untuk fullscreen image -->
-<div id="imageModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); align-items:center; justify-content:center; z-index:99999;">
+<div id="imageModal" onclick="closeImage(event)" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); align-items:center; justify-content:center; z-index:99999;">
   <span style="position:absolute; top:20px; right:30px; font-size:30px; color:#fff; cursor:pointer;" onclick="closeImage()">✖</span>
   <img id="fullImage" src="" style="max-width:90%; max-height:90%; border-radius:8px; box-shadow:0 4px 20px rgba(0,0,0,0.5);">
 </div>
@@ -1187,8 +1299,14 @@ function showImage(src) {
   document.getElementById('fullImage').src = src;
   document.getElementById('imageModal').style.display = 'flex';
 }
-function closeImage() {
-  document.getElementById('imageModal').style.display = 'none';
+
+function closeImage(e) {
+  const modal = document.getElementById('imageModal');
+
+  // jika klik di luar gambar (background)
+  if (!e || e.target === modal) {
+    modal.style.display = 'none';
+  }
 }
 
 // ===== PARTICLES =====
